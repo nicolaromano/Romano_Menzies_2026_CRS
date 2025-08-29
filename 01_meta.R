@@ -17,7 +17,7 @@ do_meta <- function(
     test, save_pdf = FALSE, effects_limits = NA) {
     # Calculate effect sizes for the specified test
     # We use Hedges' g for standardized mean difference
-    effects <- escalc(
+    effect_sizes <- escalc(
         data = CS_data %>%
             filter(Outcome == test),
         measure = "SMD",
@@ -29,12 +29,19 @@ do_meta <- function(
         sd2i = test_sd,
         append = TRUE, # Return the data along with the effect sizes
         slab = PubID
-        #slab = paste(PubID, ifelse(is.na(sex), "?", sex), sep = " - ")
+        # slab = paste(PubID, ifelse(is.na(sex), "?", sex), sep = " - ")
     )
+
+    if (is.na(effects_limits[1])) {
+        effects_limits <- c(
+            floor(min(effect_sizes$yi, na.rm = TRUE)) - 1,
+            ceiling(max(effect_sizes$yi, na.rm = TRUE)) + 1
+        )
+    }
 
     # Mixed-effects model
     mc <- rma.mv(
-        data = effects,
+        data = effect_sizes,
         yi = yi,
         V = vi,
         mods = total_time ~ 1, # We include total_time as a moderator
@@ -48,18 +55,44 @@ do_meta <- function(
 
     print(summary(mc))
 
-    if (!is.null(out_pdf)) {
-        pdf(out_pdf, width = width, height = height)
+    if (save_pdf) {
+        out_pdf <- paste0(test, "_forest.pdf")
+        cairo_pdf(out_pdf,
+            width = 10, height = 2 * nrow(effect_sizes) / 5,
+            family = "Noto Sans"
+        )
     }
 
+    par(family = "Noto Sans")
+
+    if (test == "SPT") {
+        ilabs <- cbind(
+            ifelse(is.na(effect_sizes$total_days), "?", effect_sizes$total_days),
+            ifelse(is.na(effect_sizes$water_depriv_h), "?", effect_sizes$water_depriv_h),
+            ifelse(is.na(effect_sizes$sex), "?", effect_sizes$sex)
+        )
+        ilabs_labels <- c("CRS\ndays", "Water\ndepriv (h)", "Sex")
+        ilabs_xpos <- c(
+            effects_limits[1] - 4, effects_limits[1] - 2,
+            effects_limits[1]
+        )
+    } else {
+        ilabs <- cbind(
+            ifelse(is.na(effect_sizes$total_days), "?", effect_sizes$total_days),
+            ifelse(is.na(effect_sizes$sex), "?", effect_sizes$sex)
+        )
+        ilabs_labels <- c("CRS\ndays", "Sex")
+        ilabs_xpos <- c(
+            effects_limits[1] - 3, effects_limits[1]
+        )
+    }
     forest(mc,
-        order = total_days, #PubID,
+        order = total_days, # PubID,
         header = c("Study", "Hedges' g [95% CI]"),
         shade = TRUE,
-        ilab = cbind(ifelse(is.na(effects$total_days), "?", effects$total_days),
-            ifelse(is.na(effects$sex), "?", effects$sex)),
-        ilab.lab = c("CRS days", "Sex"),
-        ilab.xpos = c(effects_limits[1] - 2, effects_limits[1]),
+        ilab = ilabs,
+        ilab.lab = ilabs_labels,
+        ilab.xpos = ilabs_xpos,
         xlim = c(effects_limits[1] - 10, effects_limits[2] + 8),
         at = seq(effects_limits[1], effects_limits[2], 5),
         mlab = paste("Random-effects model", test, sep = " - ")
@@ -72,16 +105,57 @@ do_meta <- function(
 
     summary(mc)
 
-    if (!is.null(out_pdf)) {
+    if (save_pdf) {
+        dev.off()
+    }
+
+    if (save_pdf) {
+        out_pdf <- paste0(test, "_funnel.pdf")
+        cairo_pdf(out_pdf,
+            width = 7, height = 7,
+            family = "Noto Sans"
+        )
+    }
+
+    # Note: metafor::regtest does not support rma.mv objects
+    # Egger's test is a simple linear regression of the effect sizes
+    # on their standard errors, weighted by the inverse of the
+    # variance of the effect sizes.
+    egger <- lm(yi ~ sei, weights = 1/vi, 
+        data = transform(effect_sizes, sei = sqrt(vi)))
+    print(paste("Egger's test for funnel plot asymmetry - ", test))
+    print(summary(egger))
+
+    # Funnel plot
+    funnel(mc,
+        xlab = "Hedges' g",
+        ylab = "Standard Error",
+        xlim = effects_limits + c(-5, 5),
+        ylim = c(0, max(sqrt(mc$vi)) + 0.1),
+        pch = 21,
+        las = 1
+    )
+
+    intercept <- round(coef(egger)[1], 2)
+    pval <- signif(summary(egger)$coefficients[1,4], 2)
+    text(x = min(effect_sizes$yi), 
+     y = 0, 
+     labels = paste0("Egger's intercept = ", intercept, 
+                     ", p = ", pval), 
+     pos = 4, cex=0.8)
+
+    if (save_pdf) {
         dev.off()
     }
 
     return(mc)
 }
 
-spt_mc <- do_meta("SPT", effects_limits = c(-5, 15))
-# mc_FST <- do_meta("FST", out_pdf = "FST_forest.pdf")
-# metareg(mc_FST, ~total_time)
+spt_mc <- do_meta("SPT", effects_limits = c(-5, 15), save_pdf = F)
+fst_mc <- do_meta("FST", effects_limits = c(-10, 5), save_pdf = F)
+epm_mc <- do_meta("EPM", effects_limits = c(-5, 10), save_pdf = F)
+oft_mc <- do_meta("OFT", effects_limits = c(-15, 15), save_pdf = F)
+
 # funnel(mc_FST)
 # mc_SPT <- do_meta("SPT", out_pdf = "SPT_forest.pdf", 10, 14)
 # metareg(mc_SPT, ~ water_depriv_h + food_depriv_h + total_time)
