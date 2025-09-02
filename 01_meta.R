@@ -1,7 +1,38 @@
 library(metafor)
 library(dplyr)
+library(ggplot2)
 
 CS_data <- read.csv("CS_data.csv")
+
+CS_data %>% 
+    group_by(Outcome) %>%
+    summarise(total_days_not_specified = sum(is.na(total_days)),
+              total_days_min = min(total_days, na.rm = TRUE),
+              total_days_max = max(total_days, na.rm = TRUE),
+              n_studies = n_distinct(PubID),
+              n_effects = n())
+
+cairo_pdf("CRS_duration.pdf",
+    width = 10, height = 10,
+    family = "Noto Sans"
+)
+
+CS_data %>%
+    filter(!is.na(total_days)) %>%
+    group_by(Outcome) %>%
+    select(PMID, total_days, Outcome) %>%
+    distinct() %>%
+    ggplot(aes(y = total_days, x = Outcome)) +
+    geom_boxplot(outlier.shape = NA) +
+    geom_jitter(width = 0.1, height = 0, size = 2) +
+    theme_minimal() +
+    ylab("CRS duration (days)") +
+    xlab("Behavioral test") +
+    theme(text = element_text(family = "Noto Sans"),
+          axis.title = element_text(size = 16),
+          axis.text = element_text(size = 14))
+
+dev.off()
 
 get_I2 <- function(model) {
     # See https://www.metafor-project.org/doku.php/tips:i2_multilevel_multivariate
@@ -21,12 +52,12 @@ do_meta <- function(
         data = CS_data %>%
             filter(Outcome == test),
         measure = "SMD",
-        m1i = control_mean,
-        m2i = test_mean,
-        n1i = control_n,
-        n2i = test_n,
-        sd1i = control_sd,
-        sd2i = test_sd,
+        m1i = test_mean,
+        m2i = control_mean,
+        n1i = test_n,
+        n2i = control_n,
+        sd1i = test_sd,
+        sd2i = control_sd,
         append = TRUE, # Return the data along with the effect sizes
         slab = PubID
         # slab = paste(PubID, ifelse(is.na(sex), "?", sex), sep = " - ")
@@ -44,7 +75,7 @@ do_meta <- function(
         data = effect_sizes,
         yi = yi,
         V = vi,
-        mods = total_time ~ 1, # We include total_time as a moderator
+        mods = ~ total_time, # We include total_time as a moderator
         # We use PubID as a random effect. This is important as some
         # studies have multiple observations (e.g. M/F or different lengths
         # of CRS).
@@ -94,8 +125,33 @@ do_meta <- function(
         ilab.lab = ilabs_labels,
         ilab.xpos = ilabs_xpos,
         xlim = c(effects_limits[1] - 10, effects_limits[2] + 8),
+        ylim = c(-3, nrow(effect_sizes) + 3),
         at = seq(effects_limits[1], effects_limits[2], 5),
-        mlab = paste("Random-effects model", test, sep = " - ")
+        mlab = paste("Random-effects model", test, sep = " - "),
+        addfit = FALSE
+    )
+
+    median_CRS_days <- median(effect_sizes$total_days, na.rm = TRUE)
+    pred <- predict(mc, newmods = median_CRS_days)
+    estimate <- pred$pred
+    se  <- pred$se
+    df  <- mc$ddf[1]
+
+    tval <- estimate / se
+    pval <- 2 * (1 - pt(abs(tval), df))
+
+    print(paste0("Model estimate for ", test, 
+        " at median CRS days (", median_CRS_days, ")"))
+    print(paste0("Hedges' g = ", round(estimate, 3),
+                 " (SE = ", round(se, 3),
+                 ", df = ", round(df, 1),
+                 ", t = ", round(tval, 3),
+                 ", p = ", signif(pval, 3), ")"))
+
+    addpoly(
+    pred,
+    row = -1,
+    mlab = "Model estimate (at median CRS days)"
     )
 
     mtext(bquote(I^2 == .(format(get_I2(mc), digits = 3))),
@@ -151,10 +207,10 @@ do_meta <- function(
     return(mc)
 }
 
-spt_mc <- do_meta("SPT", effects_limits = c(-5, 15), save_pdf = F)
-fst_mc <- do_meta("FST", effects_limits = c(-10, 5), save_pdf = F)
-epm_mc <- do_meta("EPM", effects_limits = c(-5, 10), save_pdf = F)
-oft_mc <- do_meta("OFT", effects_limits = c(-15, 15), save_pdf = F)
+spt_mc <- do_meta("SPT", effects_limits = c(-5, 15), save_pdf = TRUE)
+fst_mc <- do_meta("FST", effects_limits = c(-5, 10), save_pdf = TRUE)
+epm_mc <- do_meta("EPM", effects_limits = c(-5, 10), save_pdf = TRUE)
+oft_mc <- do_meta("OFT", effects_limits = c(-15, 15), save_pdf = TRUE)
 
 # funnel(mc_FST)
 # mc_SPT <- do_meta("SPT", out_pdf = "SPT_forest.pdf", 10, 14)
