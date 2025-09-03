@@ -22,7 +22,7 @@ get_data <- function(test, extra_cols = NULL) {
             total_time = "total.number.of.min",
             total_days = "total.number.of.days"
         ) %>%
-        # rename extra_cols to extra_cols_names
+        # rename extra_cols to extra_col_names
         rename(!!!extra_cols) %>%
         # Name publications as "Author Year", so it's not too long
         mutate(
@@ -42,13 +42,13 @@ get_data <- function(test, extra_cols = NULL) {
         mutate(Outcome = test) %>%
         mutate(
             total_days = as.numeric(total_days),
-            total_time = as.numeric(total_time)
+            total_time_h = as.numeric(total_time) %/% 60
         ) %>%
         select(
             PMID, PubID, Journal, Outcome,
             strain, sex, age,
             control_mean, control_sd, control_n,
-            test_mean, test_sd, test_n, total_days, total_time,
+            test_mean, test_sd, test_n, total_days, total_time_h,
             all_of(names(extra_cols))
         ) %>%
         filter(!is.na(PMID)) %>%
