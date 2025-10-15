@@ -4,35 +4,23 @@ library(ggplot2)
 
 CS_data <- read.csv("CS_data.csv")
 
-CS_data %>% 
-    group_by(Outcome) %>%
-    summarise(total_days_not_specified = sum(is.na(total_days)),
-              total_days_min = min(total_days, na.rm = TRUE),
-              total_days_max = max(total_days, na.rm = TRUE),
-              n_studies = n_distinct(PubID),
-              n_effects = n())
-
-cairo_pdf("CRS_duration.pdf",
-    width = 10, height = 10,
-    family = "Noto Sans"
-)
-
 CS_data %>%
-    filter(!is.na(total_days)) %>%
     group_by(Outcome) %>%
-    select(PMID, total_days, Outcome) %>%
-    distinct() %>%
-    ggplot(aes(y = total_days, x = Outcome)) +
-    geom_boxplot(outlier.shape = NA) +
-    geom_jitter(width = 0.1, height = 0, size = 2) +
-    theme_minimal() +
-    ylab("CRS duration (days)") +
-    xlab("Behavioral test") +
-    theme(text = element_text(family = "Noto Sans"),
-          axis.title = element_text(size = 16),
-          axis.text = element_text(size = 14))
-
-dev.off()
+    summarise(
+        total_days_min = min(total_days, na.rm = TRUE),
+        total_days_max = max(total_days, na.rm = TRUE),
+        total_hours_min = min(total_time_h, na.rm = TRUE),
+        total_hours_max = max(total_time_h, na.rm = TRUE),
+        n_studies = n_distinct(PubID),
+        # Number of effects is number of rows in the data for that outcome
+        # We need to remove rows with NA in control_n or test_n as they
+        # cannot be used for meta-analysis
+        n_excluded = sum(is.na(control_n) | is.na(test_n) | 
+            is.na(control_sd) | is.na(test_sd) |
+            is.na(total_time_h) |
+            (Outcome == "SPT" & is.na(water_depriv_h))),
+        n_effects = n() - n_excluded
+    ) 
 
 get_I2 <- function(model) {
     # See https://www.metafor-project.org/doku.php/tips:i2_multilevel_multivariate
@@ -44,13 +32,59 @@ get_I2 <- function(model) {
     return(I2)
 }
 
+add_diamond <- function(model, test, moderators_val, row = -1) {
+    pred <- predict(model, newmods = moderators_val)
+    estimate <- pred$pred
+    se <- pred$se
+    ci_lb <- pred$ci.lb
+    ci_ub <- pred$ci.ub
+    df <- model$ddf[1]
+
+    tval <- estimate / se
+    pval <- 2 * (1 - pt(abs(tval), df))
+
+    print(moderators_val)
+
+    print(paste0(
+        "Hedges' g = ", round(estimate, 3),
+        " (SE = ", round(se, 3),
+        ", 95% CI [", round(ci_lb, 3), ", ", round(ci_ub, 3), "]",
+        ", df = ", round(df, 1),
+        ", t = ", round(tval, 3),
+        ", p = ", signif(pval, 3), ")"
+    ))
+
+    if (test == "SPT") {
+        diamond_label <- paste("Model estimate (at", moderators_val["total_time_h"],
+            "h CRS,", moderators_val["water_depriv_h"], "h H2O depr.)")
+    } else
+        diamond_label <- paste("Model estimate (at", moderators_val["total_time_h"], "h CRS)")
+
+    addpoly(
+        pred,
+        row = row,
+        mlab = diamond_label
+    )
+}
+
 do_meta <- function(
-    test, save_pdf = FALSE, effects_limits = NA) {
+    test, effects_limits = NA,
+    save_pdf = FALSE, pdf_width, pdf_height) {
+    CS_data_filtered <- CS_data %>%
+        filter(Outcome == test) %>%
+        filter(!is.na(control_n) & !is.na(test_n)) %>% # Must have sample sizes
+        filter(!is.na(control_sd) & !is.na(test_sd)) %>% # Must have SDs
+        filter(!is.na(total_time_h)) # Must have CRS duration
+
+    if (test == "SPT") {
+        CS_data_filtered <- CS_data_filtered %>%
+            filter(!is.na(water_depriv_h)) # Must have water deprivation hours for SPT
+    }
+
     # Calculate effect sizes for the specified test
     # We use Hedges' g for standardized mean difference
     effect_sizes <- escalc(
-        data = CS_data %>%
-            filter(Outcome == test),
+        data = CS_data_filtered,
         measure = "SMD",
         m1i = test_mean,
         m2i = control_mean,
@@ -60,7 +94,6 @@ do_meta <- function(
         sd2i = control_sd,
         append = TRUE, # Return the data along with the effect sizes
         slab = PubID
-        # slab = paste(PubID, ifelse(is.na(sex), "?", sex), sep = " - ")
     )
 
     if (is.na(effects_limits[1])) {
@@ -71,25 +104,39 @@ do_meta <- function(
     }
 
     # Mixed-effects model
-    mc <- rma.mv(
-        data = effect_sizes,
-        yi = yi,
-        V = vi,
-        mods = ~ total_time, # We include total_time as a moderator
-        # We use PubID as a random effect. This is important as some
-        # studies have multiple observations (e.g. M/F or different lengths
-        # of CRS).
-        random = ~ 1 | PubID,
-        method = "REML", # Restricted Maximum Likelihood
-        test = "knha" # Knapp-Hartung adjustment for small sample sizes
-    )
+    model <- NULL
+    if (test != "SPT") {
+        model <- rma.mv(
+            data = effect_sizes,
+            yi = yi,
+            V = vi,
+            mods = ~total_time_h, # We include total_time as a moderator
+            # We use PubID as a random effect. This is important as some
+            # studies have multiple observations (e.g. M/F or different lengths
+            # of CRS).
+            random = ~ 1 | PubID,
+            method = "REML", # Restricted Maximum Likelihood
+            test = "knha" # Knapp-Hartung adjustment for small sample sizes
+        )
+    } else {
+        model <- rma.mv(
+            data = effect_sizes,
+            yi = yi,
+            V = vi,
+            # For SPT, we also include water deprivation as a moderator
+            mods = ~ total_time_h + water_depriv_h,
+            random = ~ 1 | PubID,
+            method = "REML",
+            test = "knha"
+        )
+    }
 
-    print(summary(mc))
+    print(summary(model))
 
     if (save_pdf) {
         out_pdf <- paste0(test, "_forest.pdf")
         cairo_pdf(out_pdf,
-            width = 10, height = 2 * nrow(effect_sizes) / 5,
+            width = pdf_width, height = pdf_height,
             family = "Noto Sans"
         )
     }
@@ -98,68 +145,80 @@ do_meta <- function(
 
     if (test == "SPT") {
         ilabs <- cbind(
-            ifelse(is.na(effect_sizes$total_days), "?", effect_sizes$total_days),
-            ifelse(is.na(effect_sizes$water_depriv_h), "?", effect_sizes$water_depriv_h),
-            ifelse(is.na(effect_sizes$sex), "?", effect_sizes$sex)
+            effect_sizes$total_time_h,
+            effect_sizes$water_depriv_h,
+            ifelse(is.na(effect_sizes$sex), "?", effect_sizes$sex),
+            round(weights(model), 1)
         )
-        ilabs_labels <- c("CRS\ndays", "Water\ndepriv (h)", "Sex")
+        ilabs_labels <- c("Tot.\nCRS (h)", "Water\ndepr. (h)", "Sex", "Study\nweight %")
         ilabs_xpos <- c(
             effects_limits[1] - 4, effects_limits[1] - 2,
-            effects_limits[1]
+            effects_limits[1], effects_limits[2] + 1
         )
     } else {
         ilabs <- cbind(
-            ifelse(is.na(effect_sizes$total_days), "?", effect_sizes$total_days),
-            ifelse(is.na(effect_sizes$sex), "?", effect_sizes$sex)
+            ifelse(is.na(effect_sizes$total_time_h), "?", effect_sizes$total_time_h),
+            ifelse(is.na(effect_sizes$sex), "?", effect_sizes$sex),
+            round(weights(model), 1)
         )
-        ilabs_labels <- c("CRS\ndays", "Sex")
+        ilabs_labels <- c("Tot.\nCRS (h)", "Sex", "Study\nweight %")
         ilabs_xpos <- c(
-            effects_limits[1] - 3, effects_limits[1]
+            effects_limits[1] - 3, effects_limits[1], 
+            effects_limits[2] + 2
         )
     }
-    forest(mc,
-        order = total_days, # PubID,
+
+    if (test != "SPT") {
+        ylims <- c(-3, model$k + 3) # Number of effects + space for header and model summary
+    } else {
+        ylims <- c(-4, model$k + 4) # Extra space for second diamond
+    }
+
+    forest(model,
+        order = paste(sprintf("%03d", total_time_h), 
+            sprintf("%03d", water_depriv_h)),
         header = c("Study", "Hedges' g [95% CI]"),
         shade = TRUE,
         ilab = ilabs,
         ilab.lab = ilabs_labels,
         ilab.xpos = ilabs_xpos,
-        xlim = c(effects_limits[1] - 10, effects_limits[2] + 8),
-        ylim = c(-3, nrow(effect_sizes) + 3),
+        xlim = c(effects_limits[1] - 10, effects_limits[2] + 12),
+        ylim = ylims,
         at = seq(effects_limits[1], effects_limits[2], 5),
         mlab = paste("Random-effects model", test, sep = " - "),
-        addfit = FALSE
+        addfit = FALSE,
+        efac = 0.75
     )
 
-    median_CRS_days <- median(effect_sizes$total_days, na.rm = TRUE)
-    pred <- predict(mc, newmods = median_CRS_days)
-    estimate <- pred$pred
-    se  <- pred$se
-    df  <- mc$ddf[1]
+    median_CRS_total_time_h <- median(effect_sizes$total_time_h, na.rm = TRUE)
 
-    tval <- estimate / se
-    pval <- 2 * (1 - pt(abs(tval), df))
+    if (test == "SPT") {
+        # For SPT, we set water_depriv_h to 0 (no water deprivation)
+        moderators_val <- c(
+            total_time_h = median_CRS_total_time_h,
+            water_depriv_h = 0
+        )
+        moderators_val_max <- c(
+            total_time_h = median_CRS_total_time_h,
+            water_depriv_h = max(effect_sizes$water_depriv_h, na.rm = TRUE)
+        )
+    } else {
+        moderators_val <- c(
+            total_time_h = median_CRS_total_time_h
+        )
+    }
 
-    print(paste0("Model estimate for ", test, 
-        " at median CRS days (", median_CRS_days, ")"))
-    print(paste0("Hedges' g = ", round(estimate, 3),
-                 " (SE = ", round(se, 3),
-                 ", df = ", round(df, 1),
-                 ", t = ", round(tval, 3),
-                 ", p = ", signif(pval, 3), ")"))
+    add_diamond(model, test, moderators_val, row = -1)
+    if (test == "SPT") {
+        add_diamond(model, test, moderators_val_max, row = -2)
+    }
 
-    addpoly(
-    pred,
-    row = -1,
-    mlab = "Model estimate (at median CRS days)"
-    )
-
-    mtext(bquote(I^2 == .(format(get_I2(mc), digits = 3))),
-        side = 1, line = 0, at = (effects_limits[1] - 9.5),
+    mtext(bquote(I^2 == .(format(get_I2(model), digits = 3))),
+        side = 1, line = -1, at = (effects_limits[1] - 9.5),
         cex = 1, adj = 0
     )
 
-    summary(mc)
+    summary(model)
 
     if (save_pdf) {
         dev.off()
@@ -168,7 +227,7 @@ do_meta <- function(
     if (save_pdf) {
         out_pdf <- paste0(test, "_funnel.pdf")
         cairo_pdf(out_pdf,
-            width = 7, height = 7,
+            width = 10, height = 10,
             family = "Noto Sans"
         )
     }
@@ -177,45 +236,65 @@ do_meta <- function(
     # Egger's test is a simple linear regression of the effect sizes
     # on their standard errors, weighted by the inverse of the
     # variance of the effect sizes.
-    egger <- lm(yi ~ sei, weights = 1/vi, 
-        data = transform(effect_sizes, sei = sqrt(vi)))
+    egger <- lm(yi ~ sei,
+        weights = 1 / vi,
+        data = transform(effect_sizes, sei = sqrt(vi))
+    )
     print(paste("Egger's test for funnel plot asymmetry - ", test))
     print(summary(egger))
 
     # Funnel plot
-    funnel(mc,
-        xlab = "Hedges' g",
+    # Note from ?metafor::funnel
+    # "For (mixed-effects) meta-regression models (i.e., models involving moderators), the plot shows the residuals on the x-axis against their corresponding standard errors".
+    # This also means that the reference line is at 0.
+    funnel(model,
+        xlab = "Residuals",
         ylab = "Standard Error",
-        xlim = effects_limits + c(-5, 5),
-        ylim = c(0, max(sqrt(mc$vi)) + 0.1),
-        pch = 21,
+        pch = 20,
+        cex = 1.2,
+        yaxt = "n", # No y axis ticks, we'll add them manually
+        hlines = NULL,
+        main = paste("Funnel plot -", test)
+    )
+
+    # Get default y axis ticks and re-add them manually
+    # formatted with 1 decimal place
+    yticks <- axTicks(2)
+    axis(2,
+        at = yticks,
+        labels = formatC(yticks, format = "f", digits = 1),
         las = 1
     )
 
+    # Annotate outlier
+    if (test == "FST") {
+        text(45, 8, "Zhu et al. 2021", cex = 0.7)
+    }
+
     intercept <- round(coef(egger)[1], 2)
-    pval <- signif(summary(egger)$coefficients[1,4], 2)
-    text(x = min(effect_sizes$yi), 
-     y = 0, 
-     labels = paste0("Egger's intercept = ", intercept, 
-                     ", p = ", pval), 
-     pos = 4, cex=0.8)
+    se <- round(summary(egger)$coefficients[1, 2], 2)
+    pval <- signif(summary(egger)$coefficients[1, 4], 2)
+    tval <- round(summary(egger)$coefficients[1, 3], 2)
+    print(paste0("Egger's intercept (SE) = ", intercept, 
+        " (", se, "), t (", df.residual(egger), ") = ", tval,
+        " p = ", pval))
 
     if (save_pdf) {
         dev.off()
     }
 
-    return(mc)
+    return(list(model = model, effects = effect_sizes))
 }
 
-spt_mc <- do_meta("SPT", effects_limits = c(-5, 15), save_pdf = TRUE)
-fst_mc <- do_meta("FST", effects_limits = c(-5, 10), save_pdf = TRUE)
-epm_mc <- do_meta("EPM", effects_limits = c(-5, 10), save_pdf = TRUE)
-oft_mc <- do_meta("OFT", effects_limits = c(-15, 15), save_pdf = TRUE)
-
-# funnel(mc_FST)
-# mc_SPT <- do_meta("SPT", out_pdf = "SPT_forest.pdf", 10, 14)
-# metareg(mc_SPT, ~ water_depriv_h + food_depriv_h + total_time)
-
-# mc_EPM <- do_meta("EPM", out_pdf = "EPM_forest.pdf")
-
-# mc_OFT <- do_meta("OFT", out_pdf = "OFT_forest.pdf")
+print("****** FST ******")
+fst_res <- do_meta("FST", effects_limits = c(-5, 10),
+    save_pdf = TRUE, pdf_width = 12, pdf_height = 12)
+print("****** SPT ******")
+spt_res <- do_meta("SPT", effects_limits = c(-10, 5),
+    save_pdf = TRUE, pdf_width = 12, pdf_height = 15)
+print("****** EPM ******")
+epm_res <- do_meta("EPM", effects_limits = c(-10, 5),
+    save_pdf = TRUE, pdf_width = 12, pdf_height = 12)
+print("****** OFT ******")
+oft_res <- do_meta("OFT", effects_limits = c(-15, 15),
+    save_pdf = TRUE, pdf_width = 12, pdf_height = 10)
