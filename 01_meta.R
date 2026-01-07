@@ -4,7 +4,7 @@ library(ggplot2)
 
 CS_data <- read.csv("CS_data.csv")
 
-CS_data %>%
+CS_data_summary <- CS_data %>%
     group_by(Outcome) %>%
     summarise(
         total_days_min = min(total_days, na.rm = TRUE),
@@ -20,7 +20,13 @@ CS_data %>%
             is.na(total_time_h) |
             (Outcome == "SPT" & is.na(water_depriv_h))),
         n_effects = n() - n_excluded
-    ) 
+    )
+print(CS_data_summary)
+
+CS_data %>% group_by(Outcome) %>% summarise(n_excl = sum(is.na(control_n) | is.na(test_n) |
+    is.na(control_sd) | is.na(test_sd) | is.na(total_time_h) | is.na(water_depriv_h)),
+n_studies_excluded = n_distinct(PubID[is.na(control_sd) | is.na(test_sd) | is.na(control_n) | is.na(test_n) |
+    is.na(total_time_h) | (Outcome == "SPT" & is.na(water_depriv_h))]))
 
 get_I2 <- function(model) {
     # See https://www.metafor-project.org/doku.php/tips:i2_multilevel_multivariate
