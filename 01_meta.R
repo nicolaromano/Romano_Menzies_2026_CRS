@@ -2,7 +2,12 @@ library(metafor)
 library(dplyr)
 library(ggplot2)
 
+out_dir <- "plots"
 CS_data <- read.csv("CS_data.csv")
+
+if (!dir.exists(out_dir)) {
+    dir.create(out_dir)
+}
 
 CS_data_summary <- CS_data %>%
     group_by(Outcome) %>%
@@ -27,6 +32,25 @@ CS_data %>% group_by(Outcome) %>% summarise(n_excl = sum(is.na(control_n) | is.n
     is.na(control_sd) | is.na(test_sd) | is.na(total_time_h) | is.na(water_depriv_h)),
 n_studies_excluded = n_distinct(PubID[is.na(control_sd) | is.na(test_sd) | is.na(control_n) | is.na(test_n) |
     is.na(total_time_h) | (Outcome == "SPT" & is.na(water_depriv_h))]))
+
+png(paste0(out_dir, "/CRS_time_vs_days.png"),
+    width = 10, height = 8, units = "in", res = 300)
+
+CS_data %>% 
+    select(PMID, total_time_h, total_days, Outcome) %>%
+    distinct(PMID, .keep_all = TRUE) %>%
+    ggplot(aes(x = total_time_h, y = total_days)) +
+    geom_point(size = 2) +
+    stat_smooth(method = "lm", se = TRUE, color = "#00b7ff", alpha = 0.2) +
+    xlab("Total CRS time (hours)") +
+    ylab("Days of CRS") +
+    theme_minimal() +
+    theme(
+        axis.text = element_text(family = "Noto Sans", size = 14),
+        axis.title = element_text(family = "Noto Sans", size = 16)
+    )
+
+dev.off()
 
 get_I2 <- function(model) {
     # See https://www.metafor-project.org/doku.php/tips:i2_multilevel_multivariate
@@ -140,7 +164,7 @@ do_meta <- function(
     print(summary(model))
 
     if (save_pdf) {
-        out_pdf <- paste0(test, "_forest.pdf")
+        out_pdf <- paste0(out_dir, "/", test, "_forest.pdf")
         cairo_pdf(out_pdf,
             width = pdf_width, height = pdf_height,
             family = "Noto Sans"
@@ -175,8 +199,10 @@ do_meta <- function(
     }
 
     if (test != "SPT") {
+        xlims <- c(effects_limits[1] - 10, effects_limits[2] + 12)
         ylims <- c(-3, model$k + 3) # Number of effects + space for header and model summary
     } else {
+        xlims <- c(effects_limits[1] - 15, effects_limits[2] + 14)
         ylims <- c(-4, model$k + 4) # Extra space for second diamond
     }
 
@@ -188,7 +214,7 @@ do_meta <- function(
         ilab = ilabs,
         ilab.lab = ilabs_labels,
         ilab.xpos = ilabs_xpos,
-        xlim = c(effects_limits[1] - 10, effects_limits[2] + 12),
+        xlim = xlims,
         ylim = ylims,
         at = seq(effects_limits[1], effects_limits[2], 5),
         mlab = paste("Random-effects model", test, sep = " - "),
@@ -231,7 +257,7 @@ do_meta <- function(
     }
 
     if (save_pdf) {
-        out_pdf <- paste0(test, "_funnel.pdf")
+        out_pdf <- paste0(out_dir, "/", test, "_funnel.pdf")
         cairo_pdf(out_pdf,
             width = 10, height = 10,
             family = "Noto Sans"
