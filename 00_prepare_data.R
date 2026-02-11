@@ -3,7 +3,7 @@ library(dplyr)
 library(stringr)
 
 get_data <- function(test, extra_cols = NULL) {
-    data_original <- read.xlsx("08 csv-chronicres-set - test characteristics and effect sizes.xlsx",
+    data_original <- read.xlsx("08 csv-chronicres-set - test characteristics and effect sizes - amended.xlsx",
         sheetName = test, startRow = 2
     )
 
@@ -67,4 +67,6 @@ get_data("FST") %>%
     )) %>%
     bind_rows(get_data("EPM")) %>%
     bind_rows(get_data("OFT")) %>%
-    write.csv("CS_data.csv", row.names = FALSE)
+    # Format everything with 2 decimal places
+    mutate(across(where(is.numeric), ~ round(., 2))) %>%
+    write.csv("CRS_data.csv", row.names = FALSE)
