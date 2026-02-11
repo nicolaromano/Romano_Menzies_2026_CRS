@@ -3,13 +3,13 @@ library(dplyr)
 library(ggplot2)
 
 out_dir <- "plots"
-CS_data <- read.csv("CS_data.csv")
+CRS_data <- read.csv("CRS_data.csv")
 
 if (!dir.exists(out_dir)) {
     dir.create(out_dir)
 }
 
-CS_data_summary <- CS_data %>%
+CRS_data_summary <- CRS_data %>%
     group_by(Outcome) %>%
     summarise(
         total_days_min = min(total_days, na.rm = TRUE),
@@ -20,25 +20,31 @@ CS_data_summary <- CS_data %>%
         # Number of effects is number of rows in the data for that outcome
         # We need to remove rows with NA in control_n or test_n as they
         # cannot be used for meta-analysis
-        n_excluded = sum(is.na(control_n) | is.na(test_n) | 
+        n_excluded = sum(is.na(control_n) | is.na(test_n) |
             is.na(control_sd) | is.na(test_sd) |
             is.na(total_time_h) |
             (Outcome == "SPT" & is.na(water_depriv_h))),
         n_effects = n() - n_excluded
     )
-print(CS_data_summary)
+print(CRS_data_summary)
 
-CS_data %>% group_by(Outcome) %>% summarise(n_excl = sum(is.na(control_n) | is.na(test_n) |
-    is.na(control_sd) | is.na(test_sd) | is.na(total_time_h) | is.na(water_depriv_h)),
-n_studies_excluded = n_distinct(PubID[is.na(control_sd) | is.na(test_sd) | is.na(control_n) | is.na(test_n) |
-    is.na(total_time_h) | (Outcome == "SPT" & is.na(water_depriv_h))]))
+CRS_data %>%
+    group_by(Outcome) %>%
+    summarise(
+        n_excl = sum(is.na(control_n) | is.na(test_n) |
+            is.na(control_sd) | is.na(test_sd) | is.na(total_time_h) | is.na(water_depriv_h)),
+        n_studies_excluded = n_distinct(PubID[is.na(control_sd) | is.na(test_sd) | is.na(control_n) | is.na(test_n) |
+            is.na(total_time_h) | (Outcome == "SPT" & is.na(water_depriv_h))])
+    )
 
 png(paste0(out_dir, "/CRS_time_vs_days.png"),
-    width = 10, height = 8, units = "in", res = 300)
+    width = 10, height = 8, units = "in", res = 300
+)
 
-CS_data %>% 
+CRS_data %>%
     select(PMID, total_time_h, total_days, Outcome) %>%
     distinct(PMID, .keep_all = TRUE) %>%
+    filter(!is.na(total_time_h) & !is.na(total_days)) %>%
     ggplot(aes(x = total_time_h, y = total_days)) +
     geom_point(size = 2) +
     stat_smooth(method = "lm", se = TRUE, color = "#00b7ff", alpha = 0.2) +
@@ -51,6 +57,13 @@ CS_data %>%
     )
 
 dev.off()
+
+CRS_data %>%
+    select(PMID, total_time_h, total_days, Outcome) %>%
+    distinct(PMID, .keep_all = TRUE) %>%
+    filter(!is.na(total_time_h) & !is.na(total_days)) %>%
+    lm(total_days ~ total_time_h, data = .) %>%
+    summary()
 
 get_I2 <- function(model) {
     # See https://www.metafor-project.org/doku.php/tips:i2_multilevel_multivariate
@@ -85,10 +98,13 @@ add_diamond <- function(model, test, moderators_val, row = -1) {
     ))
 
     if (test == "SPT") {
-        diamond_label <- paste("Model estimate (at", moderators_val["total_time_h"],
-            "h CRS,", moderators_val["water_depriv_h"], "h H2O depr.)")
-    } else
+        diamond_label <- paste(
+            "Model estimate (at", moderators_val["total_time_h"],
+            "h CRS,", moderators_val["water_depriv_h"], "h H2O depr.)"
+        )
+    } else {
         diamond_label <- paste("Model estimate (at", moderators_val["total_time_h"], "h CRS)")
+    }
 
     addpoly(
         pred,
@@ -97,24 +113,33 @@ add_diamond <- function(model, test, moderators_val, row = -1) {
     )
 }
 
+CRS_data %>%
+    group_by(Outcome) %>%
+    summarise(
+        median_duration_h = median(total_time_h, na.rm = TRUE)
+    )
+
 do_meta <- function(
-    test, effects_limits = NA,
-    save_pdf = FALSE, pdf_width, pdf_height) {
-    CS_data_filtered <- CS_data %>%
+  test, effects_limits = NA,
+  save_pdf = FALSE, pdf_width, pdf_height,
+  excluded_studies = NULL
+) {
+    CRS_data_filtered <- CRS_data %>%
         filter(Outcome == test) %>%
+        filter(!(PMID %in% excluded_studies)) %>%
         filter(!is.na(control_n) & !is.na(test_n)) %>% # Must have sample sizes
         filter(!is.na(control_sd) & !is.na(test_sd)) %>% # Must have SDs
         filter(!is.na(total_time_h)) # Must have CRS duration
 
     if (test == "SPT") {
-        CS_data_filtered <- CS_data_filtered %>%
+        CRS_data_filtered <- CRS_data_filtered %>%
             filter(!is.na(water_depriv_h)) # Must have water deprivation hours for SPT
     }
 
     # Calculate effect sizes for the specified test
     # We use Hedges' g for standardized mean difference
     effect_sizes <- escalc(
-        data = CS_data_filtered,
+        data = CRS_data_filtered,
         measure = "SMD",
         m1i = test_mean,
         m2i = control_mean,
@@ -193,7 +218,7 @@ do_meta <- function(
         )
         ilabs_labels <- c("Tot.\nCRS (h)", "Sex", "Study\nweight %")
         ilabs_xpos <- c(
-            effects_limits[1] - 3, effects_limits[1], 
+            effects_limits[1] - 3, effects_limits[1],
             effects_limits[2] + 2
         )
     }
@@ -207,8 +232,10 @@ do_meta <- function(
     }
 
     forest(model,
-        order = paste(sprintf("%03d", total_time_h), 
-            sprintf("%03d", water_depriv_h)),
+        order = paste(
+            sprintf("%03d", total_time_h),
+            sprintf("%03d", water_depriv_h)
+        ),
         header = c("Study", "Hedges' g [95% CI]"),
         shade = TRUE,
         ilab = ilabs,
@@ -223,6 +250,8 @@ do_meta <- function(
     )
 
     median_CRS_total_time_h <- median(effect_sizes$total_time_h, na.rm = TRUE)
+
+    cat("Median CRS total time (hours): ", median_CRS_total_time_h, "\n")
 
     if (test == "SPT") {
         # For SPT, we set water_depriv_h to 0 (no water deprivation)
@@ -307,9 +336,11 @@ do_meta <- function(
     se <- round(summary(egger)$coefficients[1, 2], 2)
     pval <- signif(summary(egger)$coefficients[1, 4], 2)
     tval <- round(summary(egger)$coefficients[1, 3], 2)
-    print(paste0("Egger's intercept (SE) = ", intercept, 
+    print(paste0(
+        "Egger's intercept (SE) = ", intercept,
         " (", se, "), t (", df.residual(egger), ") = ", tval,
-        " p = ", pval))
+        " p = ", pval
+    ))
 
     if (save_pdf) {
         dev.off()
@@ -319,14 +350,57 @@ do_meta <- function(
 }
 
 print("****** FST ******")
-fst_res <- do_meta("FST", effects_limits = c(-5, 10),
-    save_pdf = TRUE, pdf_width = 12, pdf_height = 12)
+fst_res <- do_meta("FST",
+    effects_limits = c(-5, 10),
+    save_pdf = TRUE, pdf_width = 12, pdf_height = 12
+)
+
+fst_res_excl <- do_meta("FST",
+    effects_limits = c(-5, 10),
+    save_pdf = FALSE, excluded_studies = 33505499
+)
 print("****** SPT ******")
-spt_res <- do_meta("SPT", effects_limits = c(-10, 5),
-    save_pdf = TRUE, pdf_width = 12, pdf_height = 15)
+spt_res <- do_meta("SPT",
+    effects_limits = c(-10, 5),
+    save_pdf = TRUE, pdf_width = 12, pdf_height = 15
+)
 print("****** EPM ******")
-epm_res <- do_meta("EPM", effects_limits = c(-10, 5),
-    save_pdf = TRUE, pdf_width = 12, pdf_height = 12)
+epm_res <- do_meta("EPM",
+    effects_limits = c(-10, 5),
+    save_pdf = TRUE, pdf_width = 12, pdf_height = 12
+)
 print("****** OFT ******")
-oft_res <- do_meta("OFT", effects_limits = c(-15, 15),
-    save_pdf = TRUE, pdf_width = 12, pdf_height = 10)
+oft_res <- do_meta("OFT",
+    effects_limits = c(-15, 15),
+    save_pdf = TRUE, pdf_width = 12, pdf_height = 10
+)
+
+# Save predicted effects for sensitivity analyses
+data.frame(
+    Outcome = c("FST", "SPT", "EPM", "OFT"),
+    Estimate = c(
+        fst_res$model$beta[1],
+        spt_res$model$beta[1],
+        epm_res$model$beta[1],
+        oft_res$model$beta[1]
+    ),
+    SE = c(
+        fst_res$model$se[1],
+        spt_res$model$se[1],
+        epm_res$model$se[1],
+        oft_res$model$se[1]
+    ),
+    CI_LB = c(
+        fst_res$model$ci.lb[1],
+        spt_res$model$ci.lb[1],
+        epm_res$model$ci.lb[1],
+        oft_res$model$ci.lb[1]
+    ),
+    CI_UB = c(
+        fst_res$model$ci.ub[1],
+        spt_res$model$ci.ub[1],
+        epm_res$model$ci.ub[1],
+        oft_res$model$ci.ub[1]
+    )
+) %>% 
+    write.csv("model_estimates.csv", row.names = FALSE)
