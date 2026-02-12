@@ -375,20 +375,44 @@ oft_res <- do_meta("OFT",
     save_pdf = TRUE, pdf_width = 12, pdf_height = 10
 )
 
-# Save predicted effects for sensitivity analyses
+# Save predicted effects and betas for sensitivity analyses
+fst_pred <- predict(fst_res$model, newmods = median(fst_res$effects$total_time_h, na.rm = TRUE))
+spt_pred <- predict(spt_res$model, newmods = c(total_time_h = median(spt_res$effects$total_time_h, na.rm = TRUE), water_depriv_h = 0))
+epm_pred <- predict(epm_res$model, newmods = median(epm_res$effects$total_time_h, na.rm = TRUE))
+oft_pred <- predict(oft_res$model, newmods = median(oft_res$effects$total_time_h, na.rm = TRUE))
+
+
 data.frame(
     Outcome = c("FST", "SPT", "EPM", "OFT"),
-    Estimate = c(
+    beta_CRS_length = c(
         fst_res$model$beta[1],
         spt_res$model$beta[1],
         epm_res$model$beta[1],
         oft_res$model$beta[1]
     ),
-    SE = c(
+    SE_CRS_length = c(
         fst_res$model$se[1],
         spt_res$model$se[1],
         epm_res$model$se[1],
         oft_res$model$se[1]
+    ),
+    beta_water_deprivation = c(
+        NA,
+        spt_res$model$beta[2],
+        NA,
+        NA
+    ),
+    SE_water_deprivation = c(
+        NA,
+        spt_res$model$se[2],
+        NA,
+        NA
+    ),
+    predicted_effect = c(
+        fst_pred$pred,
+        spt_pred$pred,
+        epm_pred$pred,
+        oft_pred$pred
     ),
     CI_LB = c(
         fst_res$model$ci.lb[1],
@@ -402,5 +426,5 @@ data.frame(
         epm_res$model$ci.ub[1],
         oft_res$model$ci.ub[1]
     )
-) %>% 
+) %>%
     write.csv("model_estimates.csv", row.names = FALSE)
