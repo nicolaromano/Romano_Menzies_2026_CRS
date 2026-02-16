@@ -7,6 +7,9 @@ get_data <- function(test, extra_cols = NULL) {
         sheetName = test, startRow = 2
     )
 
+    SYRCLE <- read.csv("SYRCLE analysis.csv")
+    colnames(SYRCLE)[7:16] <- paste0("SYRCLE_Q", 1:10)
+
     res <- data_original %>%
         # Rename columns for consistency
         rename(
@@ -45,7 +48,7 @@ get_data <- function(test, extra_cols = NULL) {
             total_time_h = as.numeric(total_time) %/% 60
         ) %>%
         select(
-            PMID, PubID, Journal, Outcome,
+            PMID, PubID, Journal, Outcome, Notes,
             strain, sex, age,
             control_mean, control_sd, control_n,
             test_mean, test_sd, test_n, total_days, total_time_h,
@@ -53,6 +56,10 @@ get_data <- function(test, extra_cols = NULL) {
         ) %>%
         filter(!is.na(PMID)) %>%
         filter(!is.na(control_mean) & !is.na(test_mean))
+
+    # Add SYRCLE analysis columns
+    res <- res %>%
+        left_join(SYRCLE %>% select(c(PMID, starts_with("SYRCLE_Q"))), by = "PMID")
 
     return(res)
 }
