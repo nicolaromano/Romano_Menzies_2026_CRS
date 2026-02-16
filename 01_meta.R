@@ -385,26 +385,38 @@ oft_pred <- predict(oft_res$model, newmods = median(oft_res$effects$total_time_h
 data.frame(
     Outcome = c("FST", "SPT", "EPM", "OFT"),
     beta_CRS_length = c(
-        fst_res$model$beta[1],
-        spt_res$model$beta[1],
-        epm_res$model$beta[1],
-        oft_res$model$beta[1]
+        fst_res$model$beta["total_time_h",],
+        spt_res$model$beta["total_time_h",],
+        epm_res$model$beta["total_time_h",],
+        oft_res$model$beta["total_time_h",]
     ),
     SE_CRS_length = c(
-        fst_res$model$se[1],
-        spt_res$model$se[1],
-        epm_res$model$se[1],
-        oft_res$model$se[1]
+        fst_res$model$se[2],
+        spt_res$model$se[2],
+        epm_res$model$se[2],
+        oft_res$model$se[2]
+    ),
+    pval_CRS_length = c(
+        fst_res$model$pval[2],
+        spt_res$model$pval[2],
+        epm_res$model$pval[2],
+        oft_res$model$pval[2]
     ),
     beta_water_deprivation = c(
         NA,
-        spt_res$model$beta[2],
+        spt_res$model$beta["water_depriv_h",],
         NA,
         NA
     ),
     SE_water_deprivation = c(
         NA,
-        spt_res$model$se[2],
+        spt_res$model$se[3],
+        NA,
+        NA
+    ),
+    pval_water_deprivation = c(
+        NA,
+        spt_res$model$pval[3],
         NA,
         NA
     ),
@@ -414,17 +426,23 @@ data.frame(
         epm_pred$pred,
         oft_pred$pred
     ),
+    median_CRS_time_h = c(
+        median(fst_res$effects$total_time_h, na.rm = TRUE),
+        median(spt_res$effects$total_time_h, na.rm = TRUE),
+        median(epm_res$effects$total_time_h, na.rm = TRUE),
+        median(oft_res$effects$total_time_h, na.rm = TRUE)
+    ),
     CI_LB = c(
-        fst_res$model$ci.lb[1],
-        spt_res$model$ci.lb[1],
-        epm_res$model$ci.lb[1],
-        oft_res$model$ci.lb[1]
+        fst_pred$ci.lb,
+        spt_pred$ci.lb,
+        epm_pred$ci.lb,
+        oft_pred$ci.lb
     ),
     CI_UB = c(
-        fst_res$model$ci.ub[1],
-        spt_res$model$ci.ub[1],
-        epm_res$model$ci.ub[1],
-        oft_res$model$ci.ub[1]
+        fst_pred$ci.ub,
+        spt_pred$ci.ub,
+        epm_pred$ci.ub,
+        oft_pred$ci.ub
     )
 ) %>%
     write.csv("model_estimates.csv", row.names = FALSE)
