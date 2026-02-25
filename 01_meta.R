@@ -9,6 +9,8 @@ if (!dir.exists(out_dir)) {
     dir.create(out_dir)
 }
 
+### SUMMARY STATISTICS ###
+
 CRS_data_summary <- CRS_data %>%
     group_by(Outcome) %>%
     summarise(
@@ -36,6 +38,8 @@ CRS_data %>%
         n_studies_excluded = n_distinct(PubID[is.na(control_sd) | is.na(test_sd) | is.na(control_n) | is.na(test_n) |
             is.na(total_time_h) | (Outcome == "SPT" & is.na(water_depriv_h))])
     )
+
+### FIGURE 2 ###
 
 png(paste0(out_dir, "/CRS_time_vs_days.png"),
     width = 10, height = 8, units = "in", res = 300
@@ -66,7 +70,13 @@ CRS_data %>%
     summary()
 
 get_I2 <- function(model) {
-    # See https://www.metafor-project.org/doku.php/tips:i2_multilevel_multivariate
+    #' Calculate I^2 for a multilevel meta-analysis model fitted with rma.mv.
+    #' See https://www.metafor-project.org/doku.php/tips:i2_multilevel_multivariate
+    #' Parameters:
+    #' model: an rma.mv object fitted with metafor
+    #' Returns:
+    #' I^2 value as a percentage (0-100)
+    
     W <- diag(1 / model$vi)
     X <- model.matrix(model)
     P <- W - W %*% X %*% solve(t(X) %*% W %*% X) %*% t(X) %*% W
@@ -76,6 +86,20 @@ get_I2 <- function(model) {
 }
 
 add_diamond <- function(model, test, moderators_val, row = -1) {
+    #' Add a diamond to the forest plot to show
+    #' the model estimate at specific moderator values.
+    #' Parameters:
+    #' model: an rma.mv object fitted with metafor
+    #' test: the name of the test (e.g. "FST", "SPT")
+    #' moderators_val: a named vector of moderator values at which 
+    #' to calculate the predicted effect
+    #' row: the row in the forest plot where the diamond should be added.
+    #' Negative values indicate rows above the first study 
+    #' (e.g. the default row = -1 is the first row above the first study, 
+    #' where the model summary is usually shown).
+    #' Returns:
+    #' None, but adds a diamond to the current forest plot.
+    
     pred <- predict(model, newmods = moderators_val)
     estimate <- pred$pred
     se <- pred$se
@@ -124,6 +148,18 @@ do_meta <- function(
   save_pdf = FALSE, pdf_width, pdf_height,
   excluded_studies = NULL
 ) {
+    #' Perform meta-analysis for a specific test
+    #' Parameters:
+    #' test: the name of the test (e.g. "FST", "SPT")
+    #' effects_limits: a numeric vector of length 2 specifying 
+    #' the x-axis limits for the forest plot.
+    #' save_pdf: whether to save the forest plot and funnel plot as PDFs
+    #' pdf_width: width of the PDF for the forest plot (in inches)
+    #' pdf_height: height of the PDF for the forest plot (in inches)
+    #' excluded_studies: a vector of PMIDs to exclude from the meta-analysis
+    #' Returns:
+    #' A list containing the fitted model and the effect sizes data frame.
+    
     CRS_data_filtered <- CRS_data %>%
         filter(Outcome == test) %>%
         filter(!(PMID %in% excluded_studies)) %>%
@@ -349,6 +385,8 @@ do_meta <- function(
     return(list(model = model, effects = effect_sizes))
 }
 
+### RUN META-ANALYSES AND SAVE PLOTS ###
+
 print("****** FST ******")
 fst_res <- do_meta("FST",
     effects_limits = c(-5, 10),
@@ -375,7 +413,27 @@ oft_res <- do_meta("OFT",
     save_pdf = TRUE, pdf_width = 12, pdf_height = 10
 )
 
-# Save predicted effects and betas for sensitivity analyses
+### SAVE EFFECT SIZES FOR EACH STUDY ###
+
+bind_rows(
+    fst_res$effects %>% mutate(Outcome = "FST"),
+    spt_res$effects %>% mutate(Outcome = "SPT"),
+    epm_res$effects %>% mutate(Outcome = "EPM"),
+    oft_res$effects %>% mutate(Outcome = "OFT")
+) %>%
+    mutate(CI_LB = round(yi - 1.96 * sqrt(vi), 3), 
+           CI_UB = round(yi + 1.96 * sqrt(vi), 3),
+           yi = round(yi, 3)) %>%    
+    select(PMID, PubID, Outcome, yi, CI_LB, CI_UB, total_time_h, water_depriv_h) %>% 
+    rename(
+        effect_size = yi,
+    ) %>% 
+    write.csv("all_effect_sizes.csv", row.names = FALSE)
+
+
+effect_sizes_df
+### SAVE MODEL ESTIMATES AND PREDICTIONS ###
+
 fst_pred <- predict(fst_res$model, newmods = median(fst_res$effects$total_time_h, na.rm = TRUE))
 spt_pred <- predict(spt_res$model, newmods = c(total_time_h = median(spt_res$effects$total_time_h, na.rm = TRUE), water_depriv_h = 0))
 epm_pred <- predict(epm_res$model, newmods = median(epm_res$effects$total_time_h, na.rm = TRUE))
@@ -385,10 +443,10 @@ oft_pred <- predict(oft_res$model, newmods = median(oft_res$effects$total_time_h
 data.frame(
     Outcome = c("FST", "SPT", "EPM", "OFT"),
     beta_CRS_length = c(
-        fst_res$model$beta["total_time_h",],
-        spt_res$model$beta["total_time_h",],
-        epm_res$model$beta["total_time_h",],
-        oft_res$model$beta["total_time_h",]
+        fst_res$model$beta["total_time_h", ],
+        spt_res$model$beta["total_time_h", ],
+        epm_res$model$beta["total_time_h", ],
+        oft_res$model$beta["total_time_h", ]
     ),
     SE_CRS_length = c(
         fst_res$model$se[2],
@@ -404,7 +462,7 @@ data.frame(
     ),
     beta_water_deprivation = c(
         NA,
-        spt_res$model$beta["water_depriv_h",],
+        spt_res$model$beta["water_depriv_h", ],
         NA,
         NA
     ),
@@ -445,4 +503,5 @@ data.frame(
         oft_pred$ci.ub
     )
 ) %>%
+    mutate(across(where(is.numeric), ~ round(.x, 3))) %>%
     write.csv("model_estimates.csv", row.names = FALSE)
