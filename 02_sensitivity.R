@@ -2,7 +2,16 @@ library(metafor)
 library(dplyr)
 library(ggplot2)
 
-out_dir <- "plots"
+plot_out_dir <- "plots"
+sensitivity_out_dir <- "sensitivity_analysis"
+
+if (!dir.exists(plot_out_dir)) {
+    dir.create(plot_out_dir)
+}
+if (!dir.exists(sensitivity_out_dir)) {
+    dir.create(sensitivity_out_dir)
+}
+
 CRS_data <- read.csv("CRS_data.csv")
 predicted_effects <- read.csv("model_estimates.csv")
 rownames(predicted_effects) <- predicted_effects$Outcome
@@ -65,7 +74,7 @@ run_model <- function(CRS_data, test) {
 # It makes sense to remove one study at a time (which might have multiple
 # effects), not one effect at a time to assess influence yet keep the
 # multilevel structure of the model.
-leave_one_out <- function(CRS_data, test) {
+leave_one_out <- function(CRS_data, test, save_csv_output = TRUE) {
     CRS_data_filtered <- CRS_data %>%
         filter(Outcome == test) %>%
         filter(!is.na(control_n) & !is.na(test_n)) %>% # Must have sample sizes
@@ -114,10 +123,20 @@ leave_one_out <- function(CRS_data, test) {
         res$CI_UB[i] <- pred$ci.ub
     }
 
+    if (save_csv_output) {
+        res %>%
+            mutate(
+                across(where(is.numeric), ~ round(.x, 3))
+            ) %>%
+            write.csv(paste0(sensitivity_out_dir, "/leave_one_out_sensitivity_", test, ".csv"),
+                row.names = FALSE
+            )
+    }
+
     return(res)
 }
 
-SYRCLE_sensitivity <- function(CRS_data, test) {
+SYRCLE_sensitivity <- function(CRS_data, test, save_csv_output = TRUE) {
     CRS_data_filtered <- CRS_data %>%
         filter(Outcome == test) %>%
         filter(!is.na(control_n) & !is.na(test_n)) %>% # Must have sample sizes
@@ -129,13 +148,21 @@ SYRCLE_sensitivity <- function(CRS_data, test) {
             filter(!is.na(water_depriv_h)) # Must have water deprivation hours for SPT
     }
 
+    n_excluded_studies <- CRS_data_filtered %>%
+        filter(SYRCLE_Q8 == "No") %>%
+        pull(PubID) %>%
+        unique() %>%
+        length()
+
+    SYRCLE_title <- paste0("SYRCLE (", n_excluded_studies, " excl.)")
+
     CRS_data_filtered <- CRS_data_filtered %>%
         filter(SYRCLE_Q8 != "No")
 
     model_res <- run_model(CRS_data_filtered, test)
 
-    return(data.frame(
-        PubID = "SYRCLE",
+    res <- data.frame(
+        PubID = SYRCLE_title,
         beta_CRS_length = model_res$model$beta[2],
         SE_CRS_length = model_res$model$se[2],
         pval_CRS_length = model_res$model$pval[2],
@@ -157,13 +184,25 @@ SYRCLE_sensitivity <- function(CRS_data, test) {
         predicted_effect = model_res$pred$pred,
         CI_LB = model_res$pred$ci.lb,
         CI_UB = model_res$pred$ci.ub
-    ))
+    )
+
+    if (save_csv_output) {
+        res %>%
+            mutate(
+                across(where(is.numeric), ~ round(.x, 3))
+            ) %>%
+            write.csv(paste0(sensitivity_out_dir, "/SYRCLE_sensitivity_", test, ".csv"),
+                row.names = FALSE
+            )
+    }
+
+    return(res)
 }
 
 plot_sensitivity_analysis <- function(outcome, type = "effect", xlim, outfile = NULL) {
-    stopifnot(type %in% c("effect", "beta"))
+    stopifnot(type %in% c("effect", "beta_length", "beta_water_deprivation"))
 
-    loo <- leave_one_out(CRS_data, outcome)
+    loo <- leave_one_out(CRS_data, outcome, save_csv_output = TRUE)
 
     loo$perc_diff <- (predicted_effects[outcome, "predicted_effect"] - loo$predicted_effect) /
         (predicted_effects[outcome, "predicted_effect"]) * 100
@@ -172,25 +211,28 @@ plot_sensitivity_analysis <- function(outcome, type = "effect", xlim, outfile = 
     if (type == "effect") {
         loo <- loo %>%
             arrange(predicted_effect)
-    } else {
+    } else if (type == "beta_length") {
         loo <- loo %>%
             arrange(beta_CRS_length)
+    } else if (type == "beta_water_deprivation") {
+        loo <- loo %>%
+            arrange(beta_water_deprivation)
     }
 
-    SYRCLE <- SYRCLE_sensitivity(CRS_data, outcome)
+    SYRCLE <- SYRCLE_sensitivity(CRS_data, outcome, save_csv_output = TRUE)
     SYRCLE$perc_diff <- (predicted_effects[outcome, "predicted_effect"] - SYRCLE$predicted_effect) /
         (predicted_effects[outcome, "predicted_effect"]) * 100
 
     empty_row <- SYRCLE[1, ]
-    empty_row[,] <- NA
+    empty_row[, ] <- NA
     empty_row$PubID <- " "
-    
+
     sensit <- rbind(
         SYRCLE,
         empty_row,
         loo
     ) %>%
-        mutate(PubID = factor(PubID, levels = c("SYRCLE", " ", loo$PubID)))
+        mutate(PubID = factor(PubID, levels = c(SYRCLE$PubID[1], " ", loo$PubID)))
 
     if (!is.null(outfile)) {
         cairo_pdf(outfile, width = 8, height = 8)
@@ -222,25 +264,37 @@ plot_sensitivity_analysis <- function(outcome, type = "effect", xlim, outfile = 
             ggtitle(paste("Sensitivity analysis - ", outcome, "- estimated effect")) +
             theme_minimal(base_size = 14)
     } else { # beta
-        pl <- ggplot(sensit, aes(x = beta_CRS_length, y = PubID)) +
+        xvar <- "beta_CRS_length"
+        sevar <- "SE_CRS_length"
+        title <- bquote("Sensitivity analysis - " ~ .(outcome) ~
+            " - " ~ beta[CRS ~ length])
+
+        if (type == "beta_water_deprivation") {
+            xvar <- "beta_water_deprivation"
+            sevar <- "SE_water_deprivation"
+            title <- bquote("Sensitivity analysis - " ~ .(outcome) ~
+                " - " ~ beta[CRS ~ water~ deprivation])
+        }
+
+        pl <- ggplot(sensit, aes(x = .data[[xvar]], y = PubID)) +
             geom_point(
                 size = 3,
                 col = rep(c("darkred", "black"), c(2, nrow(loo))),
                 pch = rep(c(17, 20), c(2, nrow(loo)))
             ) +
             geom_errorbar(aes(
-                xmin = beta_CRS_length - 1.96 * SE_CRS_length,
-                xmax = beta_CRS_length + 1.96 * SE_CRS_length
+                xmin = .data[[xvar]] - 1.96 * .data[[sevar]],
+                xmax = .data[[xvar]] + 1.96 * .data[[sevar]]
             ), width = 0.2) +
             geom_vline(
-                xintercept = predicted_effects[outcome, "beta_CRS_length"],
+                xintercept = predicted_effects[outcome, xvar],
                 linetype = "dashed"
             ) +
             geom_rect(
                 data = predicted_effects %>% filter(Outcome == outcome),
                 aes(
-                    xmin = beta_CRS_length - 1.96 * SE_CRS_length,
-                    xmax = beta_CRS_length + 1.96 * SE_CRS_length,
+                    xmin = predicted_effects[outcome, xvar] - 1.96 * predicted_effects[outcome, sevar],
+                    xmax = predicted_effects[outcome, xvar] + 1.96 * predicted_effects[outcome, sevar],
                     ymin = -Inf, ymax = Inf
                 ),
                 fill = "gray", alpha = 0.2, inherit.aes = FALSE
@@ -248,11 +302,8 @@ plot_sensitivity_analysis <- function(outcome, type = "effect", xlim, outfile = 
             geom_vline(xintercept = 0, linetype = "dotted") +
             xlim(xlim) +
             ylab("Study removed") +
-            # xlab(expression(\beta_{"CRS length"})) +
-            ggtitle(
-                bquote("Sensitivity analysis - " ~ .(outcome) ~
-                    " - " ~ beta[CRS ~ length])
-            ) +
+            xlab(expression(beta[CRS ~ length])) +
+            ggtitle(title) +
             theme_minimal(base_size = 14)
     }
 
@@ -265,12 +316,15 @@ plot_sensitivity_analysis <- function(outcome, type = "effect", xlim, outfile = 
     return(pl)
 }
 
-plot_sensitivity_analysis("FST", "effect", xlim = c(0, 4), paste0(out_dir, "/FST_sensitivity_effect.pdf"))
-plot_sensitivity_analysis("SPT", "effect", xlim = c(-5, 1), paste0(out_dir, "/SPT_sensitivity_effect.pdf"))
-plot_sensitivity_analysis("EPM", "effect", xlim = c(-3, 1), paste0(out_dir, "/EPM_sensitivity_effect.pdf"))
-plot_sensitivity_analysis("OFT", "effect", xlim = c(-4, 4), paste0(out_dir, "/OFT_sensitivity_effect.pdf"))
+plot_sensitivity_analysis("FST", "effect", xlim = c(0, 4), paste0(plot_out_dir, "/FST_sensitivity_effect.pdf"))
+plot_sensitivity_analysis("SPT", "effect", xlim = c(-5, 1), paste0(plot_out_dir, "/SPT_sensitivity_effect.pdf"))
+plot_sensitivity_analysis("EPM", "effect", xlim = c(-3, 1), paste0(plot_out_dir, "/EPM_sensitivity_effect.pdf"))
+plot_sensitivity_analysis("OFT", "effect", xlim = c(-4, 4), paste0(plot_out_dir, "/OFT_sensitivity_effect.pdf"))
 
-plot_sensitivity_analysis("FST", "beta", xlim = c(-0.04, 0.04), paste0(out_dir, "/FST_sensitivity_beta.pdf"))
-plot_sensitivity_analysis("SPT", "beta", xlim = c(-0.03, 0.01), paste0(out_dir, "/SPT_sensitivity_beta.pdf"))
-plot_sensitivity_analysis("EPM", "beta", xlim = c(-0.03, 0.02), paste0(out_dir, "/EPM_sensitivity_beta.pdf"))
-plot_sensitivity_analysis("OFT", "beta", xlim = c(-0.05, 0.05), paste0(out_dir, "/OFT_sensitivity_beta.pdf"))
+plot_sensitivity_analysis("FST", "beta_length", xlim = c(-0.04, 0.04), paste0(plot_out_dir, "/FST_sensitivity_beta.pdf"))
+plot_sensitivity_analysis("SPT", "beta_length", xlim = c(-0.03, 0.01), paste0(plot_out_dir, "/SPT_sensitivity_beta.pdf"))
+plot_sensitivity_analysis("SPT", "beta_water_deprivation", xlim = c(-0.2, 0.2), paste0(plot_out_dir, "/SPT_sensitivity_beta_H2O.pdf"))
+splot_sensitivity_analysis("EPM", "beta_length", xlim = c(-0.03, 0.02), paste0(plot_out_dir, "/EPM_sensitivity_beta.pdf"))
+plot_sensitivity_analysis("OFT", "beta_length", xlim = c(-0.05, 0.05), paste0(plot_out_dir, "/OFT_sensitivity_beta.pdf"))
+
+
