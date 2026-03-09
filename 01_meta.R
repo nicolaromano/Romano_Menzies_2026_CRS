@@ -76,7 +76,7 @@ get_I2 <- function(model) {
     #' model: an rma.mv object fitted with metafor
     #' Returns:
     #' I^2 value as a percentage (0-100)
-    
+
     W <- diag(1 / model$vi)
     X <- model.matrix(model)
     P <- W - W %*% X %*% solve(t(X) %*% W %*% X) %*% t(X) %*% W
@@ -91,15 +91,15 @@ add_diamond <- function(model, test, moderators_val, row = -1) {
     #' Parameters:
     #' model: an rma.mv object fitted with metafor
     #' test: the name of the test (e.g. "FST", "SPT")
-    #' moderators_val: a named vector of moderator values at which 
+    #' moderators_val: a named vector of moderator values at which
     #' to calculate the predicted effect
     #' row: the row in the forest plot where the diamond should be added.
-    #' Negative values indicate rows above the first study 
-    #' (e.g. the default row = -1 is the first row above the first study, 
+    #' Negative values indicate rows above the first study
+    #' (e.g. the default row = -1 is the first row above the first study,
     #' where the model summary is usually shown).
     #' Returns:
     #' None, but adds a diamond to the current forest plot.
-    
+
     pred <- predict(model, newmods = moderators_val)
     estimate <- pred$pred
     se <- pred$se
@@ -151,7 +151,7 @@ do_meta <- function(
     #' Perform meta-analysis for a specific test
     #' Parameters:
     #' test: the name of the test (e.g. "FST", "SPT")
-    #' effects_limits: a numeric vector of length 2 specifying 
+    #' effects_limits: a numeric vector of length 2 specifying
     #' the x-axis limits for the forest plot.
     #' save_pdf: whether to save the forest plot and funnel plot as PDFs
     #' pdf_width: width of the PDF for the forest plot (in inches)
@@ -159,7 +159,7 @@ do_meta <- function(
     #' excluded_studies: a vector of PMIDs to exclude from the meta-analysis
     #' Returns:
     #' A list containing the fitted model and the effect sizes data frame.
-    
+
     CRS_data_filtered <- CRS_data %>%
         filter(Outcome == test) %>%
         filter(!(PMID %in% excluded_studies)) %>%
@@ -421,13 +421,18 @@ bind_rows(
     epm_res$effects %>% mutate(Outcome = "EPM"),
     oft_res$effects %>% mutate(Outcome = "OFT")
 ) %>%
-    mutate(CI_LB = round(yi - 1.96 * sqrt(vi), 3), 
-           CI_UB = round(yi + 1.96 * sqrt(vi), 3),
-           yi = round(yi, 3)) %>%    
-    select(PMID, PubID, Outcome, yi, CI_LB, CI_UB, total_time_h, water_depriv_h) %>% 
+    mutate(
+        CI_LB = round(yi - 1.96 * sqrt(vi), 3),
+        CI_UB = round(yi + 1.96 * sqrt(vi), 3),
+        yi = round(yi, 3)
+    ) %>%
+    select(
+        PMID, PubID, Outcome, sex, strain,
+        yi, CI_LB, CI_UB, total_time_h, water_depriv_h
+    ) %>%
     rename(
-        effect_size = yi,
-    ) %>% 
+        effect_size = yi
+    ) %>%
     write.csv("all_effect_sizes.csv", row.names = FALSE)
 
 
