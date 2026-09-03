@@ -39,9 +39,9 @@ print(CRS_data_summary)
 CRS_data %>%
     group_by(Outcome) %>%
     summarise(
-        n_excl = sum(is.na(control_n) | is.na(test_n) |
-            is.na(control_sd) | is.na(test_sd) | is.na(total_time_h) | is.na(water_depriv_h)),
-        n_studies_excluded = n_distinct(PubID[is.na(control_sd) | is.na(test_sd) | is.na(control_n) | is.na(test_n) |
+        n_excl = sum(is.na(control_n) | is.na(test_n) | is.na(control_mean) | is.na(test_mean) |
+            is.na(control_sd) | is.na(test_sd) | is.na(total_time_h) | (Outcome == "SPT" & is.na(water_depriv_h))),
+        n_studies_excluded = n_distinct(PubID[is.na(control_mean) | is.na(test_mean) | is.na(control_sd) | is.na(test_sd) | is.na(control_n) | is.na(test_n) |
             is.na(total_time_h) | (Outcome == "SPT" & is.na(water_depriv_h))])
     )
 
@@ -51,6 +51,9 @@ png(paste0(out_dir, "/CRS_time_vs_days.png"),
     width = 10, height = 8, units = "in", res = 300
 )
 
+cairo_pdf(paste0(out_dir, "/CRS_time_vs_days.pdf"),
+    width = 10, height = 8
+)
 # CRS_data %>%
 #     select(ID, total_time_h, total_days, Outcome) %>%
 #     distinct(ID, .keep_all = TRUE) %>%
@@ -185,6 +188,7 @@ do_meta <- function(
     CRS_data_filtered <- CRS_data %>%
         filter(Outcome == test) %>%
         filter(!(ID %in% excluded_studies)) %>%
+        filter(!is.na(control_mean) & !is.na(test_mean)) %>% # Must have means
         filter(!is.na(control_n) & !is.na(test_n)) %>% # Must have sample sizes
         filter(!is.na(control_sd) & !is.na(test_sd)) %>% # Must have SDs
         filter(!is.na(total_time_h)) # Must have CRS duration
@@ -193,6 +197,16 @@ do_meta <- function(
         CRS_data_filtered <- CRS_data_filtered %>%
             filter(!is.na(water_depriv_h)) # Must have water deprivation hours for SPT
     }
+
+    n_summary = data.frame(
+        test = test,
+        n_studies_included = length(unique(CRS_data_filtered$ID)),
+        n_effects_included = nrow(CRS_data_filtered),
+        n_studies_excluded = length(unique(CRS_data$PubID[CRS_data$Outcome == test])) - length(unique(CRS_data_filtered$PubID)),
+        n_effects_excluded = nrow(CRS_data[CRS_data$Outcome == test, ]) - nrow(CRS_data_filtered)
+    )
+
+    print(n_summary)
 
     # Calculate effect sizes for the specified test
     # We use Hedges' g for standardized mean difference
@@ -431,7 +445,7 @@ oft_res <- do_meta("OFT",
 
 print("****** EPM ******")
 epm_res <- do_meta("EPM",
-    effects_limits = c(-10, 5),
+    effects_limits = c(-10, 5), excluded_studies = 6584,
     save_pdf = TRUE, pdf_width = 16, pdf_height = 12
 )
 
@@ -449,7 +463,7 @@ bind_rows(
         yi = round(yi, 3)
     ) %>%
     select(
-        PMID, PubID, Outcome, sex, strain,
+        ID, PubID, Outcome, sex, strain,
         yi, CI_LB, CI_UB, total_time_h, water_depriv_h
     ) %>%
     rename(
