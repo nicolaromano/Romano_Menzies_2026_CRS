@@ -9,13 +9,16 @@ CRS_effects <- read.csv("all_effect_sizes.csv")
 pdf(file.path(out_dir, "correlation_plot.pdf"), 
     width = 10, height = 10)
 
-CRS_effects %>%
-    select(PMID, Outcome, effect_size, total_time_h, sex, strain) %>%
+# Ampuero 2015 would result as a duplicate, because the difference is in how they restrain the animals
+# We give them different IDs
+CRS_effects[CRS_effects$ID == 9663, "ID"] <- c(96631, 96632, 96631, 96632)
+CRS_effects %>% 
+    select(ID, Outcome, effect_size, total_time_h, sex, strain) %>%
     pivot_wider(
-        id_cols = c(PMID, total_time_h, sex, strain),
+        id_cols = c(ID, total_time_h, sex, strain),
         names_from = Outcome, values_from = effect_size
     ) %>%
-    select(-c(PMID, total_time_h, sex, strain)) %>%
+    select(-c(ID, total_time_h, sex, strain)) %>%
     cor(use = "pairwise.complete.obs", method = "pearson") %>%
     corrplot.mixed(
         upper = "ellipse", lower = "number",
