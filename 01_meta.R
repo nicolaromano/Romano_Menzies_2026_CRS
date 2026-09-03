@@ -23,8 +23,14 @@ CRS_data_summary <- CRS_data %>%
         # We need to remove rows with NA in control_n or test_n as they
         # cannot be used for meta-analysis
         n_excluded = sum(is.na(control_n) | is.na(test_n) |
+            is.na(control_mean) | is.na(test_mean) |
             is.na(control_sd) | is.na(test_sd) |
             is.na(total_time_h) |
+            # This study only does one 2-hours session, so it's
+            # acute. Note another study (2949) has a single session
+            # but in the same paper they also test 3, 7, and 14 days
+            # so it makes sense to keep that
+            ID == 6584 |
             (Outcome == "SPT" & is.na(water_depriv_h))),
         n_effects = n() - n_excluded
     )
@@ -45,26 +51,42 @@ png(paste0(out_dir, "/CRS_time_vs_days.png"),
     width = 10, height = 8, units = "in", res = 300
 )
 
+# CRS_data %>%
+#     select(ID, total_time_h, total_days, Outcome) %>%
+#     distinct(ID, .keep_all = TRUE) %>%
+#     filter(!is.na(total_time_h) & !is.na(total_days)) %>%
+#     ggplot(aes(x = total_time_h, y = total_days)) +
+#     geom_point(size = 2) +
+#     stat_smooth(method = "lm", se = TRUE, color = "#00b7ff", alpha = 0.2) +
+#     xlab("Total CRS time (hours)") +
+#     ylab("Days of CRS") +
+#     theme_minimal() +
+#     theme(
+#         axis.text = element_text(family = "Noto Sans", size = 14),
+#         axis.title = element_text(family = "Noto Sans", size = 16)
+#     )
+
 CRS_data %>%
-    select(PMID, total_time_h, total_days, Outcome) %>%
-    distinct(PMID, .keep_all = TRUE) %>%
-    filter(!is.na(total_time_h) & !is.na(total_days)) %>%
-    ggplot(aes(x = total_time_h, y = total_days)) +
-    geom_point(size = 2) +
-    stat_smooth(method = "lm", se = TRUE, color = "#00b7ff", alpha = 0.2) +
-    xlab("Total CRS time (hours)") +
-    ylab("Days of CRS") +
-    theme_minimal() +
-    theme(
-        axis.text = element_text(family = "Noto Sans", size = 14),
-        axis.title = element_text(family = "Noto Sans", size = 16)
-    )
+  select(ID, total_time_h, total_days, Outcome) %>%
+  distinct(ID, .keep_all = TRUE) %>%
+  filter(!is.na(total_time_h) & !is.na(total_days)) %>%
+  ggplot(aes(x = total_time_h, y = total_days)) +
+  stat_sum(aes(size = after_stat(n)), color = "black") +
+  stat_smooth(method = "lm", se = TRUE, color = "#00b7ff", alpha = 0.2) +
+  scale_size_area(max_size = 10, name = "N studies") +
+  xlab("Total CRS time (hours)") +
+  ylab("Days of CRS") +
+  theme_minimal() +
+  theme(
+    axis.text = element_text(family = "Noto Sans", size = 14),
+    axis.title = element_text(family = "Noto Sans", size = 16)
+  )
 
 dev.off()
 
 CRS_data %>%
-    select(PMID, total_time_h, total_days, Outcome) %>%
-    distinct(PMID, .keep_all = TRUE) %>%
+    select(ID, total_time_h, total_days, Outcome) %>%
+    distinct(ID, .keep_all = TRUE) %>%
     filter(!is.na(total_time_h) & !is.na(total_days)) %>%
     lm(total_days ~ total_time_h, data = .) %>%
     summary()
@@ -162,7 +184,7 @@ do_meta <- function(
 
     CRS_data_filtered <- CRS_data %>%
         filter(Outcome == test) %>%
-        filter(!(PMID %in% excluded_studies)) %>%
+        filter(!(ID %in% excluded_studies)) %>%
         filter(!is.na(control_n) & !is.na(test_n)) %>% # Must have sample sizes
         filter(!is.na(control_sd) & !is.na(test_sd)) %>% # Must have SDs
         filter(!is.na(total_time_h)) # Must have CRS duration
@@ -254,7 +276,7 @@ do_meta <- function(
         )
         ilabs_labels <- c("Tot.\nCRS (h)", "Sex", "Study\nweight %")
         ilabs_xpos <- c(
-            effects_limits[1] - 3, effects_limits[1],
+            effects_limits[1] - 4, effects_limits[1],
             effects_limits[2] + 2
         )
     }
@@ -342,15 +364,17 @@ do_meta <- function(
 
     # Funnel plot
     # Note from ?metafor::funnel
-    # "For (mixed-effects) meta-regression models (i.e., models involving moderators), the plot shows the residuals on the x-axis against their corresponding standard errors".
+    # "For (mixed-effects) meta-regression models (i.e., models involving moderators), the plot shows 
+    # the residuals on the x-axis against their corresponding standard errors".
     # This also means that the reference line is at 0.
     funnel(model,
         xlab = "Residuals",
-        ylab = "Standard Error",
+        ylab = expression(1/sqrt(N)),
         pch = 20,
         cex = 1.2,
         yaxt = "n", # No y axis ticks, we'll add them manually
         hlines = NULL,
+        yaxis = "sqrtninv",
         main = paste("Funnel plot -", test)
     )
 
@@ -390,27 +414,25 @@ do_meta <- function(
 print("****** FST ******")
 fst_res <- do_meta("FST",
     effects_limits = c(-5, 10),
-    save_pdf = TRUE, pdf_width = 12, pdf_height = 12
+    save_pdf = TRUE, pdf_width = 16, pdf_height = 13
 )
 
-fst_res_excl <- do_meta("FST",
-    effects_limits = c(-5, 10),
-    save_pdf = FALSE, excluded_studies = 33505499
-)
 print("****** SPT ******")
 spt_res <- do_meta("SPT",
     effects_limits = c(-10, 5),
-    save_pdf = TRUE, pdf_width = 12, pdf_height = 15
+    save_pdf = TRUE, pdf_width = 16, pdf_height = 14
 )
-print("****** EPM ******")
-epm_res <- do_meta("EPM",
-    effects_limits = c(-10, 5),
-    save_pdf = TRUE, pdf_width = 12, pdf_height = 12
-)
+
 print("****** OFT ******")
 oft_res <- do_meta("OFT",
     effects_limits = c(-15, 15),
-    save_pdf = TRUE, pdf_width = 12, pdf_height = 10
+    save_pdf = TRUE, pdf_width = 18, pdf_height = 10
+)
+
+print("****** EPM ******")
+epm_res <- do_meta("EPM",
+    effects_limits = c(-10, 5),
+    save_pdf = TRUE, pdf_width = 16, pdf_height = 12
 )
 
 ### SAVE EFFECT SIZES FOR EACH STUDY ###
@@ -435,8 +457,6 @@ bind_rows(
     ) %>%
     write.csv("all_effect_sizes.csv", row.names = FALSE)
 
-
-effect_sizes_df
 ### SAVE MODEL ESTIMATES AND PREDICTIONS ###
 
 fst_pred <- predict(fst_res$model, newmods = median(fst_res$effects$total_time_h, na.rm = TRUE))
