@@ -11,38 +11,17 @@ if (!dir.exists(out_dir)) {
 
 ### SUMMARY STATISTICS ###
 
-CRS_data_summary <- CRS_data %>%
-    group_by(Outcome) %>%
-    summarise(
-        total_days_min = min(total_days, na.rm = TRUE),
-        total_days_max = max(total_days, na.rm = TRUE),
-        total_hours_min = min(total_time_h, na.rm = TRUE),
-        total_hours_max = max(total_time_h, na.rm = TRUE),
-        n_studies = n_distinct(PubID),
-        # Number of effects is number of rows in the data for that outcome
-        # We need to remove rows with NA in control_n or test_n as they
-        # cannot be used for meta-analysis
-        n_excluded = sum(is.na(control_n) | is.na(test_n) |
-            is.na(control_mean) | is.na(test_mean) |
-            is.na(control_sd) | is.na(test_sd) |
-            is.na(total_time_h) |
-            # This study only does one 2-hours session, so it's
-            # acute. Note another study (2949) has a single session
-            # but in the same paper they also test 3, 7, and 14 days
-            # so it makes sense to keep that
-            ID == 6584 |
-            (Outcome == "SPT" & is.na(water_depriv_h))),
-        n_effects = n() - n_excluded
-    )
-print(CRS_data_summary)
-
 CRS_data %>%
     group_by(Outcome) %>%
     summarise(
+        total_articles = n_distinct(ID),
+        total_fx_sizes = n(),
         n_excl = sum(is.na(control_n) | is.na(test_n) | is.na(control_mean) | is.na(test_mean) |
             is.na(control_sd) | is.na(test_sd) | is.na(total_time_h) | (Outcome == "SPT" & is.na(water_depriv_h))),
-        n_studies_excluded = n_distinct(PubID[is.na(control_mean) | is.na(test_mean) | is.na(control_sd) | is.na(test_sd) | is.na(control_n) | is.na(test_n) |
-            is.na(total_time_h) | (Outcome == "SPT" & is.na(water_depriv_h))])
+        n_studies_excluded = n_distinct(PubID[is.na(control_mean) | is.na(test_mean) |
+            is.na(control_sd) | is.na(test_sd) |
+            is.na(control_n) | is.na(test_n) |
+            is.na(total_time_h) | (Outcome == "SPT" & is.na(water_depriv_h))]),
     )
 
 ### FIGURE 2 ###
@@ -70,20 +49,20 @@ cairo_pdf(paste0(out_dir, "/CRS_time_vs_days.pdf"),
 #     )
 
 CRS_data %>%
-  select(ID, total_time_h, total_days, Outcome) %>%
-  distinct(ID, .keep_all = TRUE) %>%
-  filter(!is.na(total_time_h) & !is.na(total_days)) %>%
-  ggplot(aes(x = total_time_h, y = total_days)) +
-  stat_sum(aes(size = after_stat(n)), color = "black") +
-  stat_smooth(method = "lm", se = TRUE, color = "#00b7ff", alpha = 0.2) +
-  scale_size_area(max_size = 10, name = "N studies") +
-  xlab("Total CRS time (hours)") +
-  ylab("Days of CRS") +
-  theme_minimal() +
-  theme(
-    axis.text = element_text(family = "Noto Sans", size = 14),
-    axis.title = element_text(family = "Noto Sans", size = 16)
-  )
+    select(ID, total_time_h, total_days, Outcome) %>%
+    distinct(ID, .keep_all = TRUE) %>%
+    filter(!is.na(total_time_h) & !is.na(total_days)) %>%
+    ggplot(aes(x = total_time_h, y = total_days)) +
+    stat_sum(aes(size = after_stat(n)), color = "black") +
+    stat_smooth(method = "lm", se = TRUE, color = "#00b7ff", alpha = 0.2) +
+    scale_size_area(max_size = 10, name = "N studies") +
+    xlab("Total CRS time (hours)") +
+    ylab("Days of CRS") +
+    theme_minimal() +
+    theme(
+        axis.text = element_text(family = "Noto Sans", size = 14),
+        axis.title = element_text(family = "Noto Sans", size = 16)
+    )
 
 dev.off()
 
@@ -170,7 +149,7 @@ CRS_data %>%
 
 do_meta <- function(
   test, effects_limits = NA,
-  save_pdf = FALSE, pdf_width, pdf_height,
+  save_pdf = TRUE, pdf_width, pdf_height,
   excluded_studies = NULL
 ) {
     #' Perform meta-analysis for a specific test
@@ -198,12 +177,14 @@ do_meta <- function(
             filter(!is.na(water_depriv_h)) # Must have water deprivation hours for SPT
     }
 
-    n_summary = data.frame(
+    n_summary <- data.frame(
         test = test,
         n_studies_included = length(unique(CRS_data_filtered$ID)),
         n_effects_included = nrow(CRS_data_filtered),
         n_studies_excluded = length(unique(CRS_data$PubID[CRS_data$Outcome == test])) - length(unique(CRS_data_filtered$PubID)),
-        n_effects_excluded = nrow(CRS_data[CRS_data$Outcome == test, ]) - nrow(CRS_data_filtered)
+        n_effects_excluded = nrow(CRS_data[CRS_data$Outcome == test, ]) - nrow(CRS_data_filtered),
+        min_CRS_time_h = min(CRS_data_filtered$total_time_h, na.rm = TRUE),
+        max_CRS_time_h = max(CRS_data_filtered$total_time_h, na.rm = TRUE)
     )
 
     print(n_summary)
@@ -378,12 +359,12 @@ do_meta <- function(
 
     # Funnel plot
     # Note from ?metafor::funnel
-    # "For (mixed-effects) meta-regression models (i.e., models involving moderators), the plot shows 
+    # "For (mixed-effects) meta-regression models (i.e., models involving moderators), the plot shows
     # the residuals on the x-axis against their corresponding standard errors".
     # This also means that the reference line is at 0.
     funnel(model,
         xlab = "Residuals",
-        ylab = expression(1/sqrt(N)),
+        ylab = expression(1 / sqrt(N)),
         pch = 20,
         cex = 1.2,
         yaxt = "n", # No y axis ticks, we'll add them manually
@@ -445,7 +426,7 @@ oft_res <- do_meta("OFT",
 
 print("****** EPM ******")
 epm_res <- do_meta("EPM",
-    effects_limits = c(-10, 5), excluded_studies = 6584,
+    effects_limits = c(-10, 5),
     save_pdf = TRUE, pdf_width = 16, pdf_height = 12
 )
 

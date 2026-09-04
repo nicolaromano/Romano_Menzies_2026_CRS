@@ -1,451 +1,450 @@
-"ID","PubID","Journal","Outcome","Notes","strain","sex","age","control_mean","control_sd","control_n","test_mean","test_sd","test_n","total_days","total_time_h","water_depriv_h","food_depriv_h"
-1287,"Alkanat 2024","EUROPEAN JOURNAL OF NEUROSCIENCE","FST",NA,"SD","M","not given",NA,NA,NA,NA,NA,NA,21,105,NA,NA
-1407,"Sen 2021","NEUROSCIENCE LETTERS","FST",NA,"SD","M","not given",343,28.28,"8",339,19.8,"8",14,14,NA,NA
-1502,"Lefter 2018","NEUROPHYSIOLOGY","FST",NA,"Wistar",NA,NA,40,6.71,"5",50,11.18,"5",7,42,NA,NA
-1565,"Ghalandari-Shamami 2019","NEUROCHEMICAL RESEARCH","FST",NA,"Wistar","M","4",65,15.87,"7",114,26.46,"7",10,20,NA,NA
-1764,"Zhong 2019","Front Psychiatry","FST",NA,"SD","M","8",32,20.55,"10",71,31.62,"10",21,84,NA,NA
-1796,"Luo 2015","Neuropharmacology","FST",NA,"SD","M","8",29,8,"7",60,3,"7",10,40,NA,NA
-1983,"Lehner 2017","BEHAVIOURAL BRAIN RESEARCH","FST","restrained daily on Mon-Fri each week ","Wistar","M",NA,260,9.49,"10",287,3,"9",15,45,NA,NA
-2075,"Zhu 2022","Front Pharmacol","FST",NA,"SD","M","8",99,31.18,"12",233,90.07,"12",21,63,NA,NA
-2300,"Aboul-Fotouh 2018","Behav Pharmacol","FST",NA,"Wistar","M",NA,64,8.49,"8",117,31.11,"8",28,168,NA,NA
-2319,"Ndavoumta 2025","IBRO Neuroscience Reports","FST",NA,"Wistar","M","8-10",150,11.18,"5",171,NA,"5",21,42,NA,NA
-2319,"Ndavoumta 2025","IBRO Neuroscience Reports","FST",NA,"Wistar","F","8-10",114,6.71,"5",172,17.89,"5",21,42,NA,NA
-2504,"Zhang 2022","Food Chem Toxicol","FST","Method taken from cited article. Data expressed as % ","Wistar","M",NA,99,11,"12",229,28,"12",21,126,NA,NA
-2506,"Shin 2019","Eur J Neurosci","FST",NA,"SD","M",NA,49,22.14,"10",115,31.62,"10",14,84,NA,NA
-2714,"Li 2023","J Affect Disord","FST",NA,"SD",NA,NA,100,6.32,"10",116,9.49,"10",28,168,NA,NA
-2744,"Arab 2023","Pharmaceuticals (Basel)","FST","Error bars not specified as SD or SEM","Wistar","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-2795,"Zhang 2022","NEUROSCIENCE","FST",NA,"Wistar-Kyoto","M",NA,20,36.77,"8",89,101.19,"10",28,168,NA,NA
-2926,"Di 2017","Psychopharmacology (Berl)","FST",NA,"Wistar","F","16",82,24.6,"5",120,15.65,"5",21,126,NA,NA
-3077,"Abuelezz 2018","Behav Pharmacol","FST",NA,"Wistar","M",NA,54,13.86,"12",105,13.86,"12",28,168,NA,NA
-3263,"Pechlivanova 2023","REVISTA BRASILEIRA DE FARMACOGNOSIA-BRAZILIAN JOURNAL OF PHARMACOGNOSY","FST","CRS was 1 h/day for 14 days, then escalated to 6 h/day for an additional 14 days. No explanation of why.","Wistar","M",NA,159,16.97,"8",134,31.11,"8",NA,1,NA,NA
-3516,"Nozari 2020","Basic and Clinical Neuroscience","FST",NA,"Wistar","M",NA,86,4,"8",242,12,"8",21,126,NA,NA
-3569,"Zamani 2024","Journal of Advances in Medical and Biomedical Research","FST",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
-3670,"Zhou 2021","JOURNAL OF ETHNOPHARMACOLOGY","FST",NA,"Wistar","M","8",75,19.8,"8",113,19.8,"8",28,168,NA,NA
-3676,"Gao 2024","Brain Res Bull","FST",NA,"SD","M","4",21,41.11,"10",84,28.46,"10",14,28,NA,NA
-3926,"Yan 2023","NEUROPHARMACOLOGY","FST",NA,"SD","M","6-8",105,66.14,"6",138,90.63,"6",21,84,NA,NA
-3926,"Yan 2023","NEUROPHARMACOLOGY","FST",NA,"SD","F","6-8",NA,NA,NA,NA,NA,NA,21,84,NA,NA
-4002,"Han 2017","Sci Rep","FST","Method taken from cited article","SD","M",NA,120,53.67,"20",170,67.08,"20",14,28,NA,NA
-4025,"Moreno 2020","Cells","FST","FST data expressed as ""moving time"". ","SD","M","6",NA,NA,NA,NA,NA,NA,21,42,NA,NA
-4027,"Kim 2025","Laryngoscope","FST",NA,"SD","M","7",14,6.32,"10",39,25.3,"10",10,20,NA,NA
-4041,"Ayatollahi 2020","PHYSIOLOGY AND PHARMACOLOGY","FST",NA,"Wistar","M",NA,87,19.6,"6",218,22.05,"6",21,126,NA,NA
-4070,"Liu 2018","Transl Psychiatry","FST",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-4832,"van 2016","Metab Brain Dis","FST","Subjected to maternal separation","SD","M",NA,115,9.49,"10",92,18.97,"10",5,20,NA,NA
-4846,"Olesen 2015","Hippocampus","FST","Data expressed as 'diference between % immobility between test and pre-test""","Wistar","M","7-8",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-4911,"Zou 2024","Mol Nutr Food Res","FST","Data from after first 4 weeks of CRS","SD","M","6",NA,NA,NA,NA,NA,NA,28,224,NA,NA
-4961,"Tang 2024","Drug Des Devel Ther","FST",NA,"SD","M",NA,24,2.6,"6",22,6,"6",28,84,NA,NA
-4973,"Hennessy 2022","Neuroimage: Reports","FST",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,13,32,NA,NA
-5014,"Elfakharany 2024","Mol Neurobiol","FST","median (intra-quartile range) given","Wistar","M","8-10",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-5109,"Du 2023","Neuroreport","FST",NA,"SD","M","5-6",41,4.9,"6",51,12.25,"6",28,168,NA,NA
-5214,"Afzal 2021","Neurochem Res","FST","FST design unclear: ""Rats were allowed to swim for 5 min followed by a pre-test of 2 min. Immobility time was observed during testing duration of the experiment.""","Wistar","M",NA,245,27.71,"12",278,20.78,"12",14,56,NA,NA
-5216,"Ahmed 2023","Food Funct","FST",NA,"Wistar","M","7-8",93,3,"10",158,4,"10",35,105,NA,NA
-5240,"Khedr 2018","Naunyn Schmiedebergs Arch Pharmacol","FST",NA,"Wistar","M",NA,51.4,9.39,"10",83.3,24.21,"10",42,168,NA,NA
-5329,"Duarte 2024","PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES OF THE UNITED STATES OF AMERICA","FST",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,10,20,NA,NA
-5365,"Magdy 2017","Biomed Pharmacother","FST",NA,"Wistar","M",NA,52,10.39,"12",83,24.25,"12",42,168,NA,NA
-5419,"Aliphon 2023","Psychopharmacology (Berl)","FST",NA,"SD","M","8",NA,NA,NA,NA,NA,NA,14,35,NA,NA
-5419,"Aliphon 2023","Psychopharmacology (Berl)","FST",NA,"SD","F","8",NA,NA,NA,NA,NA,NA,14,35,NA,NA
-5437,"Sarawi 2025","Sci Rep","FST","""All rat groups, except the controls, underwent restraining stress for around 5 weeks""","SD","M","6-7",5.6,3.18,"6",18,5.88,"6",35,87,NA,NA
-5446,"Peng 2022","JOURNAL OF NEUROINFLAMMATION","FST",NA,"Wistar","M","6-8",50,21,"15",132,28,"15",28,168,NA,NA
-5610,"Mostardeiro 2025","Brain Sciences","FST",NA,"Wistar","M",NA,151,31.11,"8",218,25.46,"8",14,112,NA,NA
-5623,"Zhi 2023","Behav Brain Res","FST",NA,"SD","M","6",19,12.25,"6",18,9.8,"6",21,126,NA,NA
-5627,"Feng 2019","FRONTIERS IN MOLECULAR NEUROSCIENCE","FST",NA,"Wistar","M","8",96,38.11,"12",281,83.14,"12",21,126,NA,NA
-5687,"Zhou 2022","FRONTIERS IN AGING NEUROSCIENCE","FST","All rats were ovariectomised; CRS was ""7.5–8h/day""","SD","F","12",NA,NA,NA,NA,NA,NA,21,157,NA,NA
-5699,"Wei 2018","Neurosci Lett","FST",NA,"Wistar","M",NA,56,12,"8",136,30,"8",35,210,NA,NA
-5748,"Sakhri 2021","PHYTOTHERAPY RESEARCH","FST",NA,"Wistar","M",NA,50,15.65,"5",154,22.36,"5",21,126,NA,NA
-5898,"Aboul-Fotouh 2018","Asian Journal of Pharmaceutical and Clinical Research","FST",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,42,168,NA,NA
-5993,"Ruanpang 2025","Vet World","FST",NA,"Wistar","M","7",59,44.27,"10",146,88.54,"10",7,21,NA,NA
-5993,"Ruanpang 2025","Vet World","FST",NA,"Wistar","M","7",59,44.27,"10",140,75.89,"10",14,42,NA,NA
-5993,"Ruanpang 2025","Vet World","FST",NA,"Wistar","M","7",59,44.27,"10",193,82.22,"10",28,84,NA,NA
-6013,"Suwanjang 2021","Neurochem Int","FST",NA,"SD","M",NA,43,26.94,"6",99,9.8,"6",21,126,NA,NA
-6184,"Li 2022","Mol Neurobiol","FST",NA,"SD","M",NA,50,4,"5",68,5,"5",28,112,NA,NA
-6233,"Gao 2024","Translational Psychiatry","FST",NA,"Wistar","M","6",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-6233,"Gao 2024","Translational Psychiatry","FST",NA,"Wistar","F","6",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-6269,"Koncz 2023","Int J Neuropsychopharmacol","FST","Method taken from cited article","Wistar","M","7",147,87,"9",234,27,"9",10,20,NA,NA
-6305,"Lee 2015","Front Neurosci","FST","Data expressed as 'mean behavioural count'","SD","M","8",23,3.16,"10",31,3.16,"10",21,42,NA,NA
-6987,"Peng 2021","Neurochem Int","FST",NA,"SD","M","12",14,4.92,"5",21,5.39,"6",21,136,NA,NA
-6998,"Wong 2017","Molecular Psychiatry","FST",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
-7021,"Wu 2025","JOURNAL OF MOLECULAR HISTOLOGY","FST",NA,"Wistar","F","6-8",NA,NA,NA,NA,NA,NA,14,70,NA,NA
-7023,"Liu 2016","Behav Brain Res","FST",NA,"SD","M",NA,96,8.49,"8",115,16.97,"8",21,126,NA,NA
-7286,"Adachi 2021","J Tradit Complement Med","FST",NA,"Wistar","M","7",56,29,"5",162,25,"5",21,126,NA,NA
-7339,"Vorvul 2022","NEUROPEPTIDES","FST",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,14,28,NA,NA
-7440,"Li 2023","Behav Brain Res","FST","Data shown as violin plot","SD","M","7-8",NA,NA,NA,NA,NA,NA,35,140,NA,NA
-7592,"Zhu 2021","Evid Based Complement Alternat Med","FST",NA,"SD","M",NA,106,1.6,"8",208,2.2,"8",21,63,NA,NA
-7660,"Yu 2024","BEHAVIOURAL BRAIN RESEARCH","FST","""Male Sprague-Dawley rats (8–12 weeks old, 250–300 g) and male Long-Evans rats (350–400 g) .... All rats were randomly assigned to one of the following four models""","Unclear","Unclear","Unclear",131,4,"8",117,24,"8",21,126,NA,NA
-7715,"García-Rojo 2017","Int J Neuropsychopharmacol","FST",NA,"SD","M",NA,111,15.87,"7",172,7.94,"7",14,35,NA,NA
-8156,"Seo 2019","NEUROSCIENCE LETTERS","FST",NA,"SD","M",NA,80,31.84,"6",134,19.6,"6",28,168,NA,NA
-8158,"Wisłowska-Stanek 2016","Behav Brain Res","FST","Data from 'high anxiety' rats","Wistar","M",NA,269,5.66,"8",286,2.83,"8",35,105,NA,NA
-8159,"Habib 2015","PLoS One","FST",NA,"Wistar","M",NA,53,4.5,"9",76,6.9,"9",42,168,NA,NA
-8451,"Chen 2025","PHARMACOLOGICAL RESEARCH","FST",NA,"SD","M",NA,53,14,"7",101,13,"12",14,112,NA,NA
-8463,"Ratajczak 2020","ACTA NEUROBIOLOGIAE EXPERIMENTALIS","FST",NA,"SD","M","12",131,34.29,"24",173,58.79,"24",14,28,NA,NA
-8548,"Kuan 2024","JOURNAL OF PHYSIOLOGICAL INVESTIGATION","FST",NA,"Long-Evans","M",NA,4.6,2.42,"12",7.1,2.42,"12",14,28,NA,NA
-8614,"Zanca 2015","FRONTIERS IN BEHAVIORAL NEUROSCIENCE","FST","Data from 'standard housed' group","SD","M","12",NA,NA,NA,NA,NA,NA,7,42,NA,NA
-8637,"Wang 2025","BEHAVIOURAL BRAIN RESEARCH","FST","Pregnant females restrained from GD14-21","SD","F (pregnant)","8",21,5,"8",35,9,"16",7,15,NA,NA
-8743,"Seewoo 2020","eNeuro","FST",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,13,32,NA,NA
-8767,"Aboul-Fotouh 2015","Psychopharmacology (Berl)","FST",NA,"Wistar","M",NA,61,19.8,"8",152,19.8,"8",42,168,NA,NA
-8885,"Li 2021","J Proteomics","FST",NA,"Wistar","M",NA,102,7.07,"8",114,7.64,"8",28,168,NA,NA
-8955,"Castañeda 2015","J Neurosci Res","FST",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,7,17,NA,NA
-8955,"Castañeda 2015","J Neurosci Res","FST",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,14,35,NA,NA
-8964,"Phachonpai 2024","Journal of Applied Pharmaceutical Science","FST",NA,"SD","M",NA,18,6.96,"10",32,3.79,"10",14,84,NA,NA
-8964,"Phachonpai 2024","Journal of Applied Pharmaceutical Science","FST",NA,"SD","M",NA,18,6.96,"10",30,6.96,"10",28,168,NA,NA
-8964,"Phachonpai 2024","Journal of Applied Pharmaceutical Science","FST",NA,"SD","M",NA,18,6.96,"10",28,4.74,"10",42,252,NA,NA
-8964,"Phachonpai 2024","Journal of Applied Pharmaceutical Science","FST",NA,"SD","M",NA,18,6.96,"10",30,6.64,"10",56,336,NA,NA
-8989,"Arab 2023","Pharmaceuticals","FST",NA,"Wistar","M",NA,1.4,0.37,"6",3.4,0.28,"6",21,126,NA,NA
-9029,"Mehta-Raghavan 2016","Transl Psychiatry","FST","Data expressed as number of 5-sec bins","Wistar Kyoto More Immobile ","M","""adult""",25,15.81,"10",17,9.49,"10",14,28,NA,NA
-9029,"Mehta-Raghavan 2016","Transl Psychiatry","FST","Data expressed as number of 5-sec bins","Wistar Kyoto Less Immobile ","M","""adult""",2.5,1.58,"10",7,3.79,"10",14,28,NA,NA
-9120,"Bortolasci 2023","Bipolar Disorders","FST",NA,"Flinders Sensitive Line","M","6",NA,NA,NA,NA,NA,NA,10,5,NA,NA
-9424,"Alemu 2019","Brain Behav","FST",NA,"Wistar","M","7-8",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-9442,"Meng 2021","Pain Physician","FST",NA,"SD","M",NA,136,37,"10",166,23,"10",21,126,NA,NA
-9542,"Saeidi 2025","NEUROCHEMICAL RESEARCH","FST",NA,"Wistar","M","8-10",92,10.58,"7",191,7.94,"7",15,90,NA,NA
-9542,"Saeidi 2025","NEUROCHEMICAL RESEARCH","FST",NA,"Wistar","M","8-10",NA,NA,NA,NA,NA,NA,30,180,NA,NA
-9582,"Ishola 2016","BIOMEDICINE & PHARMACOTHERAPY","FST",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,14,4,NA,NA
-9638,"Zhang 2021","Journal of Hazardous Materials","FST","CRS protocol used was from a mouse study: https://doi.org/10.1080/15548627.2019.1630222 ","Wistar","M","6",100,31.11,"8",252,31.11,"8",21,126,NA,NA
-9643,"Pan 2019","MOLECULES","FST",NA,"SD","M",NA,125,21,"9",227,45,"9",21,63,NA,NA
-9663,"Ampuero 2015","INTERNATIONAL JOURNAL OF NEUROPSYCHOPHARMACOLOGY","FST","""restraint""","SD","M",NA,108,56.38,"11",162,46.43,"11",10,20,NA,NA
-9663,"Ampuero 2015","INTERNATIONAL JOURNAL OF NEUROPSYCHOPHARMACOLOGY","FST","""immobilisation""","SD","M",NA,108,56.38,"11",178,19.9,"11",10,20,NA,NA
-9825,"Samarghandian 2017","Neurosci Lett","FST",NA,"Wistar",NA,NA,189,82.02,"8",343,70.71,"8",21,42,NA,NA
-9900,"Wang 2016","Brain Res Bull","FST",NA,"Wistar","M",NA,83,20,"10",123,29,"10",21,126,NA,NA
-3385,"Gavrilovic 2021","Neuroendocrinology Letters","FST",NA,"Wistar","M","11",53,15.81,"10",66,15.81,"10",14,28,NA,NA
-1016,"Li 2022","CNS NEUROSCIENCE & THERAPEUTICS","FST",NA,"SD","M","6-8",26,22.63,"8",140,90.51,"8",28,168,NA,NA
-1129,"Liang 2015","Neuroscience","SPT",NA,"SD","M",NA,92,3.96,"8",76,13.01,"8",21,126,6,6
-1287,"Alkanat 2024","EUROPEAN JOURNAL OF NEUROSCIENCE","SPT",NA,"SD","M","not given",93,14.14,"8",59,45.25,"8",21,105,NA,NA
-1422,"Feng 2022","Andrologia","SPT",NA,"SD","M",NA,72,1.5,"10",46,2.5,"10",NA,NA,24,24
-1764,"Zhong 2019","Front Psychiatry","SPT",NA,"SD","M","8",76,12.33,"10",57,14.23,"10",21,84,NA,NA
-1796,"Luo 2015","Neuropharmacology","SPT",NA,"SD","M","8",87,3.8,"7",66,6,"7",10,40,NA,NA
-2075,"Zhu 2022","Front Pharmacol","SPT",NA,"SD","M","8",75,6.93,"12",51,10.39,"12",21,63,24,24
-2165,"Zhu 2020","CHINESE JOURNAL OF NATURAL MEDICINES","SPT",NA,"SD","M","9",82,8,"10",60,10,"10",21,126,24,24
-2186,"Qian 2020","Evid Based Complement Alternat Med","SPT",NA,"Wistar","M","9",52,21,"10",30,17,"10",28,84,24,24
-2300,"Aboul-Fotouh 2018","Behav Pharmacol","SPT",NA,"Wistar","M",NA,90,7.35,"8",78,17.54,"8",7,42,0,0
-2300,"Aboul-Fotouh 2018","Behav Pharmacol","SPT",NA,"Wistar","M",NA,90,7.35,"8",61,17.54,"8",14,84,0,0
-2300,"Aboul-Fotouh 2018","Behav Pharmacol","SPT",NA,"Wistar","M",NA,90,7.35,"8",63,18.38,"8",21,126,0,0
-2300,"Aboul-Fotouh 2018","Behav Pharmacol","SPT",NA,"Wistar","M",NA,90,7.35,"8",61,12.16,"8",28,168,0,0
-2504,"Zhang 2022","Food Chem Toxicol","SPT",NA,"Wistar","M",NA,80,8,"12",55,8,"12",21,126,12,12
-2714,"Li 2023","J Affect Disord","SPT",NA,"SD",NA,NA,79,12.65,"10",67,8.54,"10",28,168,23,23
-2744,"Arab 2023","Pharmaceuticals (Basel)","SPT",NA,"Wistar","M",NA,81,6,"10",45,9,"10",21,126,16,NA
-2795,"Zhang 2022","NEUROSCIENCE","SPT",NA,"Wistar-Kyoto","M",NA,94,14.14,"8",74,28.46,"10",28,168,NA,NA
-3077,"Abuelezz 2018","Behav Pharmacol","SPT",NA,"Wistar","M",NA,77,13.16,"12",54,7.97,"12",28,168,24,24
-3482,"Wang 2024","BRAIN RESEARCH","SPT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,14,28,12,NA
-3670,"Zhou 2021","JOURNAL OF ETHNOPHARMACOLOGY","SPT",NA,"Wistar","M","8",71,14.14,"8",74,22.63,"8",28,168,23,23
-3676,"Gao 2024","Brain Res Bull","SPT",NA,"SD","M","4",73,9.8,"10",51,12.02,"10",14,28,12,12
-3926,"Yan 2023","NEUROPHARMACOLOGY","SPT",NA,"SD","M","6-8",78,12.25,"6",66,22.05,"6",21,84,24,NA
-3926,"Yan 2023","NEUROPHARMACOLOGY","SPT",NA,"SD","F","6-8",NA,NA,NA,NA,NA,NA,21,84,NA,NA
-4002,"Han 2017","Sci Rep","SPT","CRS method taken from cited article","SD","M",NA,85,10.73,"20",62,26.83,"20",14,28,12,12
-4025,"Moreno 2020","Cells","SPT",NA,"SD","M","6",90,0.9,"9",70,5.7,"9",21,42,NA,NA
-4070,"Liu 2018","Transl Psychiatry","SPT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-4745,"Cheng 2017","BMC Complement Altern Med","SPT",NA,"SD","M",NA,78,9,"10",49,17,"10",63,378,24,24
-4794,"Liu 2022","J Affect Disord","SPT",NA,"SD","M",NA,80,9.49,"10",61,25.3,"10",21,126,6,6
-4887,"Pansarim 2023","Behav Processes","SPT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,11,66,6,6
-4887,"Pansarim 2023","Behav Processes","SPT",NA,"Wistar","F",NA,NA,NA,NA,NA,NA,NA,11,66,6,6
-4887,"Pansarim 2023","Behav Processes","SPT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,22,132,6,6
-4887,"Pansarim 2023","Behav Processes","SPT",NA,"Wistar","F",NA,NA,NA,NA,NA,NA,NA,22,132,6,6
-4911,"Zou 2024","Mol Nutr Food Res","SPT","Data from after 4 weeks of CRS","SD","M","6",81,3.4,NA,55,5,NA,28,224,NA,NA
-4911,"Zou 2024","Mol Nutr Food Res","SPT","Data from after 8 weeks of CRS","SD","M","6",81,3.4,NA,59,4.6,NA,28,224,NA,NA
-4973,"Hennessy 2022","Neuroimage: Reports","SPT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,13,32,NA,NA
-5014,"Elfakharany 2024","Mol Neurobiol","SPT",NA,"Wistar","M","8-10",71,19,NA,32,22,NA,21,126,16,NA
-5437,"Sarawi 2025","Sci Rep","SPT","""All rat groups, except the controls, underwent restraining stress for around 5 weeks""","SD","M","6-7",80,4.5,"3",41,32.91,"3",35,87,NA,NA
-5446,"Peng 2022","JOURNAL OF NEUROINFLAMMATION","SPT",NA,"Wistar","M","6-8",98,2,"15",71,10,"15",28,168,NA,NA
-5610,"Mostardeiro 2025","Brain Sciences","SPT",NA,"Wistar","M",NA,99.6,3.4,"4",93.7,3,"4",14,112,NA,NA
-5623,"Zhi 2023","Behav Brain Res","SPT",NA,"SD","M","6",90,NA,"6",89,1.71,"6",21,126,24,24
-5627,"Feng 2019","FRONTIERS IN MOLECULAR NEUROSCIENCE","SPT",NA,"Wistar","M","8",86,13.86,"12",44,34.64,"12",21,126,NA,NA
-5638,"Wang 2024","Heliyon","SPT",NA,"SD","M",NA,64,5.2,"11",68,8,"11",7,42,24,24
-5638,"Wang 2024","Heliyon","SPT",NA,"SD","M",NA,64,5.2,"11",70,6.2,"11",14,84,24,24
-5638,"Wang 2024","Heliyon","SPT",NA,"SD","M",NA,64,5.2,"11",58,8,"11",21,126,24,24
-5687,"Zhou 2022","FRONTIERS IN AGING NEUROSCIENCE","SPT","All rats were ovariectomised; CRS was ""7.5–8h/day""","SD","F","12",NA,NA,NA,NA,NA,NA,21,157,24,24
-5699,"Wei 2018","Neurosci Lett","SPT",NA,"Wistar","M",NA,83,4,"10",79,4,"10",7,42,23,23
-5699,"Wei 2018","Neurosci Lett","SPT",NA,"Wistar","M",NA,83,4,"10",62,2.5,"10",14,84,23,23
-5699,"Wei 2018","Neurosci Lett","SPT",NA,"Wistar","M",NA,83,4,"10",78,5,"10",21,126,23,23
-5699,"Wei 2018","Neurosci Lett","SPT",NA,"Wistar","M",NA,83,4,"10",80,4,"10",28,168,23,23
-5699,"Wei 2018","Neurosci Lett","SPT",NA,"Wistar","M",NA,83,4,"10",81,4,"10",35,210,23,23
-5748,"Sakhri 2021","PHYTOTHERAPY RESEARCH","SPT",NA,"Wistar","M",NA,87,6.71,"5",56,13.42,"5",21,126,NA,NA
-5881,"Jiang 2024","Mol Neurobiol","SPT",NA,"SD","M",NA,72,9.95,"11",43,19.9,"11",7,42,23,23
-5881,"Jiang 2024","Mol Neurobiol","SPT",NA,"SD","M",NA,74,6.63,"11",37,26.53,"11",14,84,23,23
-5881,"Jiang 2024","Mol Neurobiol","SPT",NA,"SD","M",NA,70,9.95,"11",35,16.58,"11",21,126,23,23
-5993,"Ruanpang 2025","Vet World","SPT",NA,"Wistar","M","7",68,12.65,"10",80,6.32,"10",7,21,NA,NA
-5993,"Ruanpang 2025","Vet World","SPT",NA,"Wistar","M","7",68,12.65,"10",75,6.32,"10",14,42,NA,NA
-5993,"Ruanpang 2025","Vet World","SPT",NA,"Wistar","M","7",68,12.65,"10",72,9.49,"10",28,84,NA,NA
-6184,"Li 2022","Mol Neurobiol","SPT",NA,"SD","M",NA,82,1.9,NA,50,6.5,NA,28,112,NA,NA
-6184,"Olave 2022","Neurobiol Stress","SPT",NA,"Wistar","M",NA,77,21,"9",31,33,"9",14,35,NA,NA
-6184,"Olave 2022","Neurobiol Stress","SPT",NA,"Wistar","F",NA,71,18,"9",81,NA,"9",NA,NA,NA,NA
-6233,"Gao 2024","Translational Psychiatry","SPT",NA,"Wistar","M","6",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-6233,"Gao 2024","Translational Psychiatry","SPT",NA,"Wistar","F","6",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-6320,"Li 2025","Brain Res Bull","SPT",NA,"SD","M","5",69,2,"6",59,4,"6",28,168,24,24
-6392,"Hong 2022","J Int Med Res","SPT",NA,"SD","M",NA,72,2.21,"10",46,2.85,"10",28,NA,24,24
-6517,"Garman 2024","European Journal of Pharmacology","SPT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,42,6,NA
-6728,"Zhao 2022","Front Neurol","SPT",NA,"SD","M",NA,85,8,"8",74,9,"8",21,63,NA,NA
-6938,"Alizadeh 2025","Avicenna Journal of Phytomedicine","SPT",NA,"Wistar","M",NA,82,5.66,"8",58,5.66,"8",21,42,NA,NA
-6987,"Peng 2021","Neurochem Int","SPT",NA,"SD","M","12",94,2.46,"5",81,11.02,"6",21,136,12,12
-7023,"Liu 2016","Behav Brain Res","SPT",NA,"SD","M",NA,69,7.07,"8",58,19.8,"8",7,42,6,6
-7023,"Liu 2016","Behav Brain Res","SPT",NA,"SD","M",NA,69,7.07,"8",52,25.46,"8",14,84,6,6
-7023,"Liu 2016","Behav Brain Res","SPT",NA,"SD","M",NA,69,7.07,"8",47,16.97,"8",21,126,6,6
-7110,"Chen 2022","Frontiers in Psychiatry","SPT",NA,"SD","M",NA,65,12,"11",53,12,"11",7,42,23,23
-7110,"Chen 2022","Frontiers in Psychiatry","SPT",NA,"SD","M",NA,65,12,"11",48,13,"11",14,84,23,23
-7110,"Chen 2022","Frontiers in Psychiatry","SPT",NA,"SD","M",NA,65,12,"11",40,16,"11",21,126,23,23
-7286,"Adachi 2021","J Tradit Complement Med","SPT",NA,"Wistar","M","7",85,7,NA,53,9,NA,21,126,12,12
-7592,"Zhu 2021","Evid Based Complement Alternat Med","SPT",NA,"SD","M",NA,73,7,"8",46,3,"8",21,63,24,24
-7660,"Yu 2024","BEHAVIOURAL BRAIN RESEARCH","SPT","""Male Sprague-Dawley rats (8–12 weeks old, 250–300 g) and male Long-Evans rats (350–400 g) .... All rats were randomly assigned to one of the following four models""","Unclear","Unclear","Unclear",83,17,"8",73,28,"8",21,126,NA,NA
-7812,"Wang 2022","Neuropsychiatr Dis Treat","SPT","SPT pre-screen done","SD","M","4",91,3,"12",74,9.5,"12",28,112,NA,NA
-7864,"Zhao 2023","ANDROLOGIA","SPT",NA,"SD","M","4-5",71,1,NA,46,1,NA,28,168,24,24
-7875,"Wang 2017","BRAIN RESEARCH BULLETIN","SPT",NA,"SD","M","7",68,6,"12",59,9,"12",7,42,NA,NA
-7875,"Wang 2017","BRAIN RESEARCH BULLETIN","SPT",NA,"SD","M","7",68,6,"12",46,6,"12",14,84,NA,NA
-7875,"Wang 2017","BRAIN RESEARCH BULLETIN","SPT",NA,"SD","M","7",68,6,"12",37,5,"12",21,126,NA,NA
-7875,"Wang 2017","BRAIN RESEARCH BULLETIN","SPT",NA,"SD","M","7",68,6,"12",33,6,"12",28,168,NA,NA
-8438,"Wang 2017","J Tradit Chin Med","SPT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,28,168,23,23
-8451,"Chen 2025","PHARMACOLOGICAL RESEARCH","SPT",NA,"SD","M",NA,86,11,"7",51,10,"12",14,112,NA,NA
-8548,"Kuan 2024","JOURNAL OF PHYSIOLOGICAL INVESTIGATION","SPT",NA,"Long-Evans","M",NA,NA,NA,NA,NA,NA,NA,14,28,NA,NA
-8637,"Wang 2025","BEHAVIOURAL BRAIN RESEARCH","SPT","Pregnant females restrained from GD14-21","SD","F (pregnant)","8",91,19.8,"8",74,38.18,"18",7,15,24,24
-8767,"Aboul-Fotouh 2015","Psychopharmacology (Berl)","SPT",NA,"Wistar","M",NA,84,5.66,"8",74,8.49,"8",7,28,0,0
-8767,"Aboul-Fotouh 2015","Psychopharmacology (Berl)","SPT",NA,"Wistar","M",NA,84,5.66,"8",67,5.66,"8",14,56,0,0
-8767,"Aboul-Fotouh 2015","Psychopharmacology (Berl)","SPT",NA,"Wistar","M",NA,84,5.66,"8",61,8.49,"8",21,84,0,0
-8767,"Aboul-Fotouh 2015","Psychopharmacology (Berl)","SPT",NA,"Wistar","M",NA,84,5.66,"8",59,5.66,"8",28,112,0,0
-8767,"Aboul-Fotouh 2015","Psychopharmacology (Berl)","SPT",NA,"Wistar","M",NA,84,5.66,"8",58,11.31,"8",35,140,0,0
-8767,"Aboul-Fotouh 2015","Psychopharmacology (Berl)","SPT",NA,"Wistar","M",NA,84,5.66,"8",51,11.31,"8",42,168,0,0
-8885,"Li 2021","J Proteomics","SPT",NA,"Wistar","M",NA,81,7.64,"8",71,5.09,"8",28,168,23,23
-8955,"Castañeda 2015","J Neurosci Res","SPT",NA,"SD","M",NA,90,14.14,"8",48,18.38,"8",7,17,1,1
-8955,"Castañeda 2015","J Neurosci Res","SPT",NA,"SD","M",NA,90,14.14,"8",59,11.31,"8",14,35,1,1
-8977,"Lei 2020","FRONTIERS IN NEUROSCIENCE","SPT","Pregnant females restrained from GD12-18","SD","F (pregnant)","not given",NA,NA,NA,NA,NA,NA,7,15,NA,NA
-8989,"Arab 2023","Pharmaceuticals","SPT",NA,"Wistar","M",NA,84,8,"6",41,9,"6",21,126,NA,NA
-9120,"Bortolasci 2023","Bipolar Disorders","SPT",NA,"Flinders Sensitive Line","M","6",NA,NA,NA,NA,NA,NA,10,5,NA,NA
-9208,"Shen 2024","PLoS One","SPT","Limited SPT data provided","SD","M",NA,96,NA,"6",70,NA,"6",28,224,24,24
-9234,"Lyu 2022","Psychopharmacology (Berl)","SPT",NA,"Wistar-Kyoto","M","8",86,2.83,"8",88,2.83,"8",28,168,0,0
-9442,"Meng 2021","Pain Physician","SPT",NA,"SD","M",NA,83,3.6,"10",68,10,"10",21,126,24,NA
-9638,"Zhang 2021","Journal of Hazardous Materials","SPT","CRS protocol used was from a mouse study: https://doi.org/10.1080/15548627.2019.1630222 ","Wistar","M","6",81,14.14,"8",63,11.31,"8",21,126,NA,NA
-9643,"Pan 2019","MOLECULES","SPT",NA,"SD","M",NA,82,6,"9",67,15,"9",21,63,NA,NA
-9788,"Bagheri 2021","Hum Exp Toxicol","SPT",NA,"Wistar","M",NA,75,15.3,"9",42,10.5,"9",21,42,NA,NA
-9883,"Macedo 2015","NEUROPEPTIDES","SPT","restrained daily on Mon-Fri each week for 12 weeks","Wistar","M",NA,NA,NA,NA,NA,NA,NA,60,60,20,20
-9900,"Wang 2016","Brain Res Bull","SPT",NA,"Wistar","M",NA,81,8,"10",65,8,"10",21,126,23,23
-1016,"Li 2022","CNS NEUROSCIENCE & THERAPEUTICS","SPT",NA,"SD","M","6-8",76,11.31,"8",50,15.27,"8",28,168,24,24
-1030,"Valipour 2024","AMINO ACIDS","EPM",NA,"Wistar","M","8-10",NA,NA,NA,NA,NA,NA,14,28,NA,NA
-1106,"Safarzadeh 2024","EXPERIMENTAL GERONTOLOGY","EPM",NA,"Wistar","M",NA,62,5.29,"7",52,5.29,"7",10,20,NA,NA
-1129,"Liang 2015","Neuroscience","EPM",NA,"SD","M",NA,88,31.11,"8",45,19.8,"8",21,126,NA,NA
-1407,"Sen 2021","NEUROSCIENCE LETTERS","EPM",NA,"SD","M","not given",16,96.17,"8",18,48.08,"8",14,14,NA,NA
-1497,"Judd 2025","LEARNING & MEMORY","EPM",NA,"SD","M",NA,122,35.78,"5",105,34.79,"10",21,126,NA,NA
-1502,"Lefter 2018","NEUROPHYSIOLOGY","EPM",NA,"Wistar",NA,NA,12,4.47,"5",6,2.24,"5",7,42,NA,NA
-1565,"Ghalandari-Shamami 2019","NEUROCHEMICAL RESEARCH","EPM",NA,"Wistar","M","4",50,10.58,"7",16,5.29,"7",10,20,NA,NA
-1764,"Zhong 2019","Front Psychiatry","EPM",NA,"SD","M","8",56,24,"9",20,15,"9",21,84,NA,NA
-1767,"Lee 2019","Translational Psychiatry","EPM",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
-1983,"Lehner 2017","BEHAVIOURAL BRAIN RESEARCH","EPM","restrained daily on Mon-Fri each week ","Wistar","M",NA,55,9.49,"10",29,12,"9",15,45,NA,NA
-2075,"Zhu 2022","Front Pharmacol","EPM",NA,"SD","M","8",38,13.86,"12",24,13.86,"12",21,63,NA,NA
-2165,"Zhu 2020","CHINESE JOURNAL OF NATURAL MEDICINES","EPM",NA,"SD","M","9",21,3,"12",11,2,"12",21,126,NA,NA
-2167,"Odendaal-Gambrell 2025","Physiol Rep","EPM",NA,"Wistar","M","7",12,13,"8",28,36,"8",28,28,NA,NA
-2167,"Odendaal-Gambrell 2025","Physiol Rep","EPM",NA,"Wistar","F","7",29,28,"8",27,20,"8",28,28,NA,NA
-2926,"Di 2017","Psychopharmacology (Berl)","EPM",NA,"Wistar","F","16",39,15.65,"5",18,8.94,"5",21,126,NA,NA
-2949,"Lin 2019","FRONTIERS IN CELLULAR NEUROSCIENCE","EPM",NA,"SD","M",NA,40,2,"8",39,2,"8",1,8,NA,NA
-2949,"Lin 2019","FRONTIERS IN CELLULAR NEUROSCIENCE","EPM",NA,"SD","M",NA,40,2,"8",33,2,"8",3,24,NA,NA
-2949,"Lin 2019","FRONTIERS IN CELLULAR NEUROSCIENCE","EPM",NA,"SD","M",NA,40,2,"8",26,1.5,"8",7,56,NA,NA
-2949,"Lin 2019","FRONTIERS IN CELLULAR NEUROSCIENCE","EPM",NA,"SD","M",NA,40,2,"8",21,2,"8",14,112,NA,NA
-3209,"Subamalani 2018","International Journal of Pharmaceutical Sciences and Research","EPM",NA,"Wistar","M",NA,103,26.94,"6",57,7.35,"6",21,126,NA,NA
-3263,"Pechlivanova 2023","REVISTA BRASILEIRA DE FARMACOGNOSIA-BRAZILIAN JOURNAL OF PHARMACOGNOSY","EPM",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA
-3459,"Bahramzadeh 2019","Neurobiol Learn Mem","EPM",NA,"Wistar","M",NA,81,38.11,"12",80,39.8,"11",10,60,NA,NA
-3733,"Sarfi 2025","PHARMACOLOGY BIOCHEMISTRY AND BEHAVIOR","EPM",NA,"Wistar","M",NA,107,67.88,"8",28,0,"8",21,126,NA,NA
-3772,"Singh 2023","Nanotheranostics","EPM",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,7,42,NA,NA
-3822,"Bigdeli 2019","NEUROPHYSIOLOGY","EPM",NA,"Wistar","M",NA,24,6.32,"10",12,9.49,"10",21,126,NA,NA
-3856,"Trofimiuk 2015","BEHAVIOURAL BRAIN RESEARCH","EPM",NA,"Wistar-Crl:WI(Han)","M","6",8,8.49,"8",12,16.97,"8",21,42,NA,NA
-3926,"Yan 2023","NEUROPHARMACOLOGY","EPM",NA,"SD","M","6-8",18,19.6,"6",4,12.25,"6",21,84,NA,NA
-3926,"Yan 2023","NEUROPHARMACOLOGY","EPM",NA,"SD","F","6-8",NA,NA,NA,NA,NA,NA,21,84,NA,NA
-3972,"Jung 2020","Neuroscience","EPM",NA,"Wistar-Kyoto","M","10-12",NA,NA,NA,NA,NA,NA,14,28,NA,NA
-3972,"Jung 2020","Neuroscience","EPM",NA,"F334","M","10-12",NA,NA,NA,NA,NA,NA,14,28,NA,NA
-4027,"Kim 2025","Laryngoscope","EPM",NA,"SD","M","7",85,34,"4",45,12,"4",10,20,NA,NA
-4070,"Liu 2018","Transl Psychiatry","EPM",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-4265,"Zhu 2020","BEHAVIOURAL BRAIN RESEARCH","EPM",NA,"SD","M",NA,95,17,"12",67,12,"12",21,126,NA,NA
-4485,"de 2023","NEUROCHEMICAL RESEARCH","EPM","restrained daily on Mon-Fri each week ","Wistar","M",NA,NA,NA,NA,NA,NA,NA,15,15,NA,NA
-4548,"Meftahi 2023","JOURNAL OF CHEMICAL NEUROANATOMY","EPM",NA,"Wistar","M",NA,11,1.41,"8",3,1.98,"8",14,56,NA,NA
-4560,"Joshi 2015","PHYSIOLOGY & BEHAVIOR","EPM",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,15,15,NA,NA
-4735,"Siddiqui 2025","BASIC AND CLINICAL NEUROSCIENCE","EPM",NA,"SD","M","8-12",NA,NA,NA,NA,NA,NA,10,60,NA,NA
-4735,"Siddiqui 2025","BASIC AND CLINICAL NEUROSCIENCE","EPM",NA,"SD","F","8-12",NA,NA,NA,NA,NA,NA,10,60,NA,NA
-4794,"Liu 2022","J Affect Disord","EPM",NA,"SD","M",NA,21,22.14,"10",21,31.62,"10",21,126,NA,NA
-4832,"van 2016","Metab Brain Dis","EPM","Subjected to maternal separation","SD","M",NA,27,24.25,"12",33,31.18,"12",5,20,NA,NA
-4833,"Zhvania 2022","NEUROSCIENCE LETTERS","EPM",NA,"Wistar","M",NA,85,63.25,"10",10,12.65,"10",20,80,NA,NA
-4887,"Pansarim 2023","Behav Processes","EPM",NA,"Wistar","M",NA,24,18.97,"10",14,9.49,"10",11,66,NA,NA
-4887,"Pansarim 2023","Behav Processes","EPM",NA,"Wistar","F",NA,31,12.65,"10",31,22.14,"10",11,66,NA,NA
-4887,"Pansarim 2023","Behav Processes","EPM",NA,"Wistar","M",NA,29,22.14,"10",36,6.32,"10",22,132,NA,NA
-4887,"Pansarim 2023","Behav Processes","EPM",NA,"Wistar","F",NA,35,9.49,"10",24,12.65,"10",22,132,NA,NA
-4961,"Tang 2024","Drug Des Devel Ther","EPM",NA,"SD","M",NA,27,5.5,"6",20,2.7,"6",28,84,NA,NA
-4973,"Hennessy 2022","Neuroimage: Reports","EPM",NA,"SD","M",NA,3.7,4,"16",9.6,8.94,"20",13,32,NA,NA
-5014,"Elfakharany 2024","Mol Neurobiol","EPM",NA,"Wistar","M","8-10",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-5278,"Guedri 2017","Toxicology and Environmental Health Sciences","EPM",NA,"Wistar","M","not given",80,94.87,"10",21,44.27,"10",14,42,NA,NA
-5304,"Rojas-Carvajal 2017","REVISTA MEXICANA DE NEUROCIENCIA","EPM","restraint stress applied ""every other day""","SD","M",NA,NA,NA,NA,NA,NA,NA,16,16,NA,NA
-5533,"Terzioglu-Usak 2018","Int J Endocrinol Metab","EPM",NA,"Wistar","M",NA,8,5.29,"7",7,10.58,"7",7,21,NA,NA
-5533,"Terzioglu-Usak 2018","Int J Endocrinol Metab","EPM",NA,"Wistar","M",NA,7,5.29,"7",7,5.29,"7",28,84,NA,NA
-5610,"Mostardeiro 2025","Brain Sciences","EPM",NA,"Wistar","M",NA,30,14.14,"8",5,2.83,"8",14,112,NA,NA
-5687,"Zhou 2022","FRONTIERS IN AGING NEUROSCIENCE","EPM",NA,"SD","F","12",NA,NA,NA,NA,NA,NA,21,157,NA,NA
-5729,"Yi 2024","Behav Brain Res","EPM",NA,"SD","M",NA,37,5.88,"6",11,1.96,"6",28,168,NA,NA
-5740,"Jahromi 2024","ACTA NEUROBIOLOGIAE EXPERIMENTALIS","EPM",NA,"Wistar","M","8",41,19.8,"8",21,8.49,"8",14,28,NA,NA
-5759,"Moreno-Martinez 2022","BEHAVIOURAL BRAIN RESEARCH","EPM",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,14,4,NA,NA
-5946,"Chen 2022","Journal of Integrative Medicine","EPM",NA,"""Spontaneously Hypertensive Rat""","M","11",NA,NA,NA,NA,NA,NA,28,28,NA,NA
-6148,"Novaes 2018","PSYCHONEUROENDOCRINOLOGY","EPM",NA,"Wistar","M","8.5",19,12.65,"10",0.3,0.63,"10",10,20,NA,NA
-6180,"Tan 2021","Figshare","EPM",NA,"SD","M","not given",31,4.11,"10",3,1.26,"10",14,84,NA,NA
-6517,"Garman 2024","European Journal of Pharmacology","EPM",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,42,NA,NA
-6584,"Chakraborty 2020","NEUROPSYCHOPHARMACOLOGY","EPM",NA,"Wistar","M","7-8",48,15,"25",24,21.91,"30",1,2,NA,NA
-6666,"Bhagya 2017","JOURNAL OF NEUROSCIENCE RESEARCH","EPM",NA,"Wistar","M","6-8",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-6728,"Zhao 2022","Front Neurol","EPM",NA,"SD","M",NA,26,17,"8",6,7,"8",21,63,NA,NA
-6826,"Tan 2021","Front Neurosci","EPM",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
-6987,"Peng 2021","Neurochem Int","EPM",NA,"SD","M","12",69,51.43,"5",7,4.9,"6",21,136,NA,NA
-7023,"Liu 2016","Behav Brain Res","EPM",NA,"SD","M",NA,33,33.94,"8",26,45.25,"8",21,126,NA,NA
-7075,"de 2019","Neurotoxicity Research","EPM",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-7291,"Cairns 2024","Am J Physiol Heart Circ Physiol","EPM",NA,"Wistar","M","10",2.4,3.8,"9",28.1,24,"8",28,28,NA,NA
-7291,"Cairns 2024","Am J Physiol Heart Circ Physiol","EPM",NA,"Wistar","F","10",37.6,25.2,"9",39,29.6,"9",28,28,NA,NA
-7338,"Pentkowski 2022","Behav Brain Res","EPM",NA,"TgF344-AD (wild type)","M","24",126,74.83,"14",61,34.86,"15",14,14,NA,NA
-7339,"Vorvul 2022","NEUROPEPTIDES","EPM",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,14,28,NA,NA
-7440,"Li 2023","Behav Brain Res","EPM",NA,"SD","M","7-8",40,31,"11",15,21,"10",35,140,NA,NA
-7660,"Yu 2024","BEHAVIOURAL BRAIN RESEARCH","EPM","""Male Sprague-Dawley rats (8–12 weeks old, 250–300 g) and male Long-Evans rats (350–400 g) .... All rats were randomly assigned to one of the following four models""","Unclear","Unclear","Unclear",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-8266,"Hadipour 2023","3 Biotech","EPM",NA,"Wistar","M",NA,43,8.49,"8",20,14.14,"8",14,28,NA,NA
-8548,"Kuan 2024","JOURNAL OF PHYSIOLOGICAL INVESTIGATION","EPM",NA,"Long-Evans","M",NA,6,9.35,"12",10,9.01,"12",14,28,NA,NA
-8631,"Rodrigues 2022","Eur J Neurosci","EPM",NA,"Wistar Han","M","8",132,34.79,"10",100,34.79,"10",15,60,NA,NA
-8709,"Ercetin 2023","INDIAN JOURNAL OF EXPERIMENTAL BIOLOGY","EPM",NA,"SD","F","8-12",NA,NA,NA,NA,NA,NA,56,56,NA,NA
-8743,"Seewoo 2020","eNeuro","EPM",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,13,32,NA,NA
-8977,"Lei 2020","FRONTIERS IN NEUROSCIENCE","EPM","Pregnant females restrained from GD12-18","SD","F (pregnant)","not given",NA,NA,NA,NA,NA,NA,7,15,NA,NA
-9120,"Bortolasci 2023","Bipolar Disorders","EPM",NA,"Flinders Sensitive Line","M","6",NA,NA,NA,NA,NA,NA,10,5,NA,NA
-9536,"Dong 2017","Cell Physiol Biochem","EPM",NA,"SD","M","6-8",11,6,"20",3,1,"20",21,126,NA,NA
-9542,"Saeidi 2025","NEUROCHEMICAL RESEARCH","EPM",NA,"Wistar","M","8-10",58,7.94,"7",24,5.29,"7",15,90,NA,NA
-9542,"Saeidi 2025","NEUROCHEMICAL RESEARCH","EPM",NA,"Wistar","M","8-10",58,5.29,"7",13,7.94,"7",30,180,NA,NA
-9663,"Ampuero 2015","INTERNATIONAL JOURNAL OF NEUROPSYCHOPHARMACOLOGY","EPM","""restraint""","SD","M",NA,27,9.95,"11",15,13.27,"11",10,20,NA,NA
-9663,"Ampuero 2015","INTERNATIONAL JOURNAL OF NEUROPSYCHOPHARMACOLOGY","EPM","""immobilisation""","SD","M",NA,27,9.95,"11",14,13.27,"11",10,20,NA,NA
-9688,"Radahmadi 2025","ADVANCED BIOMEDICAL RESEARCH","EPM",NA,"Wistar","M",NA,27,5.29,"7",11,2.65,"7",14,84,NA,NA
-9788,"Bagheri 2021","Hum Exp Toxicol","EPM",NA,"Wistar","M",NA,32,3.97,"7",11,3.44,"7",21,42,NA,NA
-9808,"Paudel 2022","PLoS One","EPM",NA,"SD","M","6",NA,NA,NA,NA,NA,NA,30,120,NA,NA
-9892,"Geng 2021","Oxid Med Cell Longev","EPM",NA,"Wistar","M","6-8",40,9.49,"10",24,7.94,"7",21,126,NA,NA
-9937,"Khankani 2024","BRAIN RESEARCH","EPM",NA,"Wistar","M",NA,10,1.41,"8",3,1.13,"8",14,56,NA,NA
-1030,"Valipour 2024","AMINO ACIDS","OFT",NA,"Wistar","M","8-10",57,28.28,"8",19,28.28,"8",14,28,NA,NA
-1129,"Liang 2015","Neuroscience","OFT",NA,"SD","M",NA,21,8.49,"8",9,1.98,"8",21,126,NA,NA
-1287,"Alkanat 2024","EUROPEAN JOURNAL OF NEUROSCIENCE","OFT",NA,"SD","M","not given",NA,NA,NA,NA,NA,NA,21,105,NA,NA
-1407,"Sen 2021","NEUROSCIENCE LETTERS","OFT",NA,"SD","M","not given",12,22.63,"8",24,50.91,"8",14,14,NA,NA
-1420,"Zhang 2017","Molecular Medicine Reports","OFT",NA,"Wistar","M","8",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-1422,"Feng 2022","Andrologia","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-1502,"Lefter 2018","NEUROPHYSIOLOGY","OFT",NA,"Wistar",NA,NA,NA,NA,NA,NA,NA,NA,7,42,NA,NA
-1764,"Zhong 2019","Front Psychiatry","OFT",NA,"SD","M","8",NA,NA,NA,NA,NA,NA,21,84,NA,NA
-1767,"Lee 2019","Translational Psychiatry","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
-1983,"Lehner 2017","BEHAVIOURAL BRAIN RESEARCH","OFT","restrained daily on Mon-Fri each week ","Wistar","M",NA,NA,NA,NA,NA,NA,NA,15,45,NA,NA
-2075,"Zhu 2022","Front Pharmacol","OFT",NA,"SD","M","8",NA,NA,NA,NA,NA,NA,21,63,NA,NA
-2165,"Zhu 2020","CHINESE JOURNAL OF NATURAL MEDICINES","OFT",NA,"SD","M","9",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-2172,"Guo 2015","Neural Regen Res","OFT",NA,"SD","M","5",NA,NA,NA,NA,NA,NA,28,168,NA,NA
-2300,"Aboul-Fotouh 2018","Behav Pharmacol","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,28,168,NA,NA
-2504,"Zhang 2022","Food Chem Toxicol","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-2506,"Shin 2019","Eur J Neurosci","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
-2627,"Li 2020","Behav Brain Res","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,168,NA,NA
-2744,"Arab 2023","Pharmaceuticals (Basel)","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-2795,"Zhang 2022","NEUROSCIENCE","OFT",NA,"Wistar-Kyoto","M",NA,NA,NA,NA,NA,NA,NA,28,168,NA,NA
-2949,"Lin 2019","FRONTIERS IN CELLULAR NEUROSCIENCE","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,1,8,NA,NA
-2949,"Lin 2019","FRONTIERS IN CELLULAR NEUROSCIENCE","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,3,24,NA,NA
-2949,"Lin 2019","FRONTIERS IN CELLULAR NEUROSCIENCE","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,5,40,NA,NA
-2949,"Lin 2019","FRONTIERS IN CELLULAR NEUROSCIENCE","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,7,56,NA,NA
-2949,"Lin 2019","FRONTIERS IN CELLULAR NEUROSCIENCE","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,9,72,NA,NA
-2949,"Lin 2019","FRONTIERS IN CELLULAR NEUROSCIENCE","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,11,88,NA,NA
-2949,"Lin 2019","FRONTIERS IN CELLULAR NEUROSCIENCE","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,14,112,NA,NA
-3077,"Abuelezz 2018","Behav Pharmacol","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,28,168,NA,NA
-3158,"Arakawa 2020","PHYSIOLOGY & BEHAVIOR","OFT",NA,"Wistar","M","5",225,41.11,"10",73,31.62,"10",NA,NA,NA,NA
-3158,"Arakawa 2020","PHYSIOLOGY & BEHAVIOR","OFT",NA,"Wistar","M","5",133,34.79,"10",117,22.14,"10",NA,NA,NA,NA
-3158,"Novaes 2020","PHYSIOLOGY & BEHAVIOR","OFT",NA,"Wistar","M","5",189,18.97,"10",89,28.46,"10",NA,NA,NA,NA
-3158,"Arakawa 2020","PHYSIOLOGY & BEHAVIOR","OFT",NA,"Wistar","M","5",153,41.11,"10",130,69.57,"10",NA,NA,NA,NA
-3158,"Arakawa 2020","PHYSIOLOGY & BEHAVIOR","OFT",NA,"Wistar","M","5",177,69.57,"10",165,79.06,"10",NA,NA,NA,NA
-3158,"Arakawa 2020","PHYSIOLOGY & BEHAVIOR","OFT",NA,"Wistar","M","5",277,63.25,"10",112,56.92,"10",NA,NA,NA,NA
-3209,"Subamalani 2018","International Journal of Pharmaceutical Sciences and Research","OFT",NA,"Wistar","M",NA,68,24.6,"5",39,15.65,"5",21,126,NA,NA
-3260,"Faraji 2020","BEHAVIOURAL BRAIN RESEARCH","OFT",NA,"Long-Evans","M","11-13",NA,NA,NA,NA,NA,NA,10,30,NA,NA
-3263,"Pechlivanova 2023","REVISTA BRASILEIRA DE FARMACOGNOSIA-BRAZILIAN JOURNAL OF PHARMACOGNOSY","OFT","CRS was 1 h/day for 14 days, then escalated to 6 h/day for an additional 14 days. No explanation of why.","Wistar","M",NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA
-3459,"Bahramzadeh 2019","Neurobiol Learn Mem","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,10,60,NA,NA
-3482,"Wang 2024","BRAIN RESEARCH","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,14,28,NA,NA
-3569,"Zamani 2024","Journal of Advances in Medical and Biomedical Research","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
-3670,"Zhou 2021","JOURNAL OF ETHNOPHARMACOLOGY","OFT",NA,"Wistar","M","8",NA,NA,NA,NA,NA,NA,28,168,NA,NA
-3734,"Yi 2016","NEURAL REGENERATION RESEARCH","OFT","The FST used was a ""modification of the traditional method"", where ""swimming endurance capacity was assessed by forcing the rats to swim until exhaustion, which was defined as the point at which the rat's nose remained below the water surface for 10 seconds"".","SD","M",NA,NA,NA,NA,NA,NA,NA,21,63,NA,NA
-3926,"Yan 2023","NEUROPHARMACOLOGY","OFT",NA,"SD","M","6-8",9,7.35,"6",6,4.9,"6",21,84,NA,NA
-3926,"Yan 2023","NEUROPHARMACOLOGY","OFT",NA,"SD","F","6-8",NA,NA,NA,NA,NA,NA,21,84,NA,NA
-4070,"Liu 2018","Transl Psychiatry","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-4261,"Ranjbar 2017","CLINICAL AND EXPERIMENTAL PHARMACOLOGY AND PHYSIOLOGY","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,1,6,NA,NA
-4261,"Ranjbar 2017","CLINICAL AND EXPERIMENTAL PHARMACOLOGY AND PHYSIOLOGY","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,7,42,NA,NA
-4261,"Ranjbar 2017","CLINICAL AND EXPERIMENTAL PHARMACOLOGY AND PHYSIOLOGY","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-4265,"Zhu 2020","BEHAVIOURAL BRAIN RESEARCH","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-4451,"Yang 2017","Evidence-based Complementary and Alternative Medicine","OFT",NA,"SD","M","5",NA,NA,NA,NA,NA,NA,28,168,NA,NA
-4485,"de 2023","NEUROCHEMICAL RESEARCH","OFT","restrained daily on Mon-Fri each week ","Wistar","M",NA,NA,NA,NA,NA,NA,NA,15,15,NA,NA
-4630,"Li 2017","Biomed Res Int","OFT",NA,"Wistar","M",NA,18,1.9,"12",30,2.2,"12",14,42,NA,NA
-4630,"Li 2017","Biomed Res Int","OFT",NA,"Wistar","M",NA,19,1.7,"12",34,2.1,"12",28,84,NA,NA
-4669,"Shen 2020","Neurosci Lett","OFT",NA,"SD","F","52",NA,NA,NA,NA,NA,NA,42,252,NA,NA
-4735,"Siddiqui 2025","BASIC AND CLINICAL NEUROSCIENCE","OFT",NA,"SD","M","8-12",NA,NA,NA,NA,NA,NA,10,60,NA,NA
-4735,"Siddiqui 2025","BASIC AND CLINICAL NEUROSCIENCE","OFT",NA,"SD","F","8-12",NA,NA,NA,NA,NA,NA,10,60,NA,NA
-4745,"Cheng 2017","BMC Complement Altern Med","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,63,378,NA,NA
-4794,"Liu 2022","J Affect Disord","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-4832,"van 2016","Metab Brain Dis","OFT","Subjected to maternal separation","SD","M",NA,NA,NA,NA,NA,NA,NA,5,20,NA,NA
-4833,"Zhvania 2022","NEUROSCIENCE LETTERS","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,20,80,NA,NA
-4961,"Tang 2024","Drug Des Devel Ther","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,28,84,NA,NA
-5014,"Elfakharany 2024","Mol Neurobiol","OFT",NA,"Wistar","M","8-10",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-5068,"Zhu 2023","JOURNAL OF AGRICULTURAL AND FOOD CHEMISTRY","OFT",NA,"Wistar","M","6-7",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-5108,"Pourheydar 2022","BEHAVIORAL NEUROSCIENCE","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,21,52,NA,NA
-5109,"Du 2023","Neuroreport","OFT",NA,"SD","M","5-6",NA,NA,NA,NA,NA,NA,28,168,NA,NA
-5233,"Song 2020","FRONTIERS IN PHYSIOLOGY","OFT",NA,"Wistar","M",NA,15,5.88,"6",9,3.67,"6",21,126,NA,NA
-5240,"Khedr 2018","Naunyn Schmiedebergs Arch Pharmacol","OFT",NA,"Wistar","M",NA,8.8,2.2,"10",23.9,11.2,"11",42,168,NA,NA
-5278,"Guedri 2017","Toxicology and Environmental Health Sciences","OFT",NA,"Wistar","M","not given",NA,NA,NA,NA,NA,NA,14,42,NA,NA
-5291,"Liu 2019","Physiol Behav","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,28,84,NA,NA
-5304,"Rojas-Carvajal 2017","REVISTA MEXICANA DE NEUROCIENCIA","OFT","restraint stress applied ""every other day""","SD","M",NA,NA,NA,NA,NA,NA,NA,16,16,NA,NA
-5365,"Magdy 2017","Biomed Pharmacother","OFT",NA,"Wistar","M",NA,9,7.97,"12",24,11.09,"12",42,168,NA,NA
-5366,"Xi 2020","Aging (Albany NY)","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,63,NA,NA
-5610,"Mostardeiro 2025","Brain Sciences","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,14,112,NA,NA
-5623,"Zhi 2023","Behav Brain Res","OFT",NA,"SD","M","6",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-5627,"Feng 2019","FRONTIERS IN MOLECULAR NEUROSCIENCE","OFT",NA,"Wistar","M","8",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-5638,"Wang 2024","Heliyon","OFT","Multiple SPTs and OFTs done","SD","M",NA,5,3.4,"11",2.9,1.5,"11",7,42,NA,NA
-5638,"Wang 2024","Heliyon","OFT","Multiple SPTs and OFTs done","SD","M",NA,5,3.4,"11",1.4,0.6,"11",14,84,NA,NA
-5638,"Wang 2024","Heliyon","OFT","Multiple SPTs and OFTs done","SD","M",NA,5,3.4,"11",0.2,0.1,"11",21,126,NA,NA
-5687,"Zhou 2022","FRONTIERS IN AGING NEUROSCIENCE","OFT","All rats were ovariectomised; CRS was ""7.5–8h/day""","SD","F","12",NA,NA,NA,NA,NA,NA,21,157,NA,NA
-5697,"Kamsrijai 2025","JOURNAL OF ETHNOPHARMACOLOGY","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-5729,"Yi 2024","Behav Brain Res","OFT",NA,"SD","M",NA,22,3.67,"6",7.6,2.45,"6",28,168,NA,NA
-5748,"Sakhri 2021","PHYTOTHERAPY RESEARCH","OFT",NA,"Wistar","M",NA,19,3.13,"5",4.5,4.02,"5",21,126,NA,NA
-5759,"Moreno-Martinez 2022","BEHAVIOURAL BRAIN RESEARCH","OFT",NA,"Wistar","M",NA,52,20.78,"12",30,13.86,"12",14,4,NA,NA
-5966,"Zhang 2022","JOURNAL OF AGRICULTURAL AND FOOD CHEMISTRY","OFT",NA,"Wistar","M","6-7",29,2.5,"9",8.4,1.2,"9",21,126,NA,NA
-5993,"Ruanpang 2025","Vet World","OFT",NA,"Wistar","M","7",NA,NA,NA,NA,NA,NA,7,21,NA,NA
-5993,"Ruanpang 2025","Vet World","OFT",NA,"Wistar","M","7",NA,NA,NA,NA,NA,NA,14,42,NA,NA
-5993,"Ruanpang 2025","Vet World","OFT",NA,"Wistar","M","7",NA,NA,NA,NA,NA,NA,28,84,NA,NA
-6148,"Novaes 2018","PSYCHONEUROENDOCRINOLOGY","OFT",NA,"Wistar","M","8.5",NA,NA,NA,NA,NA,NA,10,20,NA,NA
-6180,"Tan 2021","Figshare","OFT",NA,"SD","M","not given",16,3.13,"20",12,4.02,"20",14,84,NA,NA
-6184,"Li 2022","Mol Neurobiol","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,28,112,NA,NA
-6184,"Olave 2022","Neurobiol Stress","OFT",NA,"Wistar","M",NA,2.9,5.4,"9",1.6,2.7,"9",14,35,NA,NA
-6184,"Olave 2022","Neurobiol Stress","OFT",NA,"Wistar","F",NA,5.8,5.31,"11",4.3,4.11,"10",NA,NA,NA,NA
-6233,"Gao 2024","Translational Psychiatry","OFT",NA,"Wistar","M","6",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-6233,"Gao 2024","Translational Psychiatry","OFT",NA,"Wistar","F","6",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-6320,"Li 2025","Brain Res Bull","OFT",NA,"SD","M","5",NA,NA,NA,NA,NA,NA,28,168,NA,NA
-6392,"Hong 2022","J Int Med Res","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-6616,"Rodriguez-Palma 2023","EUROPEAN JOURNAL OF PHARMACOLOGY","OFT",NA,"Wistar","M","8-10",NA,NA,NA,NA,NA,NA,28,56,NA,NA
-6616,"Rodriguez-Palma 2023","EUROPEAN JOURNAL OF PHARMACOLOGY","OFT",NA,"Wistar","F","8-10",NA,NA,NA,NA,NA,NA,28,56,NA,NA
-6728,"Zhao 2022","Front Neurol","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,63,NA,NA
-6826,"Tan 2021","Front Neurosci","OFT",NA,"SD","M",NA,15.2,4.47,"20",11.3,4.02,"20",14,84,NA,NA
-6850,"Farhan 2015","ADVANCEMENTS IN LIFE SCIENCES","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-6850,"Farhan 2015","ADVANCEMENTS IN LIFE SCIENCES","OFT",NA,"Wistar","F",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-6987,"Peng 2021","Neurochem Int","OFT",NA,"SD","M","12",2.6,2.46,"5",0.05,0.12,"6",21,136,NA,NA
-7021,"Wu 2025","JOURNAL OF MOLECULAR HISTOLOGY","OFT",NA,"Wistar","F","6-8",NA,NA,NA,NA,NA,NA,14,70,NA,NA
-7023,"Liu 2016","Behav Brain Res","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-7075,"de 2019","Neurotoxicity Research","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-7255,"Fernández 2016","Alcohol","OFT",NA,"Wistar","M","7 (at testing)",NA,NA,NA,NA,NA,NA,4,8,NA,NA
-7255,"Fernández 2016","Alcohol","OFT",NA,"Wistar","M","11 (at testing)",NA,NA,NA,NA,NA,NA,4,8,NA,NA
-7270,"Zhang 2022","J Hazard Mater","OFT","Method taken from cited article","Wistar","M","6",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-7286,"Adachi 2021","J Tradit Complement Med","OFT",NA,"Wistar","M","7",19,3,"5",2,1,"5",21,126,NA,NA
-7339,"Vorvul 2022","NEUROPEPTIDES","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,14,28,NA,NA
-7440,"Li 2023","Behav Brain Res","OFT",NA,"SD","M","7-8",NA,NA,NA,NA,NA,NA,35,140,NA,NA
-7545,"Jiang 2021","Behav Brain Res","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,28,168,NA,NA
-7592,"Zhu 2021","Evid Based Complement Alternat Med","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,63,NA,NA
-7660,"Yu 2024","BEHAVIOURAL BRAIN RESEARCH","OFT","""Male Sprague-Dawley rats (8–12 weeks old, 250–300 g) and male Long-Evans rats (350–400 g) .... All rats were randomly assigned to one of the following four models""","Unclear","Unclear","Unclear",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-7769,"Wang 2022","Journal of agricultural and food chemistry","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-7812,"Wang 2022","Neuropsychiatr Dis Treat","OFT","SPT pre-screen done","SD","M","4",NA,NA,NA,NA,NA,NA,28,112,NA,NA
-7858,"Wang 2017","Evidence-based Complementary and Alternative Medicine","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,28,168,NA,NA
-7864,"Zhao 2023","ANDROLOGIA","OFT",NA,"SD","M","4-5",NA,NA,NA,NA,NA,NA,28,168,NA,NA
-8158,"Wisłowska-Stanek 2016","Behav Brain Res","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,35,105,NA,NA
-8159,"Habib 2015","PLoS One","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,42,168,NA,NA
-8420,"Zhao 2015","NEUROSCIENCE LETTERS","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,3,18,NA,NA
-8420,"Zhao 2015","NEUROSCIENCE LETTERS","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
-8451,"Chen 2025","PHARMACOLOGICAL RESEARCH","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,14,112,NA,NA
-8709,"Ercetin 2023","INDIAN JOURNAL OF EXPERIMENTAL BIOLOGY","OFT",NA,"SD","F","8-12",NA,NA,NA,NA,NA,NA,56,56,NA,NA
-8767,"Aboul-Fotouh 2015","Psychopharmacology (Berl)","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,42,168,NA,NA
-8964,"Phachonpai 2024","Journal of Applied Pharmaceutical Science","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,56,336,NA,NA
-8977,"Lei 2020","FRONTIERS IN NEUROSCIENCE","OFT","Pregnant females restrained from GD12-18","SD","F (pregnant)","not given",NA,NA,NA,NA,NA,NA,7,15,NA,NA
-8989,"Arab 2023","Pharmaceuticals","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-9101,"Zhao 2015","Physiol Behav","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,3,6,NA,NA
-9101,"Zhao 2015","Physiol Behav","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,7,14,NA,NA
-9101,"Zhao 2015","Physiol Behav","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,14,28,NA,NA
-9120,"Bortolasci 2023","Bipolar Disorders","OFT",NA,"Flinders Sensitive Line","M","6",NA,NA,NA,NA,NA,NA,10,5,NA,NA
-9211,"Sun 2022","JOURNAL OF AGRICULTURAL AND FOOD CHEMISTRY","OFT",NA,"Wistar","M","6-7",NA,NA,NA,NA,NA,NA,21,126,NA,NA
-9223,"Hadipour 2023","Synapse","OFT",NA,"Wistar","M","12",13,5.66,"8",4.3,5.09,"8",14,28,NA,NA
-9234,"Lyu 2022","Psychopharmacology (Berl)","OFT",NA,"Wistar-Kyoto","M","8",NA,NA,NA,NA,NA,NA,28,168,NA,NA
-9352,"Li 2015","Evidence-based Complementary and Alternative Medicine","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,21,63,NA,NA
-9442,"Meng 2021","Pain Physician","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-9542,"Saeidi 2025","NEUROCHEMICAL RESEARCH","OFT",NA,"Wistar","M","8-10",29,9,"7",9,2.91,"7",15,90,NA,NA
-9542,"Saeidi 2025","NEUROCHEMICAL RESEARCH","OFT",NA,"Wistar","M","8-10",37,12.17,"7",6,2.91,"7",30,180,NA,NA
-9643,"Pan 2019","MOLECULES","OFT",NA,"SD","M",NA,21,4.2,"9",41,13.8,"9",21,63,NA,NA
-9767,"Zhu 2019","BIOMEDICINE & PHARMACOTHERAPY","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,21,63,NA,NA
-9825,"Samarghandian 2017","Neurosci Lett","OFT",NA,"Wistar",NA,NA,NA,NA,NA,NA,NA,NA,21,42,NA,NA
-9892,"Geng 2021","Oxid Med Cell Longev","OFT",NA,"Wistar","M","6-8",NA,0,NA,NA,0,NA,21,126,NA,NA
-9900,"Wang 2016","Brain Res Bull","OFT",NA,"Wistar","M",NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
-1016,"Li 2022","CNS NEUROSCIENCE & THERAPEUTICS","OFT",NA,"SD","M","6-8",NA,NA,NA,NA,NA,NA,28,168,NA,NA
-4733,"Tian 2018","Frontiers in Psychiatry","OFT",NA,"SD","M",NA,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+ID,PubID,Journal,Outcome,Notes,strain,sex,age,control_mean,control_sd,control_n,test_mean,test_sd,test_n,total_days,total_time_h,water_depriv_h,food_depriv_h
+1287,Alkanat 2024,EUROPEAN JOURNAL OF NEUROSCIENCE,FST,NA,SD,M,not given,NA,NA,NA,NA,NA,NA,21,105,NA,NA
+1407,Sen 2021,NEUROSCIENCE LETTERS,FST,NA,SD,M,not given,343,28.28,8,339,19.8,8,14,14,NA,NA
+1502,Lefter 2018,NEUROPHYSIOLOGY,FST,NA,Wistar,NA,NA,40,6.71,5,50,11.18,5,7,42,NA,NA
+1565,Ghalandari-Shamami 2019,NEUROCHEMICAL RESEARCH,FST,NA,Wistar,M,4,65,15.87,7,114,26.46,7,10,20,NA,NA
+1764,Zhong 2019,Front Psychiatry,FST,NA,SD,M,8,32,20.55,10,71,31.62,10,21,84,NA,NA
+1796,Luo 2015,Neuropharmacology,FST,NA,SD,M,8,29,8,7,60,3,7,10,40,NA,NA
+1983,Lehner 2017,BEHAVIOURAL BRAIN RESEARCH,FST,restrained daily on Mon-Fri each week ,Wistar,M,NA,260,9.49,10,287,3,9,15,45,NA,NA
+2075,Zhu 2022,Front Pharmacol,FST,NA,SD,M,8,99,31.18,12,233,90.07,12,21,63,NA,NA
+2300,Aboul-Fotouh 2018,Behav Pharmacol,FST,NA,Wistar,M,NA,64,8.49,8,117,31.11,8,28,168,NA,NA
+2319,Ndavoumta 2025,IBRO Neuroscience Reports,FST,NA,Wistar,M,8-10,150,11.18,5,171,NA,5,21,42,NA,NA
+2319,Ndavoumta 2025,IBRO Neuroscience Reports,FST,NA,Wistar,F,8-10,114,6.71,5,172,17.89,5,21,42,NA,NA
+2504,Zhang 2022,Food Chem Toxicol,FST,Method taken from cited article. Data expressed as % ,Wistar,M,NA,99,11,12,229,28,12,21,126,NA,NA
+2506,Shin 2019,Eur J Neurosci,FST,NA,SD,M,NA,49,22.14,10,115,31.62,10,14,84,NA,NA
+2714,Li 2023,J Affect Disord,FST,NA,SD,NA,NA,100,6.32,10,116,9.49,10,28,168,NA,NA
+2744,Arab 2023,Pharmaceuticals (Basel),FST,Error bars not specified as SD or SEM,Wistar,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+2795,Zhang 2022,NEUROSCIENCE,FST,NA,Wistar-Kyoto,M,NA,20,36.77,8,89,101.19,10,28,168,NA,NA
+2926,Di 2017,Psychopharmacology (Berl),FST,NA,Wistar,F,16,82,24.6,5,120,15.65,5,21,126,NA,NA
+3077,Abuelezz 2018,Behav Pharmacol,FST,NA,Wistar,M,NA,54,13.86,12,105,13.86,12,28,168,NA,NA
+3263,Pechlivanova 2023,REVISTA BRASILEIRA DE FARMACOGNOSIA-BRAZILIAN JOURNAL OF PHARMACOGNOSY,FST,"CRS was 1 h/day for 14 days, then escalated to 6 h/day for an additional 14 days. No explanation of why.",Wistar,M,NA,159,16.97,8,134,31.11,8,NA,1,NA,NA
+3516,Nozari 2020,Basic and Clinical Neuroscience,FST,NA,Wistar,M,NA,86,4,8,242,12,8,21,126,NA,NA
+3569,Zamani 2024,Journal of Advances in Medical and Biomedical Research,FST,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
+3670,Zhou 2021,JOURNAL OF ETHNOPHARMACOLOGY,FST,NA,Wistar,M,8,75,19.8,8,113,19.8,8,28,168,NA,NA
+3676,Gao 2024,Brain Res Bull,FST,NA,SD,M,4,21,41.11,10,84,28.46,10,14,28,NA,NA
+3926,Yan 2023,NEUROPHARMACOLOGY,FST,NA,SD,M,6-8,105,66.14,6,138,90.63,6,21,84,NA,NA
+3926,Yan 2023,NEUROPHARMACOLOGY,FST,NA,SD,F,6-8,NA,NA,NA,NA,NA,NA,21,84,NA,NA
+4002,Han 2017,Sci Rep,FST,Method taken from cited article,SD,M,NA,120,53.67,20,170,67.08,20,14,28,NA,NA
+4025,Moreno 2020,Cells,FST,"FST data expressed as ""moving time"". ",SD,M,6,NA,NA,NA,NA,NA,NA,21,42,NA,NA
+4027,Kim 2025,Laryngoscope,FST,NA,SD,M,7,14,6.32,10,39,25.3,10,10,20,NA,NA
+4041,Ayatollahi 2020,PHYSIOLOGY AND PHARMACOLOGY,FST,NA,Wistar,M,NA,87,19.6,6,218,22.05,6,21,126,NA,NA
+4070,Liu 2018,Transl Psychiatry,FST,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+4832,van 2016,Metab Brain Dis,FST,Subjected to maternal separation,SD,M,NA,115,9.49,10,92,18.97,10,5,20,NA,NA
+4846,Olesen 2015,Hippocampus,FST,"Data expressed as 'diference between % immobility between test and pre-test""",Wistar,M,7-8,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+4911,Zou 2024,Mol Nutr Food Res,FST,Data from after first 4 weeks of CRS,SD,M,6,NA,NA,NA,NA,NA,NA,28,224,NA,NA
+4961,Tang 2024,Drug Des Devel Ther,FST,NA,SD,M,NA,24,2.6,6,22,6,6,28,84,NA,NA
+4973,Hennessy 2022,Neuroimage: Reports,FST,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,13,32,NA,NA
+5014,Elfakharany 2024,Mol Neurobiol,FST,median (intra-quartile range) given,Wistar,M,8-10,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+5109,Du 2023,Neuroreport,FST,NA,SD,M,5-6,41,4.9,6,51,12.25,6,28,168,NA,NA
+5214,Afzal 2021,Neurochem Res,FST,"FST design unclear: ""Rats were allowed to swim for 5 min followed by a pre-test of 2 min. Immobility time was observed during testing duration of the experiment.""",Wistar,M,NA,245,27.71,12,278,20.78,12,14,56,NA,NA
+5216,Ahmed 2023,Food Funct,FST,NA,Wistar,M,7-8,93,3,10,158,4,10,35,105,NA,NA
+5240,Khedr 2018,Naunyn Schmiedebergs Arch Pharmacol,FST,NA,Wistar,M,NA,51.4,9.39,10,83.3,24.21,10,42,168,NA,NA
+5329,Duarte 2024,PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES OF THE UNITED STATES OF AMERICA,FST,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,10,20,NA,NA
+5365,Magdy 2017,Biomed Pharmacother,FST,NA,Wistar,M,NA,52,10.39,12,83,24.25,12,42,168,NA,NA
+5419,Aliphon 2023,Psychopharmacology (Berl),FST,NA,SD,M,8,NA,NA,NA,NA,NA,NA,14,35,NA,NA
+5419,Aliphon 2023,Psychopharmacology (Berl),FST,NA,SD,F,8,NA,NA,NA,NA,NA,NA,14,35,NA,NA
+5437,Sarawi 2025,Sci Rep,FST,"""All rat groups, except the controls, underwent restraining stress for around 5 weeks""",SD,M,6-7,5.6,3.18,6,18,5.88,6,35,87,NA,NA
+5446,Peng 2022,JOURNAL OF NEUROINFLAMMATION,FST,NA,Wistar,M,6-8,50,21,15,132,28,15,28,168,NA,NA
+5610,Mostardeiro 2025,Brain Sciences,FST,NA,Wistar,M,NA,151,31.11,8,218,25.46,8,14,112,NA,NA
+5623,Zhi 2023,Behav Brain Res,FST,NA,SD,M,6,19,12.25,6,18,9.8,6,21,126,NA,NA
+5627,Feng 2019,FRONTIERS IN MOLECULAR NEUROSCIENCE,FST,NA,Wistar,M,8,96,38.11,12,281,83.14,12,21,126,NA,NA
+5687,Zhou 2022,FRONTIERS IN AGING NEUROSCIENCE,FST,"All rats were ovariectomised; CRS was ""7.5–8h/day""",SD,F,12,NA,NA,NA,NA,NA,NA,21,157,NA,NA
+5699,Wei 2018,Neurosci Lett,FST,NA,Wistar,M,NA,56,12,8,136,30,8,35,210,NA,NA
+5748,Sakhri 2021,PHYTOTHERAPY RESEARCH,FST,NA,Wistar,M,NA,50,15.65,5,154,22.36,5,21,126,NA,NA
+5898,Aboul-Fotouh 2018,Asian Journal of Pharmaceutical and Clinical Research,FST,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,42,168,NA,NA
+5993,Ruanpang 2025,Vet World,FST,NA,Wistar,M,7,59,44.27,10,146,88.54,10,7,21,NA,NA
+5993,Ruanpang 2025,Vet World,FST,NA,Wistar,M,7,59,44.27,10,140,75.89,10,14,42,NA,NA
+5993,Ruanpang 2025,Vet World,FST,NA,Wistar,M,7,59,44.27,10,193,82.22,10,28,84,NA,NA
+6013,Suwanjang 2021,Neurochem Int,FST,NA,SD,M,NA,43,26.94,6,99,9.8,6,21,126,NA,NA
+6184,Li 2022,Mol Neurobiol,FST,NA,SD,M,NA,50,4,5,68,5,5,28,112,NA,NA
+6233,Gao 2024,Translational Psychiatry,FST,NA,Wistar,M,6,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+6233,Gao 2024,Translational Psychiatry,FST,NA,Wistar,F,6,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+6269,Koncz 2023,Int J Neuropsychopharmacol,FST,Method taken from cited article,Wistar,M,7,147,87,9,234,27,9,10,20,NA,NA
+6305,Lee 2015,Front Neurosci,FST,Data expressed as 'mean behavioural count',SD,M,8,23,3.16,10,31,3.16,10,21,42,NA,NA
+6987,Peng 2021,Neurochem Int,FST,NA,SD,M,12,14,4.92,5,21,5.39,6,21,136,NA,NA
+6998,Wong 2017,Molecular Psychiatry,FST,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
+7021,Wu 2025,JOURNAL OF MOLECULAR HISTOLOGY,FST,NA,Wistar,F,6-8,NA,NA,NA,NA,NA,NA,14,70,NA,NA
+7023,Liu 2016,Behav Brain Res,FST,NA,SD,M,NA,96,8.49,8,115,16.97,8,21,126,NA,NA
+7286,Adachi 2021,J Tradit Complement Med,FST,NA,Wistar,M,7,56,29,5,162,25,5,21,126,NA,NA
+7339,Vorvul 2022,NEUROPEPTIDES,FST,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,14,28,NA,NA
+7440,Li 2023,Behav Brain Res,FST,Data shown as violin plot,SD,M,7-8,NA,NA,NA,NA,NA,NA,35,140,NA,NA
+7592,Zhu 2021,Evid Based Complement Alternat Med,FST,NA,SD,M,NA,106,1.6,8,208,2.2,8,21,63,NA,NA
+7660,Yu 2024,BEHAVIOURAL BRAIN RESEARCH,FST,"""Male Sprague-Dawley rats (8–12 weeks old, 250–300 g) and male Long-Evans rats (350–400 g) .... All rats were randomly assigned to one of the following four models""",Unclear,Unclear,Unclear,131,4,8,117,24,8,21,126,NA,NA
+7715,García-Rojo 2017,Int J Neuropsychopharmacol,FST,NA,SD,M,NA,111,15.87,7,172,7.94,7,14,35,NA,NA
+8156,Seo 2019,NEUROSCIENCE LETTERS,FST,NA,SD,M,NA,80,31.84,6,134,19.6,6,28,168,NA,NA
+8158,Wisłowska-Stanek 2016,Behav Brain Res,FST,Data from 'high anxiety' rats,Wistar,M,NA,269,5.66,8,286,2.83,8,35,105,NA,NA
+8159,Habib 2015,PLoS One,FST,NA,Wistar,M,NA,53,4.5,9,76,6.9,9,42,168,NA,NA
+8451,Chen 2025,PHARMACOLOGICAL RESEARCH,FST,NA,SD,M,NA,53,14,7,101,13,12,14,112,NA,NA
+8463,Ratajczak 2020,ACTA NEUROBIOLOGIAE EXPERIMENTALIS,FST,NA,SD,M,12,131,34.29,24,173,58.79,24,14,28,NA,NA
+8548,Kuan 2024,JOURNAL OF PHYSIOLOGICAL INVESTIGATION,FST,NA,Long-Evans,M,NA,4.6,2.42,12,7.1,2.42,12,14,28,NA,NA
+8614,Zanca 2015,FRONTIERS IN BEHAVIORAL NEUROSCIENCE,FST,Data from 'standard housed' group,SD,M,12,NA,NA,NA,NA,NA,NA,7,42,NA,NA
+8637,Wang 2025,BEHAVIOURAL BRAIN RESEARCH,FST,Pregnant females restrained from GD14-21,SD,F (pregnant),8,21,5,8,35,9,16,7,15,NA,NA
+8743,Seewoo 2020,eNeuro,FST,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,13,32,NA,NA
+8767,Aboul-Fotouh 2015,Psychopharmacology (Berl),FST,NA,Wistar,M,NA,61,19.8,8,152,19.8,8,42,168,NA,NA
+8885,Li 2021,J Proteomics,FST,NA,Wistar,M,NA,102,7.07,8,114,7.64,8,28,168,NA,NA
+8955,Castañeda 2015,J Neurosci Res,FST,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,7,17,NA,NA
+8955,Castañeda 2015,J Neurosci Res,FST,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,14,35,NA,NA
+8964,Phachonpai 2024,Journal of Applied Pharmaceutical Science,FST,NA,SD,M,NA,18,6.96,10,32,3.79,10,14,84,NA,NA
+8964,Phachonpai 2024,Journal of Applied Pharmaceutical Science,FST,NA,SD,M,NA,18,6.96,10,30,6.96,10,28,168,NA,NA
+8964,Phachonpai 2024,Journal of Applied Pharmaceutical Science,FST,NA,SD,M,NA,18,6.96,10,28,4.74,10,42,252,NA,NA
+8964,Phachonpai 2024,Journal of Applied Pharmaceutical Science,FST,NA,SD,M,NA,18,6.96,10,30,6.64,10,56,336,NA,NA
+8989,Arab 2023,Pharmaceuticals,FST,NA,Wistar,M,NA,1.4,0.37,6,3.4,0.28,6,21,126,NA,NA
+9029,Mehta-Raghavan 2016,Transl Psychiatry,FST,Data expressed as number of 5-sec bins,Wistar Kyoto More Immobile ,M,"""adult""",25,15.81,10,17,9.49,10,14,28,NA,NA
+9029,Mehta-Raghavan 2016,Transl Psychiatry,FST,Data expressed as number of 5-sec bins,Wistar Kyoto Less Immobile ,M,"""adult""",2.5,1.58,10,7,3.79,10,14,28,NA,NA
+9120,Bortolasci 2023,Bipolar Disorders,FST,NA,Flinders Sensitive Line,M,6,NA,NA,NA,NA,NA,NA,10,5,NA,NA
+9424,Alemu 2019,Brain Behav,FST,NA,Wistar,M,7-8,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+9442,Meng 2021,Pain Physician,FST,NA,SD,M,NA,136,37,10,166,23,10,21,126,NA,NA
+9542,Saeidi 2025,NEUROCHEMICAL RESEARCH,FST,NA,Wistar,M,8-10,92,10.58,7,191,7.94,7,15,90,NA,NA
+9542,Saeidi 2025,NEUROCHEMICAL RESEARCH,FST,NA,Wistar,M,8-10,NA,NA,NA,NA,NA,NA,30,180,NA,NA
+9582,Ishola 2016,BIOMEDICINE & PHARMACOTHERAPY,FST,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,14,4,NA,NA
+9638,Zhang 2021,Journal of Hazardous Materials,FST,CRS protocol used was from a mouse study: https://doi.org/10.1080/15548627.2019.1630222 ,Wistar,M,6,100,31.11,8,252,31.11,8,21,126,NA,NA
+9643,Pan 2019,MOLECULES,FST,NA,SD,M,NA,125,21,9,227,45,9,21,63,NA,NA
+9663,Ampuero 2015,INTERNATIONAL JOURNAL OF NEUROPSYCHOPHARMACOLOGY,FST,"""restraint""",SD,M,NA,108,56.38,11,162,46.43,11,10,20,NA,NA
+9663,Ampuero 2015,INTERNATIONAL JOURNAL OF NEUROPSYCHOPHARMACOLOGY,FST,"""immobilisation""",SD,M,NA,108,56.38,11,178,19.9,11,10,20,NA,NA
+9825,Samarghandian 2017,Neurosci Lett,FST,NA,Wistar,NA,NA,189,82.02,8,343,70.71,8,21,42,NA,NA
+9900,Wang 2016,Brain Res Bull,FST,NA,Wistar,M,NA,83,20,10,123,29,10,21,126,NA,NA
+3385,Gavrilovic 2021,Neuroendocrinology Letters,FST,NA,Wistar,M,11,53,15.81,10,66,15.81,10,14,28,NA,NA
+1016,Li 2022,CNS NEUROSCIENCE & THERAPEUTICS,FST,NA,SD,M,6-8,26,22.63,8,140,90.51,8,28,168,NA,NA
+1129,Liang 2015,Neuroscience,SPT,NA,SD,M,NA,92,3.96,8,76,13.01,8,21,126,6,6
+1287,Alkanat 2024,EUROPEAN JOURNAL OF NEUROSCIENCE,SPT,NA,SD,M,not given,93,14.14,8,59,45.25,8,21,105,NA,NA
+1422,Feng 2022,Andrologia,SPT,NA,SD,M,NA,72,1.5,10,46,2.5,10,NA,NA,24,24
+1764,Zhong 2019,Front Psychiatry,SPT,NA,SD,M,8,76,12.33,10,57,14.23,10,21,84,NA,NA
+1796,Luo 2015,Neuropharmacology,SPT,NA,SD,M,8,87,3.8,7,66,6,7,10,40,NA,NA
+2075,Zhu 2022,Front Pharmacol,SPT,NA,SD,M,8,75,6.93,12,51,10.39,12,21,63,24,24
+2165,Zhu 2020,CHINESE JOURNAL OF NATURAL MEDICINES,SPT,NA,SD,M,9,82,8,10,60,10,10,21,126,24,24
+2186,Qian 2020,Evid Based Complement Alternat Med,SPT,NA,Wistar,M,9,52,21,10,30,17,10,28,84,24,24
+2300,Aboul-Fotouh 2018,Behav Pharmacol,SPT,NA,Wistar,M,NA,90,7.35,8,78,17.54,8,7,42,0,0
+2300,Aboul-Fotouh 2018,Behav Pharmacol,SPT,NA,Wistar,M,NA,90,7.35,8,61,17.54,8,14,84,0,0
+2300,Aboul-Fotouh 2018,Behav Pharmacol,SPT,NA,Wistar,M,NA,90,7.35,8,63,18.38,8,21,126,0,0
+2300,Aboul-Fotouh 2018,Behav Pharmacol,SPT,NA,Wistar,M,NA,90,7.35,8,61,12.16,8,28,168,0,0
+2504,Zhang 2022,Food Chem Toxicol,SPT,NA,Wistar,M,NA,80,8,12,55,8,12,21,126,12,12
+2714,Li 2023,J Affect Disord,SPT,NA,SD,NA,NA,79,12.65,10,67,8.54,10,28,168,23,23
+2744,Arab 2023,Pharmaceuticals (Basel),SPT,NA,Wistar,M,NA,81,6,10,45,9,10,21,126,16,NA
+2795,Zhang 2022,NEUROSCIENCE,SPT,NA,Wistar-Kyoto,M,NA,94,14.14,8,74,28.46,10,28,168,NA,NA
+3077,Abuelezz 2018,Behav Pharmacol,SPT,NA,Wistar,M,NA,77,13.16,12,54,7.97,12,28,168,24,24
+3482,Wang 2024,BRAIN RESEARCH,SPT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,14,28,12,NA
+3670,Zhou 2021,JOURNAL OF ETHNOPHARMACOLOGY,SPT,NA,Wistar,M,8,71,14.14,8,74,22.63,8,28,168,23,23
+3676,Gao 2024,Brain Res Bull,SPT,NA,SD,M,4,73,9.8,10,51,12.02,10,14,28,12,12
+3926,Yan 2023,NEUROPHARMACOLOGY,SPT,NA,SD,M,6-8,78,12.25,6,66,22.05,6,21,84,24,NA
+3926,Yan 2023,NEUROPHARMACOLOGY,SPT,NA,SD,F,6-8,NA,NA,NA,NA,NA,NA,21,84,NA,NA
+4002,Han 2017,Sci Rep,SPT,CRS method taken from cited article,SD,M,NA,85,10.73,20,62,26.83,20,14,28,12,12
+4025,Moreno 2020,Cells,SPT,NA,SD,M,6,90,0.9,9,70,5.7,9,21,42,NA,NA
+4070,Liu 2018,Transl Psychiatry,SPT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+4745,Cheng 2017,BMC Complement Altern Med,SPT,NA,SD,M,NA,78,9,10,49,17,10,63,378,24,24
+4794,Liu 2022,J Affect Disord,SPT,NA,SD,M,NA,80,9.49,10,61,25.3,10,21,126,6,6
+4887,Pansarim 2023,Behav Processes,SPT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,11,66,6,6
+4887,Pansarim 2023,Behav Processes,SPT,NA,Wistar,F,NA,NA,NA,NA,NA,NA,NA,11,66,6,6
+4887,Pansarim 2023,Behav Processes,SPT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,22,132,6,6
+4887,Pansarim 2023,Behav Processes,SPT,NA,Wistar,F,NA,NA,NA,NA,NA,NA,NA,22,132,6,6
+4911,Zou 2024,Mol Nutr Food Res,SPT,Data from after 4 weeks of CRS,SD,M,6,81,3.4,NA,55,5,NA,28,224,NA,NA
+4911,Zou 2024,Mol Nutr Food Res,SPT,Data from after 8 weeks of CRS,SD,M,6,81,3.4,NA,59,4.6,NA,28,224,NA,NA
+4973,Hennessy 2022,Neuroimage: Reports,SPT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,13,32,NA,NA
+5014,Elfakharany 2024,Mol Neurobiol,SPT,NA,Wistar,M,8-10,71,19,NA,32,22,NA,21,126,16,NA
+5437,Sarawi 2025,Sci Rep,SPT,"""All rat groups, except the controls, underwent restraining stress for around 5 weeks""",SD,M,6-7,80,4.5,3,41,32.91,3,35,87,NA,NA
+5446,Peng 2022,JOURNAL OF NEUROINFLAMMATION,SPT,NA,Wistar,M,6-8,98,2,15,71,10,15,28,168,NA,NA
+5610,Mostardeiro 2025,Brain Sciences,SPT,NA,Wistar,M,NA,99.6,3.4,4,93.7,3,4,14,112,NA,NA
+5623,Zhi 2023,Behav Brain Res,SPT,NA,SD,M,6,90,NA,6,89,1.71,6,21,126,24,24
+5627,Feng 2019,FRONTIERS IN MOLECULAR NEUROSCIENCE,SPT,NA,Wistar,M,8,86,13.86,12,44,34.64,12,21,126,NA,NA
+5638,Wang 2024,Heliyon,SPT,NA,SD,M,NA,64,5.2,11,68,8,11,7,42,24,24
+5638,Wang 2024,Heliyon,SPT,NA,SD,M,NA,64,5.2,11,70,6.2,11,14,84,24,24
+5638,Wang 2024,Heliyon,SPT,NA,SD,M,NA,64,5.2,11,58,8,11,21,126,24,24
+5687,Zhou 2022,FRONTIERS IN AGING NEUROSCIENCE,SPT,"All rats were ovariectomised; CRS was ""7.5–8h/day""",SD,F,12,NA,NA,NA,NA,NA,NA,21,157,24,24
+5699,Wei 2018,Neurosci Lett,SPT,NA,Wistar,M,NA,83,4,10,79,4,10,7,42,23,23
+5699,Wei 2018,Neurosci Lett,SPT,NA,Wistar,M,NA,83,4,10,62,2.5,10,14,84,23,23
+5699,Wei 2018,Neurosci Lett,SPT,NA,Wistar,M,NA,83,4,10,78,5,10,21,126,23,23
+5699,Wei 2018,Neurosci Lett,SPT,NA,Wistar,M,NA,83,4,10,80,4,10,28,168,23,23
+5699,Wei 2018,Neurosci Lett,SPT,NA,Wistar,M,NA,83,4,10,81,4,10,35,210,23,23
+5748,Sakhri 2021,PHYTOTHERAPY RESEARCH,SPT,NA,Wistar,M,NA,87,6.71,5,56,13.42,5,21,126,NA,NA
+5881,Jiang 2024,Mol Neurobiol,SPT,NA,SD,M,NA,72,9.95,11,43,19.9,11,7,42,23,23
+5881,Jiang 2024,Mol Neurobiol,SPT,NA,SD,M,NA,74,6.63,11,37,26.53,11,14,84,23,23
+5881,Jiang 2024,Mol Neurobiol,SPT,NA,SD,M,NA,70,9.95,11,35,16.58,11,21,126,23,23
+5993,Ruanpang 2025,Vet World,SPT,NA,Wistar,M,7,68,12.65,10,80,6.32,10,7,21,NA,NA
+5993,Ruanpang 2025,Vet World,SPT,NA,Wistar,M,7,68,12.65,10,75,6.32,10,14,42,NA,NA
+5993,Ruanpang 2025,Vet World,SPT,NA,Wistar,M,7,68,12.65,10,72,9.49,10,28,84,NA,NA
+6184,Li 2022,Mol Neurobiol,SPT,NA,SD,M,NA,82,1.9,NA,50,6.5,NA,28,112,NA,NA
+6184,Olave 2022,Neurobiol Stress,SPT,NA,Wistar,M,NA,77,21,9,31,33,9,14,35,NA,NA
+6184,Olave 2022,Neurobiol Stress,SPT,NA,Wistar,F,NA,71,18,9,81,NA,9,NA,NA,NA,NA
+6233,Gao 2024,Translational Psychiatry,SPT,NA,Wistar,M,6,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+6233,Gao 2024,Translational Psychiatry,SPT,NA,Wistar,F,6,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+6320,Li 2025,Brain Res Bull,SPT,NA,SD,M,5,69,2,6,59,4,6,28,168,24,24
+6392,Hong 2022,J Int Med Res,SPT,NA,SD,M,NA,72,2.21,10,46,2.85,10,28,NA,24,24
+6517,Garman 2024,European Journal of Pharmacology,SPT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,42,6,NA
+6728,Zhao 2022,Front Neurol,SPT,NA,SD,M,NA,85,8,8,74,9,8,21,63,NA,NA
+6938,Alizadeh 2025,Avicenna Journal of Phytomedicine,SPT,NA,Wistar,M,NA,82,5.66,8,58,5.66,8,21,42,NA,NA
+6987,Peng 2021,Neurochem Int,SPT,NA,SD,M,12,94,2.46,5,81,11.02,6,21,136,12,12
+7023,Liu 2016,Behav Brain Res,SPT,NA,SD,M,NA,69,7.07,8,58,19.8,8,7,42,6,6
+7023,Liu 2016,Behav Brain Res,SPT,NA,SD,M,NA,69,7.07,8,52,25.46,8,14,84,6,6
+7023,Liu 2016,Behav Brain Res,SPT,NA,SD,M,NA,69,7.07,8,47,16.97,8,21,126,6,6
+7110,Chen 2022,Frontiers in Psychiatry,SPT,NA,SD,M,NA,65,12,11,53,12,11,7,42,23,23
+7110,Chen 2022,Frontiers in Psychiatry,SPT,NA,SD,M,NA,65,12,11,48,13,11,14,84,23,23
+7110,Chen 2022,Frontiers in Psychiatry,SPT,NA,SD,M,NA,65,12,11,40,16,11,21,126,23,23
+7286,Adachi 2021,J Tradit Complement Med,SPT,NA,Wistar,M,7,85,7,NA,53,9,NA,21,126,12,12
+7592,Zhu 2021,Evid Based Complement Alternat Med,SPT,NA,SD,M,NA,73,7,8,46,3,8,21,63,24,24
+7660,Yu 2024,BEHAVIOURAL BRAIN RESEARCH,SPT,"""Male Sprague-Dawley rats (8–12 weeks old, 250–300 g) and male Long-Evans rats (350–400 g) .... All rats were randomly assigned to one of the following four models""",Unclear,Unclear,Unclear,83,17,8,73,28,8,21,126,NA,NA
+7812,Wang 2022,Neuropsychiatr Dis Treat,SPT,SPT pre-screen done,SD,M,4,91,3,12,74,9.5,12,28,112,NA,NA
+7864,Zhao 2023,ANDROLOGIA,SPT,NA,SD,M,4-5,71,1,NA,46,1,NA,28,168,24,24
+7875,Wang 2017,BRAIN RESEARCH BULLETIN,SPT,NA,SD,M,7,68,6,12,59,9,12,7,42,NA,NA
+7875,Wang 2017,BRAIN RESEARCH BULLETIN,SPT,NA,SD,M,7,68,6,12,46,6,12,14,84,NA,NA
+7875,Wang 2017,BRAIN RESEARCH BULLETIN,SPT,NA,SD,M,7,68,6,12,37,5,12,21,126,NA,NA
+7875,Wang 2017,BRAIN RESEARCH BULLETIN,SPT,NA,SD,M,7,68,6,12,33,6,12,28,168,NA,NA
+8438,Wang 2017,J Tradit Chin Med,SPT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,28,168,23,23
+8451,Chen 2025,PHARMACOLOGICAL RESEARCH,SPT,NA,SD,M,NA,86,11,7,51,10,12,14,112,NA,NA
+8548,Kuan 2024,JOURNAL OF PHYSIOLOGICAL INVESTIGATION,SPT,NA,Long-Evans,M,NA,NA,NA,NA,NA,NA,NA,14,28,NA,NA
+8637,Wang 2025,BEHAVIOURAL BRAIN RESEARCH,SPT,Pregnant females restrained from GD14-21,SD,F (pregnant),8,91,19.8,8,74,38.18,18,7,15,24,24
+8767,Aboul-Fotouh 2015,Psychopharmacology (Berl),SPT,NA,Wistar,M,NA,84,5.66,8,74,8.49,8,7,28,0,0
+8767,Aboul-Fotouh 2015,Psychopharmacology (Berl),SPT,NA,Wistar,M,NA,84,5.66,8,67,5.66,8,14,56,0,0
+8767,Aboul-Fotouh 2015,Psychopharmacology (Berl),SPT,NA,Wistar,M,NA,84,5.66,8,61,8.49,8,21,84,0,0
+8767,Aboul-Fotouh 2015,Psychopharmacology (Berl),SPT,NA,Wistar,M,NA,84,5.66,8,59,5.66,8,28,112,0,0
+8767,Aboul-Fotouh 2015,Psychopharmacology (Berl),SPT,NA,Wistar,M,NA,84,5.66,8,58,11.31,8,35,140,0,0
+8767,Aboul-Fotouh 2015,Psychopharmacology (Berl),SPT,NA,Wistar,M,NA,84,5.66,8,51,11.31,8,42,168,0,0
+8885,Li 2021,J Proteomics,SPT,NA,Wistar,M,NA,81,7.64,8,71,5.09,8,28,168,23,23
+8955,Castañeda 2015,J Neurosci Res,SPT,NA,SD,M,NA,90,14.14,8,48,18.38,8,7,17,1,1
+8955,Castañeda 2015,J Neurosci Res,SPT,NA,SD,M,NA,90,14.14,8,59,11.31,8,14,35,1,1
+8977,Lei 2020,FRONTIERS IN NEUROSCIENCE,SPT,Pregnant females restrained from GD12-18,SD,F (pregnant),not given,NA,NA,NA,NA,NA,NA,7,15,NA,NA
+8989,Arab 2023,Pharmaceuticals,SPT,NA,Wistar,M,NA,84,8,6,41,9,6,21,126,NA,NA
+9120,Bortolasci 2023,Bipolar Disorders,SPT,NA,Flinders Sensitive Line,M,6,NA,NA,NA,NA,NA,NA,10,5,NA,NA
+9208,Shen 2024,PLoS One,SPT,Limited SPT data provided,SD,M,NA,96,NA,6,70,NA,6,28,224,24,24
+9234,Lyu 2022,Psychopharmacology (Berl),SPT,NA,Wistar-Kyoto,M,8,86,2.83,8,88,2.83,8,28,168,0,0
+9442,Meng 2021,Pain Physician,SPT,NA,SD,M,NA,83,3.6,10,68,10,10,21,126,24,NA
+9638,Zhang 2021,Journal of Hazardous Materials,SPT,CRS protocol used was from a mouse study: https://doi.org/10.1080/15548627.2019.1630222 ,Wistar,M,6,81,14.14,8,63,11.31,8,21,126,NA,NA
+9643,Pan 2019,MOLECULES,SPT,NA,SD,M,NA,82,6,9,67,15,9,21,63,NA,NA
+9788,Bagheri 2021,Hum Exp Toxicol,SPT,NA,Wistar,M,NA,75,15.3,9,42,10.5,9,21,42,NA,NA
+9883,Macedo 2015,NEUROPEPTIDES,SPT,restrained daily on Mon-Fri each week for 12 weeks,Wistar,M,NA,NA,NA,NA,NA,NA,NA,60,60,20,20
+9900,Wang 2016,Brain Res Bull,SPT,NA,Wistar,M,NA,81,8,10,65,8,10,21,126,23,23
+1016,Li 2022,CNS NEUROSCIENCE & THERAPEUTICS,SPT,NA,SD,M,6-8,76,11.31,8,50,15.27,8,28,168,24,24
+1030,Valipour 2024,AMINO ACIDS,EPM,NA,Wistar,M,8-10,NA,NA,NA,NA,NA,NA,14,28,NA,NA
+1106,Safarzadeh 2024,EXPERIMENTAL GERONTOLOGY,EPM,NA,Wistar,M,NA,62,5.29,7,52,5.29,7,10,20,NA,NA
+1129,Liang 2015,Neuroscience,EPM,NA,SD,M,NA,88,31.11,8,45,19.8,8,21,126,NA,NA
+1407,Sen 2021,NEUROSCIENCE LETTERS,EPM,NA,SD,M,not given,16,96.17,8,18,48.08,8,14,14,NA,NA
+1497,Judd 2025,LEARNING & MEMORY,EPM,NA,SD,M,NA,122,35.78,5,105,34.79,10,21,126,NA,NA
+1502,Lefter 2018,NEUROPHYSIOLOGY,EPM,NA,Wistar,NA,NA,12,4.47,5,6,2.24,5,7,42,NA,NA
+1565,Ghalandari-Shamami 2019,NEUROCHEMICAL RESEARCH,EPM,NA,Wistar,M,4,50,10.58,7,16,5.29,7,10,20,NA,NA
+1764,Zhong 2019,Front Psychiatry,EPM,NA,SD,M,8,56,24,9,20,15,9,21,84,NA,NA
+1767,Lee 2019,Translational Psychiatry,EPM,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
+1983,Lehner 2017,BEHAVIOURAL BRAIN RESEARCH,EPM,restrained daily on Mon-Fri each week ,Wistar,M,NA,55,9.49,10,29,12,9,15,45,NA,NA
+2075,Zhu 2022,Front Pharmacol,EPM,NA,SD,M,8,38,13.86,12,24,13.86,12,21,63,NA,NA
+2165,Zhu 2020,CHINESE JOURNAL OF NATURAL MEDICINES,EPM,NA,SD,M,9,21,3,12,11,2,12,21,126,NA,NA
+2167,Odendaal-Gambrell 2025,Physiol Rep,EPM,NA,Wistar,M,7,12,13,8,28,36,8,28,28,NA,NA
+2167,Odendaal-Gambrell 2025,Physiol Rep,EPM,NA,Wistar,F,7,29,28,8,27,20,8,28,28,NA,NA
+2926,Di 2017,Psychopharmacology (Berl),EPM,NA,Wistar,F,16,39,15.65,5,18,8.94,5,21,126,NA,NA
+2949,Lin 2019,FRONTIERS IN CELLULAR NEUROSCIENCE,EPM,NA,SD,M,NA,40,2,8,39,2,8,1,8,NA,NA
+2949,Lin 2019,FRONTIERS IN CELLULAR NEUROSCIENCE,EPM,NA,SD,M,NA,40,2,8,33,2,8,3,24,NA,NA
+2949,Lin 2019,FRONTIERS IN CELLULAR NEUROSCIENCE,EPM,NA,SD,M,NA,40,2,8,26,1.5,8,7,56,NA,NA
+2949,Lin 2019,FRONTIERS IN CELLULAR NEUROSCIENCE,EPM,NA,SD,M,NA,40,2,8,21,2,8,14,112,NA,NA
+3209,Subamalani 2018,International Journal of Pharmaceutical Sciences and Research,EPM,NA,Wistar,M,NA,103,26.94,6,57,7.35,6,21,126,NA,NA
+3263,Pechlivanova 2023,REVISTA BRASILEIRA DE FARMACOGNOSIA-BRAZILIAN JOURNAL OF PHARMACOGNOSY,EPM,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA
+3459,Bahramzadeh 2019,Neurobiol Learn Mem,EPM,NA,Wistar,M,NA,81,38.11,12,80,39.8,11,10,60,NA,NA
+3733,Sarfi 2025,PHARMACOLOGY BIOCHEMISTRY AND BEHAVIOR,EPM,NA,Wistar,M,NA,107,67.88,8,28,0,8,21,126,NA,NA
+3772,Singh 2023,Nanotheranostics,EPM,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,7,42,NA,NA
+3822,Bigdeli 2019,NEUROPHYSIOLOGY,EPM,NA,Wistar,M,NA,24,6.32,10,12,9.49,10,21,126,NA,NA
+3856,Trofimiuk 2015,BEHAVIOURAL BRAIN RESEARCH,EPM,NA,Wistar-Crl:WI(Han),M,6,8,8.49,8,12,16.97,8,21,42,NA,NA
+3926,Yan 2023,NEUROPHARMACOLOGY,EPM,NA,SD,M,6-8,18,19.6,6,4,12.25,6,21,84,NA,NA
+3926,Yan 2023,NEUROPHARMACOLOGY,EPM,NA,SD,F,6-8,NA,NA,NA,NA,NA,NA,21,84,NA,NA
+3972,Jung 2020,Neuroscience,EPM,NA,Wistar-Kyoto,M,10-12,NA,NA,NA,NA,NA,NA,14,28,NA,NA
+3972,Jung 2020,Neuroscience,EPM,NA,F334,M,10-12,NA,NA,NA,NA,NA,NA,14,28,NA,NA
+4027,Kim 2025,Laryngoscope,EPM,NA,SD,M,7,85,34,4,45,12,4,10,20,NA,NA
+4070,Liu 2018,Transl Psychiatry,EPM,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+4265,Zhu 2020,BEHAVIOURAL BRAIN RESEARCH,EPM,NA,SD,M,NA,95,17,12,67,12,12,21,126,NA,NA
+4485,de 2023,NEUROCHEMICAL RESEARCH,EPM,restrained daily on Mon-Fri each week ,Wistar,M,NA,NA,NA,NA,NA,NA,NA,15,15,NA,NA
+4548,Meftahi 2023,JOURNAL OF CHEMICAL NEUROANATOMY,EPM,NA,Wistar,M,NA,11,1.41,8,3,1.98,8,14,56,NA,NA
+4560,Joshi 2015,PHYSIOLOGY & BEHAVIOR,EPM,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,15,15,NA,NA
+4735,Siddiqui 2025,BASIC AND CLINICAL NEUROSCIENCE,EPM,NA,SD,M,8-12,NA,NA,NA,NA,NA,NA,10,60,NA,NA
+4735,Siddiqui 2025,BASIC AND CLINICAL NEUROSCIENCE,EPM,NA,SD,F,8-12,NA,NA,NA,NA,NA,NA,10,60,NA,NA
+4794,Liu 2022,J Affect Disord,EPM,NA,SD,M,NA,21,22.14,10,21,31.62,10,21,126,NA,NA
+4832,van 2016,Metab Brain Dis,EPM,Subjected to maternal separation,SD,M,NA,27,24.25,12,33,31.18,12,5,20,NA,NA
+4833,Zhvania 2022,NEUROSCIENCE LETTERS,EPM,NA,Wistar,M,NA,85,63.25,10,10,12.65,10,20,80,NA,NA
+4887,Pansarim 2023,Behav Processes,EPM,NA,Wistar,M,NA,24,18.97,10,14,9.49,10,11,66,NA,NA
+4887,Pansarim 2023,Behav Processes,EPM,NA,Wistar,F,NA,31,12.65,10,31,22.14,10,11,66,NA,NA
+4887,Pansarim 2023,Behav Processes,EPM,NA,Wistar,M,NA,29,22.14,10,36,6.32,10,22,132,NA,NA
+4887,Pansarim 2023,Behav Processes,EPM,NA,Wistar,F,NA,35,9.49,10,24,12.65,10,22,132,NA,NA
+4961,Tang 2024,Drug Des Devel Ther,EPM,NA,SD,M,NA,27,5.5,6,20,2.7,6,28,84,NA,NA
+4973,Hennessy 2022,Neuroimage: Reports,EPM,NA,SD,M,NA,3.7,4,16,9.6,8.94,20,13,32,NA,NA
+5014,Elfakharany 2024,Mol Neurobiol,EPM,NA,Wistar,M,8-10,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+5278,Guedri 2017,Toxicology and Environmental Health Sciences,EPM,NA,Wistar,M,not given,80,94.87,10,21,44.27,10,14,42,NA,NA
+5304,Rojas-Carvajal 2017,REVISTA MEXICANA DE NEUROCIENCIA,EPM,"restraint stress applied ""every other day""",SD,M,NA,NA,NA,NA,NA,NA,NA,16,16,NA,NA
+5533,Terzioglu-Usak 2018,Int J Endocrinol Metab,EPM,NA,Wistar,M,NA,8,5.29,7,7,10.58,7,7,21,NA,NA
+5533,Terzioglu-Usak 2018,Int J Endocrinol Metab,EPM,NA,Wistar,M,NA,7,5.29,7,7,5.29,7,28,84,NA,NA
+5610,Mostardeiro 2025,Brain Sciences,EPM,NA,Wistar,M,NA,30,14.14,8,5,2.83,8,14,112,NA,NA
+5687,Zhou 2022,FRONTIERS IN AGING NEUROSCIENCE,EPM,NA,SD,F,12,NA,NA,NA,NA,NA,NA,21,157,NA,NA
+5729,Yi 2024,Behav Brain Res,EPM,NA,SD,M,NA,37,5.88,6,11,1.96,6,28,168,NA,NA
+5740,Jahromi 2024,ACTA NEUROBIOLOGIAE EXPERIMENTALIS,EPM,NA,Wistar,M,8,41,19.8,8,21,8.49,8,14,28,NA,NA
+5759,Moreno-Martinez 2022,BEHAVIOURAL BRAIN RESEARCH,EPM,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,14,4,NA,NA
+5946,Chen 2022,Journal of Integrative Medicine,EPM,NA,"""Spontaneously Hypertensive Rat""",M,11,NA,NA,NA,NA,NA,NA,28,28,NA,NA
+6148,Novaes 2018,PSYCHONEUROENDOCRINOLOGY,EPM,NA,Wistar,M,8.5,19,12.65,10,0.3,0.63,10,10,20,NA,NA
+6180,Tan 2021,Figshare,EPM,NA,SD,M,not given,31,4.11,10,3,1.26,10,14,84,NA,NA
+6517,Garman 2024,European Journal of Pharmacology,EPM,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,42,NA,NA
+6666,Bhagya 2017,JOURNAL OF NEUROSCIENCE RESEARCH,EPM,NA,Wistar,M,6-8,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+6728,Zhao 2022,Front Neurol,EPM,NA,SD,M,NA,26,17,8,6,7,8,21,63,NA,NA
+6826,Tan 2021,Front Neurosci,EPM,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
+6987,Peng 2021,Neurochem Int,EPM,NA,SD,M,12,69,51.43,5,7,4.9,6,21,136,NA,NA
+7023,Liu 2016,Behav Brain Res,EPM,NA,SD,M,NA,33,33.94,8,26,45.25,8,21,126,NA,NA
+7075,de 2019,Neurotoxicity Research,EPM,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+7291,Cairns 2024,Am J Physiol Heart Circ Physiol,EPM,NA,Wistar,M,10,2.4,3.8,9,28.1,24,8,28,28,NA,NA
+7291,Cairns 2024,Am J Physiol Heart Circ Physiol,EPM,NA,Wistar,F,10,37.6,25.2,9,39,29.6,9,28,28,NA,NA
+7338,Pentkowski 2022,Behav Brain Res,EPM,NA,TgF344-AD (wild type),M,24,126,74.83,14,61,34.86,15,14,14,NA,NA
+7339,Vorvul 2022,NEUROPEPTIDES,EPM,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,14,28,NA,NA
+7440,Li 2023,Behav Brain Res,EPM,NA,SD,M,7-8,40,31,11,15,21,10,35,140,NA,NA
+7660,Yu 2024,BEHAVIOURAL BRAIN RESEARCH,EPM,"""Male Sprague-Dawley rats (8–12 weeks old, 250–300 g) and male Long-Evans rats (350–400 g) .... All rats were randomly assigned to one of the following four models""",Unclear,Unclear,Unclear,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+8266,Hadipour 2023,3 Biotech,EPM,NA,Wistar,M,NA,43,8.49,8,20,14.14,8,14,28,NA,NA
+8548,Kuan 2024,JOURNAL OF PHYSIOLOGICAL INVESTIGATION,EPM,NA,Long-Evans,M,NA,6,9.35,12,10,9.01,12,14,28,NA,NA
+8631,Rodrigues 2022,Eur J Neurosci,EPM,NA,Wistar Han,M,8,132,34.79,10,100,34.79,10,15,60,NA,NA
+8709,Ercetin 2023,INDIAN JOURNAL OF EXPERIMENTAL BIOLOGY,EPM,NA,SD,F,8-12,NA,NA,NA,NA,NA,NA,56,56,NA,NA
+8743,Seewoo 2020,eNeuro,EPM,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,13,32,NA,NA
+8977,Lei 2020,FRONTIERS IN NEUROSCIENCE,EPM,Pregnant females restrained from GD12-18,SD,F (pregnant),not given,NA,NA,NA,NA,NA,NA,7,15,NA,NA
+9120,Bortolasci 2023,Bipolar Disorders,EPM,NA,Flinders Sensitive Line,M,6,NA,NA,NA,NA,NA,NA,10,5,NA,NA
+9536,Dong 2017,Cell Physiol Biochem,EPM,NA,SD,M,6-8,11,6,20,3,1,20,21,126,NA,NA
+9542,Saeidi 2025,NEUROCHEMICAL RESEARCH,EPM,NA,Wistar,M,8-10,58,7.94,7,24,5.29,7,15,90,NA,NA
+9542,Saeidi 2025,NEUROCHEMICAL RESEARCH,EPM,NA,Wistar,M,8-10,58,5.29,7,13,7.94,7,30,180,NA,NA
+9663,Ampuero 2015,INTERNATIONAL JOURNAL OF NEUROPSYCHOPHARMACOLOGY,EPM,"""restraint""",SD,M,NA,27,9.95,11,15,13.27,11,10,20,NA,NA
+9663,Ampuero 2015,INTERNATIONAL JOURNAL OF NEUROPSYCHOPHARMACOLOGY,EPM,"""immobilisation""",SD,M,NA,27,9.95,11,14,13.27,11,10,20,NA,NA
+9688,Radahmadi 2025,ADVANCED BIOMEDICAL RESEARCH,EPM,NA,Wistar,M,NA,27,5.29,7,11,2.65,7,14,84,NA,NA
+9788,Bagheri 2021,Hum Exp Toxicol,EPM,NA,Wistar,M,NA,32,3.97,7,11,3.44,7,21,42,NA,NA
+9808,Paudel 2022,PLoS One,EPM,NA,SD,M,6,NA,NA,NA,NA,NA,NA,30,120,NA,NA
+9892,Geng 2021,Oxid Med Cell Longev,EPM,NA,Wistar,M,6-8,40,9.49,10,24,7.94,7,21,126,NA,NA
+9937,Khankani 2024,BRAIN RESEARCH,EPM,NA,Wistar,M,NA,10,1.41,8,3,1.13,8,14,56,NA,NA
+1030,Valipour 2024,AMINO ACIDS,OFT,NA,Wistar,M,8-10,57,28.28,8,19,28.28,8,14,28,NA,NA
+1129,Liang 2015,Neuroscience,OFT,NA,SD,M,NA,21,8.49,8,9,1.98,8,21,126,NA,NA
+1287,Alkanat 2024,EUROPEAN JOURNAL OF NEUROSCIENCE,OFT,NA,SD,M,not given,NA,NA,NA,NA,NA,NA,21,105,NA,NA
+1407,Sen 2021,NEUROSCIENCE LETTERS,OFT,NA,SD,M,not given,12,22.63,8,24,50.91,8,14,14,NA,NA
+1420,Zhang 2017,Molecular Medicine Reports,OFT,NA,Wistar,M,8,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+1422,Feng 2022,Andrologia,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1502,Lefter 2018,NEUROPHYSIOLOGY,OFT,NA,Wistar,NA,NA,NA,NA,NA,NA,NA,NA,7,42,NA,NA
+1764,Zhong 2019,Front Psychiatry,OFT,NA,SD,M,8,NA,NA,NA,NA,NA,NA,21,84,NA,NA
+1767,Lee 2019,Translational Psychiatry,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
+1983,Lehner 2017,BEHAVIOURAL BRAIN RESEARCH,OFT,restrained daily on Mon-Fri each week ,Wistar,M,NA,NA,NA,NA,NA,NA,NA,15,45,NA,NA
+2075,Zhu 2022,Front Pharmacol,OFT,NA,SD,M,8,NA,NA,NA,NA,NA,NA,21,63,NA,NA
+2165,Zhu 2020,CHINESE JOURNAL OF NATURAL MEDICINES,OFT,NA,SD,M,9,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+2172,Guo 2015,Neural Regen Res,OFT,NA,SD,M,5,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+2300,Aboul-Fotouh 2018,Behav Pharmacol,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+2504,Zhang 2022,Food Chem Toxicol,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+2506,Shin 2019,Eur J Neurosci,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
+2627,Li 2020,Behav Brain Res,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,168,NA,NA
+2744,Arab 2023,Pharmaceuticals (Basel),OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+2795,Zhang 2022,NEUROSCIENCE,OFT,NA,Wistar-Kyoto,M,NA,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+2949,Lin 2019,FRONTIERS IN CELLULAR NEUROSCIENCE,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,1,8,NA,NA
+2949,Lin 2019,FRONTIERS IN CELLULAR NEUROSCIENCE,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,3,24,NA,NA
+2949,Lin 2019,FRONTIERS IN CELLULAR NEUROSCIENCE,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,5,40,NA,NA
+2949,Lin 2019,FRONTIERS IN CELLULAR NEUROSCIENCE,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,7,56,NA,NA
+2949,Lin 2019,FRONTIERS IN CELLULAR NEUROSCIENCE,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,9,72,NA,NA
+2949,Lin 2019,FRONTIERS IN CELLULAR NEUROSCIENCE,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,11,88,NA,NA
+2949,Lin 2019,FRONTIERS IN CELLULAR NEUROSCIENCE,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,14,112,NA,NA
+3077,Abuelezz 2018,Behav Pharmacol,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+3158,Arakawa 2020,PHYSIOLOGY & BEHAVIOR,OFT,NA,Wistar,M,5,225,41.11,10,73,31.62,10,NA,NA,NA,NA
+3158,Arakawa 2020,PHYSIOLOGY & BEHAVIOR,OFT,NA,Wistar,M,5,133,34.79,10,117,22.14,10,NA,NA,NA,NA
+3158,Novaes 2020,PHYSIOLOGY & BEHAVIOR,OFT,NA,Wistar,M,5,189,18.97,10,89,28.46,10,NA,NA,NA,NA
+3158,Arakawa 2020,PHYSIOLOGY & BEHAVIOR,OFT,NA,Wistar,M,5,153,41.11,10,130,69.57,10,NA,NA,NA,NA
+3158,Arakawa 2020,PHYSIOLOGY & BEHAVIOR,OFT,NA,Wistar,M,5,177,69.57,10,165,79.06,10,NA,NA,NA,NA
+3158,Arakawa 2020,PHYSIOLOGY & BEHAVIOR,OFT,NA,Wistar,M,5,277,63.25,10,112,56.92,10,NA,NA,NA,NA
+3209,Subamalani 2018,International Journal of Pharmaceutical Sciences and Research,OFT,NA,Wistar,M,NA,68,24.6,5,39,15.65,5,21,126,NA,NA
+3260,Faraji 2020,BEHAVIOURAL BRAIN RESEARCH,OFT,NA,Long-Evans,M,11-13,NA,NA,NA,NA,NA,NA,10,30,NA,NA
+3263,Pechlivanova 2023,REVISTA BRASILEIRA DE FARMACOGNOSIA-BRAZILIAN JOURNAL OF PHARMACOGNOSY,OFT,"CRS was 1 h/day for 14 days, then escalated to 6 h/day for an additional 14 days. No explanation of why.",Wistar,M,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA
+3459,Bahramzadeh 2019,Neurobiol Learn Mem,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,10,60,NA,NA
+3482,Wang 2024,BRAIN RESEARCH,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,14,28,NA,NA
+3569,Zamani 2024,Journal of Advances in Medical and Biomedical Research,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
+3670,Zhou 2021,JOURNAL OF ETHNOPHARMACOLOGY,OFT,NA,Wistar,M,8,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+3734,Yi 2016,NEURAL REGENERATION RESEARCH,OFT,"The FST used was a ""modification of the traditional method"", where ""swimming endurance capacity was assessed by forcing the rats to swim until exhaustion, which was defined as the point at which the rat's nose remained below the water surface for 10 seconds"".",SD,M,NA,NA,NA,NA,NA,NA,NA,21,63,NA,NA
+3926,Yan 2023,NEUROPHARMACOLOGY,OFT,NA,SD,M,6-8,9,7.35,6,6,4.9,6,21,84,NA,NA
+3926,Yan 2023,NEUROPHARMACOLOGY,OFT,NA,SD,F,6-8,NA,NA,NA,NA,NA,NA,21,84,NA,NA
+4070,Liu 2018,Transl Psychiatry,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+4261,Ranjbar 2017,CLINICAL AND EXPERIMENTAL PHARMACOLOGY AND PHYSIOLOGY,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,1,6,NA,NA
+4261,Ranjbar 2017,CLINICAL AND EXPERIMENTAL PHARMACOLOGY AND PHYSIOLOGY,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,7,42,NA,NA
+4261,Ranjbar 2017,CLINICAL AND EXPERIMENTAL PHARMACOLOGY AND PHYSIOLOGY,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+4265,Zhu 2020,BEHAVIOURAL BRAIN RESEARCH,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+4451,Yang 2017,Evidence-based Complementary and Alternative Medicine,OFT,NA,SD,M,5,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+4485,de 2023,NEUROCHEMICAL RESEARCH,OFT,restrained daily on Mon-Fri each week ,Wistar,M,NA,NA,NA,NA,NA,NA,NA,15,15,NA,NA
+4630,Li 2017,Biomed Res Int,OFT,NA,Wistar,M,NA,18,1.9,12,30,2.2,12,14,42,NA,NA
+4630,Li 2017,Biomed Res Int,OFT,NA,Wistar,M,NA,19,1.7,12,34,2.1,12,28,84,NA,NA
+4669,Shen 2020,Neurosci Lett,OFT,NA,SD,F,52,NA,NA,NA,NA,NA,NA,42,252,NA,NA
+4735,Siddiqui 2025,BASIC AND CLINICAL NEUROSCIENCE,OFT,NA,SD,M,8-12,NA,NA,NA,NA,NA,NA,10,60,NA,NA
+4735,Siddiqui 2025,BASIC AND CLINICAL NEUROSCIENCE,OFT,NA,SD,F,8-12,NA,NA,NA,NA,NA,NA,10,60,NA,NA
+4745,Cheng 2017,BMC Complement Altern Med,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,63,378,NA,NA
+4794,Liu 2022,J Affect Disord,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+4832,van 2016,Metab Brain Dis,OFT,Subjected to maternal separation,SD,M,NA,NA,NA,NA,NA,NA,NA,5,20,NA,NA
+4833,Zhvania 2022,NEUROSCIENCE LETTERS,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,20,80,NA,NA
+4961,Tang 2024,Drug Des Devel Ther,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,28,84,NA,NA
+5014,Elfakharany 2024,Mol Neurobiol,OFT,NA,Wistar,M,8-10,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+5068,Zhu 2023,JOURNAL OF AGRICULTURAL AND FOOD CHEMISTRY,OFT,NA,Wistar,M,6-7,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+5108,Pourheydar 2022,BEHAVIORAL NEUROSCIENCE,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,21,52,NA,NA
+5109,Du 2023,Neuroreport,OFT,NA,SD,M,5-6,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+5233,Song 2020,FRONTIERS IN PHYSIOLOGY,OFT,NA,Wistar,M,NA,15,5.88,6,9,3.67,6,21,126,NA,NA
+5240,Khedr 2018,Naunyn Schmiedebergs Arch Pharmacol,OFT,NA,Wistar,M,NA,8.8,2.2,10,23.9,11.2,11,42,168,NA,NA
+5278,Guedri 2017,Toxicology and Environmental Health Sciences,OFT,NA,Wistar,M,not given,NA,NA,NA,NA,NA,NA,14,42,NA,NA
+5291,Liu 2019,Physiol Behav,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,28,84,NA,NA
+5304,Rojas-Carvajal 2017,REVISTA MEXICANA DE NEUROCIENCIA,OFT,"restraint stress applied ""every other day""",SD,M,NA,NA,NA,NA,NA,NA,NA,16,16,NA,NA
+5365,Magdy 2017,Biomed Pharmacother,OFT,NA,Wistar,M,NA,9,7.97,12,24,11.09,12,42,168,NA,NA
+5366,Xi 2020,Aging (Albany NY),OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,63,NA,NA
+5610,Mostardeiro 2025,Brain Sciences,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,14,112,NA,NA
+5623,Zhi 2023,Behav Brain Res,OFT,NA,SD,M,6,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+5627,Feng 2019,FRONTIERS IN MOLECULAR NEUROSCIENCE,OFT,NA,Wistar,M,8,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+5638,Wang 2024,Heliyon,OFT,Multiple SPTs and OFTs done,SD,M,NA,5,3.4,11,2.9,1.5,11,7,42,NA,NA
+5638,Wang 2024,Heliyon,OFT,Multiple SPTs and OFTs done,SD,M,NA,5,3.4,11,1.4,0.6,11,14,84,NA,NA
+5638,Wang 2024,Heliyon,OFT,Multiple SPTs and OFTs done,SD,M,NA,5,3.4,11,0.2,0.1,11,21,126,NA,NA
+5687,Zhou 2022,FRONTIERS IN AGING NEUROSCIENCE,OFT,"All rats were ovariectomised; CRS was ""7.5–8h/day""",SD,F,12,NA,NA,NA,NA,NA,NA,21,157,NA,NA
+5697,Kamsrijai 2025,JOURNAL OF ETHNOPHARMACOLOGY,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+5729,Yi 2024,Behav Brain Res,OFT,NA,SD,M,NA,22,3.67,6,7.6,2.45,6,28,168,NA,NA
+5748,Sakhri 2021,PHYTOTHERAPY RESEARCH,OFT,NA,Wistar,M,NA,19,3.13,5,4.5,4.02,5,21,126,NA,NA
+5759,Moreno-Martinez 2022,BEHAVIOURAL BRAIN RESEARCH,OFT,NA,Wistar,M,NA,52,20.78,12,30,13.86,12,14,4,NA,NA
+5966,Zhang 2022,JOURNAL OF AGRICULTURAL AND FOOD CHEMISTRY,OFT,NA,Wistar,M,6-7,29,2.5,9,8.4,1.2,9,21,126,NA,NA
+5993,Ruanpang 2025,Vet World,OFT,NA,Wistar,M,7,NA,NA,NA,NA,NA,NA,7,21,NA,NA
+5993,Ruanpang 2025,Vet World,OFT,NA,Wistar,M,7,NA,NA,NA,NA,NA,NA,14,42,NA,NA
+5993,Ruanpang 2025,Vet World,OFT,NA,Wistar,M,7,NA,NA,NA,NA,NA,NA,28,84,NA,NA
+6148,Novaes 2018,PSYCHONEUROENDOCRINOLOGY,OFT,NA,Wistar,M,8.5,NA,NA,NA,NA,NA,NA,10,20,NA,NA
+6180,Tan 2021,Figshare,OFT,NA,SD,M,not given,16,3.13,20,12,4.02,20,14,84,NA,NA
+6184,Li 2022,Mol Neurobiol,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,28,112,NA,NA
+6184,Olave 2022,Neurobiol Stress,OFT,NA,Wistar,M,NA,2.9,5.4,9,1.6,2.7,9,14,35,NA,NA
+6184,Olave 2022,Neurobiol Stress,OFT,NA,Wistar,F,NA,5.8,5.31,11,4.3,4.11,10,NA,NA,NA,NA
+6233,Gao 2024,Translational Psychiatry,OFT,NA,Wistar,M,6,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+6233,Gao 2024,Translational Psychiatry,OFT,NA,Wistar,F,6,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+6320,Li 2025,Brain Res Bull,OFT,NA,SD,M,5,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+6392,Hong 2022,J Int Med Res,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+6616,Rodriguez-Palma 2023,EUROPEAN JOURNAL OF PHARMACOLOGY,OFT,NA,Wistar,M,8-10,NA,NA,NA,NA,NA,NA,28,56,NA,NA
+6616,Rodriguez-Palma 2023,EUROPEAN JOURNAL OF PHARMACOLOGY,OFT,NA,Wistar,F,8-10,NA,NA,NA,NA,NA,NA,28,56,NA,NA
+6728,Zhao 2022,Front Neurol,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,63,NA,NA
+6826,Tan 2021,Front Neurosci,OFT,NA,SD,M,NA,15.2,4.47,20,11.3,4.02,20,14,84,NA,NA
+6850,Farhan 2015,ADVANCEMENTS IN LIFE SCIENCES,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+6850,Farhan 2015,ADVANCEMENTS IN LIFE SCIENCES,OFT,NA,Wistar,F,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+6987,Peng 2021,Neurochem Int,OFT,NA,SD,M,12,2.6,2.46,5,0.05,0.12,6,21,136,NA,NA
+7021,Wu 2025,JOURNAL OF MOLECULAR HISTOLOGY,OFT,NA,Wistar,F,6-8,NA,NA,NA,NA,NA,NA,14,70,NA,NA
+7023,Liu 2016,Behav Brain Res,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+7075,de 2019,Neurotoxicity Research,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+7255,Fernández 2016,Alcohol,OFT,NA,Wistar,M,7 (at testing),NA,NA,NA,NA,NA,NA,4,8,NA,NA
+7255,Fernández 2016,Alcohol,OFT,NA,Wistar,M,11 (at testing),NA,NA,NA,NA,NA,NA,4,8,NA,NA
+7270,Zhang 2022,J Hazard Mater,OFT,Method taken from cited article,Wistar,M,6,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+7286,Adachi 2021,J Tradit Complement Med,OFT,NA,Wistar,M,7,19,3,5,2,1,5,21,126,NA,NA
+7339,Vorvul 2022,NEUROPEPTIDES,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,14,28,NA,NA
+7440,Li 2023,Behav Brain Res,OFT,NA,SD,M,7-8,NA,NA,NA,NA,NA,NA,35,140,NA,NA
+7545,Jiang 2021,Behav Brain Res,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+7592,Zhu 2021,Evid Based Complement Alternat Med,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,63,NA,NA
+7660,Yu 2024,BEHAVIOURAL BRAIN RESEARCH,OFT,"""Male Sprague-Dawley rats (8–12 weeks old, 250–300 g) and male Long-Evans rats (350–400 g) .... All rats were randomly assigned to one of the following four models""",Unclear,Unclear,Unclear,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+7769,Wang 2022,Journal of agricultural and food chemistry,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+7812,Wang 2022,Neuropsychiatr Dis Treat,OFT,SPT pre-screen done,SD,M,4,NA,NA,NA,NA,NA,NA,28,112,NA,NA
+7858,Wang 2017,Evidence-based Complementary and Alternative Medicine,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+7864,Zhao 2023,ANDROLOGIA,OFT,NA,SD,M,4-5,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+8158,Wisłowska-Stanek 2016,Behav Brain Res,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,35,105,NA,NA
+8159,Habib 2015,PLoS One,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,42,168,NA,NA
+8420,Zhao 2015,NEUROSCIENCE LETTERS,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,3,18,NA,NA
+8420,Zhao 2015,NEUROSCIENCE LETTERS,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,14,84,NA,NA
+8451,Chen 2025,PHARMACOLOGICAL RESEARCH,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,14,112,NA,NA
+8709,Ercetin 2023,INDIAN JOURNAL OF EXPERIMENTAL BIOLOGY,OFT,NA,SD,F,8-12,NA,NA,NA,NA,NA,NA,56,56,NA,NA
+8767,Aboul-Fotouh 2015,Psychopharmacology (Berl),OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,42,168,NA,NA
+8964,Phachonpai 2024,Journal of Applied Pharmaceutical Science,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,56,336,NA,NA
+8977,Lei 2020,FRONTIERS IN NEUROSCIENCE,OFT,Pregnant females restrained from GD12-18,SD,F (pregnant),not given,NA,NA,NA,NA,NA,NA,7,15,NA,NA
+8989,Arab 2023,Pharmaceuticals,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+9101,Zhao 2015,Physiol Behav,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,3,6,NA,NA
+9101,Zhao 2015,Physiol Behav,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,7,14,NA,NA
+9101,Zhao 2015,Physiol Behav,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,14,28,NA,NA
+9120,Bortolasci 2023,Bipolar Disorders,OFT,NA,Flinders Sensitive Line,M,6,NA,NA,NA,NA,NA,NA,10,5,NA,NA
+9211,Sun 2022,JOURNAL OF AGRICULTURAL AND FOOD CHEMISTRY,OFT,NA,Wistar,M,6-7,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+9223,Hadipour 2023,Synapse,OFT,NA,Wistar,M,12,13,5.66,8,4.3,5.09,8,14,28,NA,NA
+9234,Lyu 2022,Psychopharmacology (Berl),OFT,NA,Wistar-Kyoto,M,8,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+9352,Li 2015,Evidence-based Complementary and Alternative Medicine,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,21,63,NA,NA
+9442,Meng 2021,Pain Physician,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+9542,Saeidi 2025,NEUROCHEMICAL RESEARCH,OFT,NA,Wistar,M,8-10,29,9,7,9,2.91,7,15,90,NA,NA
+9542,Saeidi 2025,NEUROCHEMICAL RESEARCH,OFT,NA,Wistar,M,8-10,37,12.17,7,6,2.91,7,30,180,NA,NA
+9643,Pan 2019,MOLECULES,OFT,NA,SD,M,NA,21,4.2,9,41,13.8,9,21,63,NA,NA
+9767,Zhu 2019,BIOMEDICINE & PHARMACOTHERAPY,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,21,63,NA,NA
+9825,Samarghandian 2017,Neurosci Lett,OFT,NA,Wistar,NA,NA,NA,NA,NA,NA,NA,NA,21,42,NA,NA
+9892,Geng 2021,Oxid Med Cell Longev,OFT,NA,Wistar,M,6-8,NA,0,NA,NA,0,NA,21,126,NA,NA
+9900,Wang 2016,Brain Res Bull,OFT,NA,Wistar,M,NA,NA,NA,NA,NA,NA,NA,21,126,NA,NA
+1016,Li 2022,CNS NEUROSCIENCE & THERAPEUTICS,OFT,NA,SD,M,6-8,NA,NA,NA,NA,NA,NA,28,168,NA,NA
+4733,Tian 2018,Frontiers in Psychiatry,OFT,NA,SD,M,NA,NA,NA,NA,NA,NA,NA,28,168,NA,NA
