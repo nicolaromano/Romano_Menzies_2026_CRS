@@ -382,21 +382,6 @@ do_meta <- function(
         las = 1
     )
 
-    # Annotate outlier
-    if (test == "FST") {
-        text(45, 8, "Zhu et al. 2021", cex = 0.7)
-    }
-
-    intercept <- round(coef(egger)[1], 2)
-    se <- round(summary(egger)$coefficients[1, 2], 2)
-    pval <- signif(summary(egger)$coefficients[1, 4], 2)
-    tval <- round(summary(egger)$coefficients[1, 3], 2)
-    print(paste0(
-        "Egger's intercept (SE) = ", intercept,
-        " (", se, "), t (", df.residual(egger), ") = ", tval,
-        " p = ", pval
-    ))
-
     if (save_pdf) {
         dev.off()
     }
